@@ -14,7 +14,7 @@ using Microsoft.VisualBasic;
 using System.Windows.Automation;
 using System.Collections.Generic;
 
-// OnSourceInitialized has buttons, first 4 key handlers = across second row of 4 buttons in order.
+// OnSourceInitialized has buttons, first 4 key handlers = across second row of 4 buttons in order....
 
 namespace Straight_Bitbrain_Heater
 {
