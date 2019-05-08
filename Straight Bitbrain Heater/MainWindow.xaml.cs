@@ -428,23 +428,32 @@ namespace Straight_Bitbrain_Heater
                         {
                             handled = true;
                             Boolean AlreadyRunning = false;
-                            
+                            foreach (var p in Process.GetProcesses())
+                            {
+                                if (p.ProcessName == "musicbee")
+                                {
+                                    p.Kill();
+                                    this.Title = "MusicBee Closed.";
+                                    AlreadyRunning = true;
+                                }
+                            }
+
                             if (AlreadyRunning == false)
                             {
                                 ProcessStartInfo start = new ProcessStartInfo
                                 {
-                                    FileName = @"c:\users\jgentile\software\foobar2000\foobar2000.exe",
+                                    FileName = @"C:\Users\jgentile\software\MusicBee\MusicBee.exe",
                                 };
                                 try
                                 {
                                     Process.Start(start);
+                                    this.Title = "MusicBee Started.";
                                 }
                                 catch(Exception ex)
                                 {
                                     System.Windows.Forms.MessageBox.Show(ex.ToString());
                                 }                                
-                            }
-                            this.Title = "Foobar Started.";
+                            }                            
                         }
                         break;
                 }

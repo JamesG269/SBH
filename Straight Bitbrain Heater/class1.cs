@@ -296,6 +296,7 @@ namespace sentence_generator
                 "[get_aspercream] does all the bits so [get_bitbrains] tell him he's doing [get_bitbrain_s] bit like rebitted mother fuckers",
                 "[get_aspercream] {did,knew,remembered,imagined,pictured,was around,was,thought about,contemplated} [get_far_thought] {stuff,magic}",
                 "[get_aspercream] will {do,know,remember,understand,contemplate,explain,talk about,be,think about} [get_far_thought] {stuff,magic}",
+                "[get_bitbrain] [get_bit_modifies] and decides it's the bit caller",
 
 
 
@@ -304,7 +305,7 @@ namespace sentence_generator
             string str = "";
             if (nanoshit2.RandomNumber.Rand4(2) == 0)
             {
-                str += nanoshit2.pick(shit);
+                str += nanoshit2.pick(shit, "shit");
                 if (nanoshit2.RandomNumber.Rand4(2) == 0)
                 {
                     str += aspercream_rides_for();
@@ -312,7 +313,7 @@ namespace sentence_generator
             }
             else
             {
-                str += nanoshit2.pick(shit2);
+                str += nanoshit2.pick(shit2, "shit2");
             }
             str += nanoshit2.get_time_or_place_or_neither();
             return str;
@@ -330,7 +331,7 @@ namespace sentence_generator
             };
             string str = "";
             str += nanoshit2.get_a(nanoshit2.get_bitbrain_mofo(nanoshit2.bitbrain));
-            str += nanoshit2.pick(destiny);
+            str += nanoshit2.pick(destiny, "destiny");
             str += nanoshit2.get_time_or_place_or_neither();
             return str;
         }
@@ -343,8 +344,8 @@ namespace sentence_generator
             string str = "";
             str += nanoshit2.get_a(nanoshit2.get_bitbrain_mofo(nanoshit2.bitbrain));
             str += "is ";
-            str += nanoshit2.pick(nanoshit2.bit_modify);
-            str += nanoshit2.pick(_is);
+            str += nanoshit2.pick(nanoshit2.bit_modify,"bit_modify");
+            str += nanoshit2.pick(_is, "_is");
             str += nanoshit2.call(bitbrainwhenhe);
             return str;
         }
@@ -353,7 +354,7 @@ namespace sentence_generator
         {
             string[] when = { "when he", "because he", "as he", "so he" };
             string str = "";
-            str += nanoshit2.pick(when);
+            str += nanoshit2.pick(when, "when");
             str += nanoshit2.call(bitbrainhedoes);
             return str;
         }
@@ -375,7 +376,7 @@ namespace sentence_generator
 
             };
             string str = "";
-            str += nanoshit2.pick(does);
+            str += nanoshit2.pick(does, "does");
             str += nanoshit2.get_time_or_place_or_neither();
             
             return str;
@@ -388,7 +389,7 @@ namespace sentence_generator
             string str = "";
             str += nanoshit2.get_aspercream();
             str += "is [get_far_thought]";
-            str += nanoshit2.pick(_is);
+            str += nanoshit2.pick(_is, "_is");
             str += nanoshit2.call(aspercreamwhen);
             return str;
         }
@@ -399,7 +400,7 @@ namespace sentence_generator
             "so he starts his own shadow idea about how he","so there is a shadow coincidence when he",
             };
             string str = "";
-            str += nanoshit2.pick(when);
+            str += nanoshit2.pick(when, "when");
             str += nanoshit2.call(aspercreamdoes);
             return str;
         }
@@ -408,7 +409,7 @@ namespace sentence_generator
         {
             string[] aspercream_rides = { "rides", "balls", "plots", "strategizes", "wages [get_nano_modify] war" };
             string str = "";
-            str += nanoshit2.pick(aspercream_rides);
+            str += nanoshit2.pick(aspercream_rides, "aspercream_rides");
             str += nanoshit2.call(aspercreamdoesx);
             return str;
         }
@@ -419,11 +420,11 @@ namespace sentence_generator
             string str = "";
             if (nanoshit2.RandomNumber.Rand4(2) == 0)
             {
-                str += nanoshit2.pick(ballschicks);
+                str += nanoshit2.pick(ballschicks, "ballschicks");
             }
             else
             {
-                str += nanoshit2.pick(balls);
+                str += nanoshit2.pick(balls, "balls");
                 str += "with ";
             }
             str += nanoshit2.get_aspercream_bitch_or_bitches();
@@ -455,7 +456,7 @@ namespace sentence_generator
         public static string aspercream_balls()
         {
             string str = "";
-            str += nanoshit2.pick(balls.Concat(ballswar).ToArray());
+            str += nanoshit2.pick(balls.Concat(ballswar).ToArray(),"ballswar");
             str += nanoshit2.get_time_or_place_or_neither();
             
             return str;
@@ -464,7 +465,7 @@ namespace sentence_generator
         {
             string[] smokes = { "smokes", "shoots", "beats", "kills", "blows up", "whips", "stomps on", "kicks", "stabs", "hangs", "erupts on", "opens fire on", "plots the [get_nano_modify] destruction of" };
             string str = "";
-            str += nanoshit2.pick(smokes);
+            str += nanoshit2.pick(smokes, "smokes");
             str += nanoshit2.call(aspercreamsmokesx);
             return str;
         }
@@ -473,7 +474,7 @@ namespace sentence_generator
         {
             string[] on = { "on", "against" };
             string str = "";
-            str += nanoshit2.pick(on);
+            str += nanoshit2.pick(on, "on");
             str += nanoshit2.call(aspercreamridesonx);
             return str;
         }
@@ -482,7 +483,7 @@ namespace sentence_generator
             string[] _for = { "{to get,for,in a quest for} [get_far_thought] {glory,fortune,fame,street fame,women,freedom,revenge}", "to {cause,bring about,start} [get_a_far_thought] {transformation,revolution,uprising}", "to {manifest,fulfill} his [get_far_thought] {prophecy,destiny}",
             "to be [get_far_thought] trouble some"};
             string str = "";
-            str += nanoshit2.pick(_for);
+            str += nanoshit2.pick(_for, "_for");
             str += nanoshit2.get_time_or_place_or_neither();
             
             return str;
@@ -499,7 +500,7 @@ namespace sentence_generator
         {
             string[] the = { "the", "some", "all the", "several", "most", "those", "these" };
             string str = "";
-            str += nanoshit2.pick(the);
+            str += nanoshit2.pick(the, "the");
             str += nanoshit2.get_bitbrains();
             str += nanoshit2.get_time_or_place_or_neither();
             
@@ -583,7 +584,7 @@ namespace sentence_generator
                 i--;
                 if (i != 0)
                 {
-                    str += pick(bh_connect);
+                    str += pick(bh_connect, "bh_connect");
                 }
             }
             return replace_functions(str);
@@ -607,8 +608,8 @@ namespace sentence_generator
             string str, str2, str3, str4;
             do
             {
-                str = pick(str_array);
-                str2 = pick(str_array2);
+                str = pick(str_array, "str_array");
+                str2 = pick(str_array2, "str_array2");
                 str3 = str.Remove(str.IndexOf(" "));
                 str4 = str2.Remove(str2.IndexOf(" "));
             } while (string.Compare(str3, str4, true) == 0);
@@ -622,7 +623,7 @@ namespace sentence_generator
             string str = "";
             str += get_aspercream();
             str += pick2(bh_pre, bh_shit);
-            str += pick(bh_thing);
+            str += pick(bh_thing, "bh_thing");
             return str;
         }
 
@@ -634,7 +635,7 @@ namespace sentence_generator
             string str = "";
             str += get_bitbrains();
             str += pick2(bh_pre, bh_shit);
-            str += pick(bh_thing);
+            str += pick(bh_thing, "bh_thing");
             return str;
         }
         public static string aspercream_shit()
@@ -650,7 +651,7 @@ namespace sentence_generator
             string str = "";
             str += get_aspercream();
             str += pick2(bh_pre, bh_shit);
-            str += pick(bh_thing);
+            str += pick(bh_thing, "bh_thing");
             return str;
         }
         public static string bh_shit()
@@ -663,7 +664,7 @@ namespace sentence_generator
             string str = "";
             str += get_bitbrains();
             str += pick2(bh_pre, bh_shit);
-            str += pick(bh_thing);
+            str += pick(bh_thing, "bh_thing");
             return str;
         }
         public static string bh_make()
@@ -675,7 +676,7 @@ namespace sentence_generator
             string str = "";
             str += get_bitbrains();
             str += pick2(bh_pre, bh_make);
-            str += pick(bh_thing);
+            str += pick(bh_thing, "bh_thing");
             return str;
         }
 
@@ -688,7 +689,7 @@ namespace sentence_generator
             string str = "";
             str += get_aspercream();
             str += pick2(aspercream_pre, aspercream_make);
-            str += pick(aspercream_thing);
+            str += pick(aspercream_thing, "aspercream_thing");
             return str;
         }
         public static string aspercream_do()
@@ -699,7 +700,7 @@ namespace sentence_generator
             string str = "";
             str += get_aspercream();
             str += pick2(aspercream_pre, aspercream_do);
-            str += pick(aspercream_thing);
+            str += pick(aspercream_thing, "aspercream_thing");
             return str;
         }
         public static string bh_do()
@@ -710,7 +711,7 @@ namespace sentence_generator
             string str = "";
             str += get_bitbrains();
             str += pick2(bh_pre, bh_do);
-            str += pick(bh_thing);
+            str += pick(bh_thing, "bh_thing");
             return str;
         }
 
@@ -874,7 +875,7 @@ namespace sentence_generator
             "james started his own [get_nano_modify] idea","james is twice the effect with out the meaning","louisiana brain death","shadow coincidence","perfect thought disorder","aspercream can do anything at all",
             "tell the [get_far_thought] truth","james is [get_far_thought] smart and hot","even if [get_bitbrain] is blind, they can still see [get_aspercream_s] prophecy, his destiny to [get_nano_modify] style for eternity",
             "good afternoon [get_no_a_bitbrain]","see where [get_aspercream] is from, they [get_bit_modify] heater easy","johnny carson is funnier than [get_bit_modify]","who are you, [get_bitbrain]","[get_aspercream] [athingplaceortime]"};
-            return pick(lines);
+            return pick(lines, "lines");
         }
 
         public static string bitbraindoing()
@@ -883,7 +884,7 @@ namespace sentence_generator
                 "says no way after","asks what does it mean after","[get_bit_modifies] before","knows the [get_bit_modify] meaning of","doesn't know why it is","cries about","hates","dislikes","loses respect for itself when it is",
             "talks about","knows who it is when it is",};
             string str = get_bitbrain();
-            str += pick(doing_list);
+            str += pick(doing_list, "doing_list");
             str += call(bitbraindoinglist);
             str += get_time_or_place_or_neither();
             return str;
@@ -915,7 +916,7 @@ namespace sentence_generator
             "back up it's brain to [get_a_bit_modify] CD","worship a [get_nano_modify] statue of [get_aspercream]","cry about [get_nano_modify]","get sent to [get_nano_modify] prison forever because of [get_bit_modify]",
             "have [get_bit_modify] nightmares about [get_aspercream_any]","watch [get_aspercream_any] [get_bit_modify] style all night long"
             };
-            return pick(doit);
+            return pick(doit, "doit");
         }
 
         public static string bitbrainsdoit()
@@ -930,7 +931,7 @@ namespace sentence_generator
             "back up their brain to [get_a_bit_modify] CD","worship a [get_nano_modify] statue of [get_aspercream]","cry about [get_nano_modify]","get sent to [get_nano_modify] prison forever because of [get_bit_modify]",
             "have [get_bit_modify] nightmares about [get_aspercream_any]","watch [get_aspercream_any] [get_bit_modify] style all night long"
             };
-            return pick(doit);
+            return pick(doit, "doit");
         }
         public static string bitbraindoesit()
         {
@@ -944,7 +945,7 @@ namespace sentence_generator
             "backs up it's brain to [get_a_bit_modify] CD","worships a [get_nano_modify] statue of [get_aspercream]","cries about [get_nano_modify]","gets sent to [get_nano_modify] prison forever because of [get_bit_modify]",
             "has [get_bit_modify] nightmares about [get_aspercream_any]","watches [get_aspercream_any] [get_bit_modify] style all night long"
             };
-            return pick(doesit);
+            return pick(doesit, "doesit");
         }
         public static string bitbraindidit()
         {
@@ -959,7 +960,7 @@ namespace sentence_generator
             "had [get_bit_modify] nightmares about [get_aspercream_any]","watch [get_aspercream_any] [get_bit_modify] style all night long"
             };
 
-            return pick(doesit);
+            return pick(doesit, "doesit");
         }
 
         public static string bitbrainbitbraindoingit()
@@ -981,7 +982,7 @@ namespace sentence_generator
             "watching [get_aspercream_any] [get_bit_modify] style all night long"
 
             };
-            return pick(doingit);
+            return pick(doingit, "doingit");
         }
 
         public static string bitbrainsdoingit()
@@ -997,7 +998,7 @@ namespace sentence_generator
             "watching [get_aspercream_any] [get_bit_modify] style all night long"
 
             };
-            return pick(doingit);
+            return pick(doingit, "doingit");
         }
         public static string bitbrainkillersdo()
         {
@@ -1055,7 +1056,7 @@ namespace sentence_generator
                 "make [get_nano_modify] songs about","reminisce about","have [get_far_thought] memories of","have [get_far_thought] discussions about","contemplate","write [get_a_nano_modify] book about","love","have far thoughts about",
                 "start a shadow idea about","know the effect with out knowing the meaning of","see a shadow coincidence when",
             "testify about","were","write [get_a_nano_modify] report about","have perfect thought disorder when"};
-            string str = pick(bitbrainkillersdoing_list);
+            string str = pick(bitbrainkillersdoing_list, "bitbrainkillersdoing_list");
             return str;
         }
         public static string bitbrainkillerdoing()
@@ -1083,7 +1084,7 @@ namespace sentence_generator
                 "starts a shadow idea about","knows the effect with out knowing the meaning of",
                 "testifies about","was","writes [get_a_nano_modify] report about","sees a shadow coincidence when","has perfect thought disorder when"
             };
-            string str = pick(bitbrainkillerdoing_list);
+            string str = pick(bitbrainkillerdoing_list, "bitbrainkillerdoing_list");
             return str;
         }
 
@@ -1107,7 +1108,7 @@ namespace sentence_generator
         {
             string[] bitbrainkillerwill_list = new string[] { "will", "wants to",  "makes [get_nano_modify] plans to", "tries to", "gets into position to", "prepares to", "gets ready to",
                 "makes [get_a_nano_modify] conspiracy to","makes [get_a_nano_modify] memo to","gives [get_a_nano_modify] order to" };
-            string str = pick(bitbrainkillerwill_list);
+            string str = pick(bitbrainkillerwill_list, "bitbrainkillerwill_list");
             return str;
         }
         public static string bitbrainkillerswill()
@@ -1130,7 +1131,7 @@ namespace sentence_generator
         {
             string[] bitbrainkillerswill_list = new string[] { "will", "want to", "make [get_nano_modify] plans to", "try to", "get into position to", "prepare to", "get ready to",  "make [get_a_nano_modify] conspiracy to",
             "make [get_a_nano_modify] memo to","give [get_a_nano_modify] order to"};
-            string str = pick(bitbrainkillerswill_list);
+            string str = pick(bitbrainkillerswill_list, "bitbrainkillerswill_list");
             return str;
         }
 
@@ -1147,7 +1148,7 @@ namespace sentence_generator
         {
             string[] bitbrainswill_list = new string[] { "will", "want to", "make [get_bit_modify] plans to", "try to", "get into position to", "prepare to", "get ready to",  "make [get_a_bit_modify] conspiracy to",
             "make [get_a_bit_modify] memo to"};
-            return pick(bitbrainswill_list);
+            return pick(bitbrainswill_list, "bitbrainswill_list");
         }
         public static string bitbrainwill()
         {
@@ -1162,7 +1163,7 @@ namespace sentence_generator
         {
             string[] bitbrainwill_list = new string[] { "will", "wants to", "makes [get_bit_modify] plans to", "tries to", "gets into position to", "prepares to", "gets ready to",  "makes [get_a_bit_modify] conspiracy to",
             "makes [get_a_bit_modify] memo to"};
-            return pick(bitbrainwill_list);
+            return pick(bitbrainwill_list, "bitbrainwill_list");
         }
 
 
@@ -1191,7 +1192,7 @@ namespace sentence_generator
 
             };
             string str;
-            str = pick(rodeon_list);
+            str = pick(rodeon_list, "rodeon_list");
             str += get_a_bitbrain_or_bitbrains();
             return str;
         }
@@ -1206,7 +1207,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
 
@@ -1217,7 +1218,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
         public static string bitbrainkillerdoingtobitbrainkillerfemale()
@@ -1229,7 +1230,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
         public static string bitbrainkillersdoingtobitbrainkillerfemales()
@@ -1239,7 +1240,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
         public static string didtobitbrains()
@@ -1251,7 +1252,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(rodeon_list);
+            str = pick(rodeon_list, "rodeon_list");
             str += get_a_bitbrain_or_bitbrains();
             return str;
         }
@@ -1266,7 +1267,7 @@ namespace sentence_generator
             "followed the [get_nano_modify] rules of the streets",};
 
             string str;
-            str = pick(did_list);
+            str = pick(did_list, "did_list");
             return str;
         }
 
@@ -1275,7 +1276,7 @@ namespace sentence_generator
             string[] did_list = new string[] { "",
             };
             string str;
-            str = pick(did_list);
+            str = pick(did_list, "did_list");
             return str;
         }
         public static string bitbrainkillerdidtobitbrainkillerfemale()
@@ -1285,7 +1286,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
 
@@ -1295,7 +1296,7 @@ namespace sentence_generator
                 "vacationed with [get_aspercream_bitches]","watched [get_a_nano_modify] movie with [get_aspercream_bitches]","made [get_nano_modify] love to [get_aspercream_bitches]",
             };
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
 
@@ -1308,7 +1309,7 @@ namespace sentence_generator
 
             };
             string str;
-            str = pick(rideson_list);
+            str = pick(rideson_list, "rideson_list");
             str += get_a_bitbrain_or_bitbrains();
             return str;
         }
@@ -1323,7 +1324,7 @@ namespace sentence_generator
             "follows the [get_nano_modify] rules of the streets",};
 
             string str;
-            str = pick(does_list);
+            str = pick(does_list, "does_list");
             return str;
         }
         public static string doestobitbrainwhores()
@@ -1332,7 +1333,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(does_list);
+            str = pick(does_list, "does_list");
             return str;
         }
         public static string bitbrainkillerdoestobitbrainkillerfemale()
@@ -1342,7 +1343,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
 
@@ -1354,7 +1355,7 @@ namespace sentence_generator
                 "break the head of","bust on","kill","bury","break the [get_bit_modify] ass of","wet up","cock block","choke","castrate","handcuff","tie up"
             };
             string str;
-            str = pick(rideon_list);
+            str = pick(rideon_list, "rideon_list");
             str += get_a_bitbrain_or_bitbrains();
             return str;
         }
@@ -1369,7 +1370,7 @@ namespace sentence_generator
             "follow the [get_nano_modify] rules of the streets",};
 
             string str;
-            str = pick(do_list);
+            str = pick(do_list, "do_list");
             return str;
         }
         public static string dotobitbrainwhores()
@@ -1378,7 +1379,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(do_list);
+            str = pick(do_list, "do_list");
             return str;
         }
 
@@ -1389,7 +1390,7 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
 
@@ -1400,13 +1401,13 @@ namespace sentence_generator
             };
 
             string str;
-            str = pick(doing_list);
+            str = pick(doing_list, "doing_list");
             return str;
         }
 
         public static string DuplicateInfo = "";
 
-        public static string pick(string[] arr)
+        public static string pick(string[] arr, string arrname)
         {
             Dictionary<string, string> dupe_dict = new Dictionary<string, string>();
 
@@ -1417,10 +1418,10 @@ namespace sentence_generator
                 {
                     if (dupe_dict.ContainsKey(s2))
                     {
-                        StackTrace st = new StackTrace(true);
-                        StackFrame sf = st.GetFrame(1);
-                        string stackname = sf.GetMethod().Name;
-                        DuplicateInfo += "@ " + stackname + " array has duplicate: " + s2 + Environment.NewLine;
+                        //StackTrace st = new StackTrace(true);
+                        //StackFrame sf = st.GetFrame(1);
+                        //string stackname = sf.GetMethod().Name;
+                        DuplicateInfo += "@ " + arrname + " array has duplicate: " + s2 + Environment.NewLine;
                     }
                     else
                     {
@@ -1486,7 +1487,7 @@ namespace sentence_generator
 
         public static string get_far_thought_list()
         {
-            return pick(far_thought_list);
+            return pick(far_thought_list, "far_thought_list");
         }
         public static string get_aspercream_bitches()
         {
@@ -1510,11 +1511,11 @@ namespace sentence_generator
         }
         public static string get_food_list()
         {
-            return pick(food_list);
+            return pick(food_list, "food_list");
         }
         public static string get_food_lists()
         {
-            return pick(foods_list);
+            return pick(foods_list, "foods_list");
         }
         public static string get_handgun()
         {
@@ -1523,7 +1524,7 @@ namespace sentence_generator
             {
                 str += "government ";
             }
-            return get_a(str + pick(handgun));
+            return get_a(str + pick(handgun,"handgun"));
         }
         public static string get_handguns()
         {
@@ -1532,7 +1533,7 @@ namespace sentence_generator
             {
                 str += "government ";
             }
-            return str + pick(handguns);
+            return str + pick(handguns, "handguns");
         }
         public static string get_guns()
         {
@@ -1542,7 +1543,7 @@ namespace sentence_generator
             {
                 str += "government ";
             }
-            return str + pick(guns.Concat(handguns).ToArray());
+            return str + pick(guns.Concat(handguns).ToArray(),"handguns");
         }
         public static string get_gun()
         {
@@ -1552,7 +1553,7 @@ namespace sentence_generator
             {
                 str += "government ";
             }
-            return str + pick(gun.Concat(handgun).ToArray());
+            return str + pick(gun.Concat(handgun).ToArray(),"handgun");
         }
         public static string geta_gun()
         {
@@ -1562,31 +1563,31 @@ namespace sentence_generator
             {
                 str += "government ";
             }
-            return get_a(str + pick(gun));
+            return get_a(str + pick(gun, "gun"));
         }
         public static string get_bit_modifying()
         {
-            return pick(bit_modifying);
+            return pick(bit_modifying, "bit_modifying");
         }
         public static string get_bit_modifies()
         {
-            return pick(bit_modifies);
+            return pick(bit_modifies, "bit_modifies");
         }
         public static string get_bit_modified()
         {
-            return pick(bit_modified);
+            return pick(bit_modified, "bit_modified");
         }
         public static string get_bit_modify()
         {
-            return pick(bit_modify);
+            return pick(bit_modify, "bit_modify");
         }
         public static string get_a_bit_modify()
         {
-            return get_a(pick(bit_modify));
+            return get_a(pick(bit_modify, "bit_modify"));
         }
         public static string get_bit_modify_y()
         {
-            return pick(bit_modify_y);
+            return pick(bit_modify_y, "bit_modify_y");
         }
         public static string get_a_nano_modify()
         {
@@ -1594,23 +1595,23 @@ namespace sentence_generator
         }
         public static string get_nano_modify()
         {
-            return pick(nano_modify);
+            return pick(nano_modify, "nano_modify");
         }
         public static string get_nano_modified()
         {
-            return pick(nano_modified);
+            return pick(nano_modified, "nano_modified");
         }
         public static string get_nano_modify_y()
         {
-            return pick(nano_modify_y);
+            return pick(nano_modify_y, "nano_modify_y");
         }
         public static string get_nano_modifies()
         {
-            return pick(nano_modifies);
+            return pick(nano_modifies, "nano_modifies");
         }
         public static string get_nano_modifying()
         {
-            return pick(nano_modifying);
+            return pick(nano_modifying, "nano_modifying");
         }
         public static string get_aspercream_bitch()
         {
@@ -1634,7 +1635,7 @@ namespace sentence_generator
 
         public static string get_no_a_aspercream()
         {
-            return (RandomNumber.Rand4(2) == 0) ? get_aspercream_mofos(aspercreammofo) : pick(aspercream);
+            return (RandomNumber.Rand4(2) == 0) ? get_aspercream_mofos(aspercreammofo) : pick(aspercream, "aspercream");
         }
 
         public static string get_a_aspercream()
@@ -1643,7 +1644,7 @@ namespace sentence_generator
         }
         public static string get_aspercream()
         {                    
-            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(aspercreammofo)) : pick(aspercream);
+            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(aspercreammofo)) : pick(aspercream, "aspercream");
         }
         public static string get_aspercreaming()
         {
@@ -1653,7 +1654,7 @@ namespace sentence_generator
         "[get_nano_modify] stylering","killering","ridering","drug kingpining","soldiering","government agenting","mafia donning","nano prisonering","cow boying","movie starring","aristocratting","lording",
         "princing","kinging","generalling","admiralling","gentlemanning","president of Nanopoling","Nanopol officering","F.B.I. Agenting","C.I.A. agenting","N.S.A. agenting","microsoft employee-ing","jedi knighting","sith lording","starship captaining",
         "hustlering","space pirating","cromming","centauring"};
-            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(mofoing)) : pick(aspercreaming);
+            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(mofoing)) : pick(aspercreaming, "aspercreaming");
         }
         public static string get_aspercream_s()
         {
@@ -1668,7 +1669,7 @@ namespace sentence_generator
         "duke's","spartan warrior's","prisoner's","guard's","inmate's","driver's","genie's","hero's","boss player's","shot caller's","thug's","rap star's","ghetto star's","mack's","mack daddy's","crom's","juggalo's",
         "nano dungeon of doom's star's","centaur's"
         };
-            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(mofo_s)) : pick(aspercream_s);
+            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(mofo_s)) : pick(aspercream_s, "aspercream_s");
         }
         public static string get_aspercream_any()
         {
@@ -1685,9 +1686,9 @@ namespace sentence_generator
         public static string get_aspercream_mofos(string[] aspercream_array)
         {
             StringBuilder str = new StringBuilder();
-            str.Append(pick(far_thought_list));
+            str.Append(pick(far_thought_list, "far_thought_list"));
             str.Append(get_mofo_meta());
-            str.Append(pick(aspercream_array));
+            str.Append(pick(aspercream_array, "aspercream_array"));
             return str.ToString();
         }
         public static string get_mofo_meta()
@@ -1695,21 +1696,21 @@ namespace sentence_generator
             StringBuilder str = new StringBuilder();
             if (RandomNumber.Rand4(2) == 0)
             {
-                str.Append(pick(place_mofos));
+                str.Append(pick(place_mofos, "place_mofos"));
             }
             if (RandomNumber.Rand4(4) == 0)
             {
-                str.Append(pick(religion_mofos));
+                str.Append(pick(religion_mofos, "religion_mofos"));
             }
             return str.ToString();
         }
         public static string get_aspercreams()
         {
             string[] mofos = new string[] { "men", "boys", "police officers", "gangsters", "ballers", "players", "outlaws", "lawyers", "rappers", "country singers", "mother fuckers", "sons of bitches",
-            "people", "mobsters", "enforcers", "hitmen","drug dealers","players","shot callers","naval aviators","navy SEALs","Gees","husbands","dictators","presidents","hang men","executioners","bitbrain killers",
+            "people", "mobsters", "enforcers", "hitmen","drug dealers","shot callers","naval aviators","navy SEALs","Gees","husbands","dictators","presidents","hang men","executioners","bitbrain killers",
         "[get_nano_modify] stylers","killers","riders","drug kingpins","soldiers","government agents","mafia dons","nano prisoners","cow boys","movie stars","aristocrats","lords",
-        "princes","kings","generals","admirals","gentlemen","Nanopol officers","F.B.I. Agents","C.I.A. agents","N.S.A. agents","microsoft employees","jedi knights","sith lords","hustlers","space pirates","astronauts","warriors",
-        "nano dungeon nauts","basket ball players","football players","aliens","monsters","strangers","demons","angels","prophets","clairvoyants","psychics","detectives","mercenaries","ghosts","nomads","assassins","kings","emperors","popes",
+        "princes","kings","generals","admirals","gentlemen","Nanopol officers","F.B.I. Agents","C.I.A. agents","N.S.A. agents","microsoft employees","jedi knights","sith lords","hustlers","space pirates","astronauts",
+        "nano dungeon nauts","basket ball players","football players","aliens","monsters","strangers","demons","angels","prophets","clairvoyants","psychics","detectives","mercenaries","ghosts","nomads","assassins","emperors","popes",
         "submarine captains","wizards","warlocks","magicians","necromancers","sorcerers","dragons","trolls","seventh sons of seventh sons","mystics","cowboys","indians","cave men","barbarians","starship captains","comedians","politicians",
                 "judges","journalists","warriors","adventurers","time travelers","little green men","grays","revolutionaries","knights","dukes","spartan warriors","prisoners","guards","inmates","drivers","grim reapers","genies","heroes",
                 "robots","cyborgs","terminators","boss players","thugs","juggalos","nano dungeon of doom stars"
@@ -1751,9 +1752,9 @@ namespace sentence_generator
             StringBuilder str = new StringBuilder();
             if (RandomNumber.Rand4(4) == 0)
             {
-                str.Append(pick(mental));
+                str.Append(pick(mental, "mental"));
             }
-            str.Append(pick(bitbrain_array));
+            str.Append(pick(bitbrain_array, "bitbrain_array"));
             return str.ToString();
         }
         public static string[] bitbrain_mofo = new string[] { "mother fucker", "son of a bitch", "whore", "bastard", "bitler",
@@ -1773,15 +1774,15 @@ namespace sentence_generator
             
             if (RandomNumber.Rand4(2) == 0)
             {
-                str.Append(pick(mental));
+                str.Append(pick(mental, "mental"));
             }
-            str.Append(pick(bit_modify));
+            str.Append(pick(bit_modify, "bit_modify"));
             
             if (RandomNumber.Rand4(2) == 0)
             {
                 str.Append(get_mofo_meta());
             }
-            str.Append(pick(bitbrain_array));
+            str.Append(pick(bitbrain_array, "bitbrain_array"));
             return str.ToString();
 
         }
@@ -1792,17 +1793,17 @@ namespace sentence_generator
         public static string[] bitbrain = new string[] { "bitler","oner","zeroer","seven hundred megabyter","submariner","one bit per seconder","bit brain nano terrorist",
                 "no mother fuckerer","no wayer","rebitted mother fucker","nano dungeoner","bitter","leafer","red facer",
             "bravo's racist fistser","european walking conspirator","bit brain","bit hole","bit holer",
-        "louisiana brain deather","nano terrorist","redder"};
+        "louisiana brain deather","nano terrorist","redder","bit caller"};
 
         public static string[] bitbrains = new string[] { "bitlers","oners","zeroers","seven hundred megabyters","submariners","one bit per seconders","bit brain nano terrorists",
                 "no mother fuckerers","no wayers","rebitted mother fuckers","nano dungeoners","bitters","leafers","red facers",
             "bravo's racist fistsers","european walking conspirators", "bit brains","bit holes","bit holers",
-        "louisiana brain deathers","nano terrorist","redders"};
+        "louisiana brain deathers","nano terrorist","redders","bit caller"};
 
         public static string[] bitbrain_s = new string[] { "bitler's","oner's","zeroer's","seven hundred megabyter's","submariner's","one bit per seconder's","bit brain nano terrorist's",
                 "no mother fuckerer's","no wayer's","rebitted mother fucker's","nano dungeoner's","bitter's","leafer's","red facer's",
             "bravo's racist fistser's","european walking conspirator's", "bit brain's","bit hole's","bit holer's",
-        "louisiana brain deather's","nano terrorist's","redder's"};
+        "louisiana brain deather's","nano terrorist's","redder's","bit caller's"};
 
 
         public static string[] bit_modify = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
@@ -1912,7 +1913,7 @@ namespace sentence_generator
             }
             else
             {
-                str.Append(pick(in_time));
+                str.Append(pick(in_time, "in_time"));
             }
             str.Append(get_time_no_in());
             return str.ToString();
@@ -1923,11 +1924,11 @@ namespace sentence_generator
             StringBuilder str = new StringBuilder();
             if (RandomNumber.Rand4(2) == 0)
             {
-                str.Append((RandomNumber.Rand4(2) == 0) ? "the " + get_time_no_inthe() : get_a(modifier_time_place() + get_nano_modify() + pick(time)));
+                str.Append((RandomNumber.Rand4(2) == 0) ? "the " + get_time_no_inthe() : get_a(modifier_time_place() + get_nano_modify() + pick(time, "time")));
             }
             else
             {
-                str.Append("the " + modifier_time_place() + (RandomNumber.Rand4(2) == 0 ? pick(times) : pick(time)) + "of " + get_nano_modify());
+                str.Append("the " + modifier_time_place() + (RandomNumber.Rand4(2) == 0 ? pick(times, "times") : pick(time, "time")) + "of " + get_nano_modify());
             }
             return str.ToString();
         }
@@ -1935,7 +1936,7 @@ namespace sentence_generator
         {
             set_time = true;
             StringBuilder str = new StringBuilder();
-            str.Append(get_nano_modify() + (RandomNumber.Rand4(2) == 0 ? pick(times) : pick(time)));
+            str.Append(get_nano_modify() + (RandomNumber.Rand4(2) == 0 ? pick(times, "times") : pick(time, "time")));
             return str.ToString();
         }
         public static string geta_time_no_inthe()
@@ -1944,11 +1945,11 @@ namespace sentence_generator
             StringBuilder str = new StringBuilder();
             if (RandomNumber.Rand4(2) == 0)
             {
-                str.Append(get_nano_modify() + pick(times));
+                str.Append(get_nano_modify() + pick(times, "times"));
             }
             else
             {
-                str.Append(get_a(get_nano_modify()) + pick(time));
+                str.Append(get_a(get_nano_modify()) + pick(time, "time"));
             }
             return str.ToString();
         }
@@ -1959,7 +1960,7 @@ namespace sentence_generator
             set_modify_time_place = true;
             if (RandomNumber.Rand4(2) == 0)
             {
-                str.Append(pick(modify_time_place));
+                str.Append(pick(modify_time_place, "modify_time_place"));
             }
             return str.ToString();
         }
@@ -2026,22 +2027,22 @@ namespace sentence_generator
             switch (get_case(t))
             {
                 case 5:
-                    str.Append("at the " + modifier_time_place() + pick(nano_modify) + pick(atplaces));
+                    str.Append("at the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(atplaces, "atplaces"));
                     break;
                 case 3:
-                    str.Append("on the " + modifier_time_place() + pick(nano_modify) + pick(onplaces));
+                    str.Append("on the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(onplaces, "onplaces"));
                     break;
                 case 0:
-                    str.Append("in " + get_a((modifier_time_place() + pick(nano_modify) + pick(placesa))));
+                    str.Append("in " + get_a((modifier_time_place() + pick(nano_modify, "nano_modify") + pick(placesa, "placesa"))));
                     break;
                 case 1:
-                    str.Append("in the " + modifier_time_place() + pick(nano_modify) + pick(placesthe));
+                    str.Append("in the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(placesthe, "placesthe"));
                     break;
                 case 2:
-                    str.Append("in " + pick(nano_modify) + pick(places));
+                    str.Append("in " + pick(nano_modify, "nano_modify") + pick(places, "places"));
                     break;
                 case 4:
-                    str.Append("on " + get_a(pick(nano_modify)) + pick(onaplaces));
+                    str.Append("on " + get_a(pick(nano_modify, "nano_modify")) + pick(onaplaces, "onaplaces"));
                     break;
                 case 6:
                     if (RandomNumber.Rand4(2) == 0)
@@ -2064,22 +2065,22 @@ namespace sentence_generator
             switch (get_case(t))
             {
                 case 5:
-                    str.Append("the " + modifier_time_place() + pick(nano_modify) + pick(atplaces));
+                    str.Append("the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(atplaces, "atplaces"));
                     break;
                 case 3:
-                    str.Append("the " + modifier_time_place() + pick(nano_modify) + pick(onplaces));
+                    str.Append("the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(onplaces, "onplaces"));
                     break;
                 case 0:
-                    str.Append(get_a((modifier_time_place() + pick(nano_modify) + pick(placesa))));
+                    str.Append(get_a((modifier_time_place() + pick(nano_modify, "nano_modify") + pick(placesa, "placesa"))));
                     break;
                 case 1:
-                    str.Append("the " + modifier_time_place() + pick(nano_modify) + pick(placesthe));
+                    str.Append("the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(placesthe, "placesthe"));
                     break;
                 case 2:
-                    str.Append(pick(nano_modify) + pick(places));
+                    str.Append(pick(nano_modify, "nano_modify") + pick(places, "places"));
                     break;
                 case 4:
-                    str.Append(get_a(pick(onaplaces)));
+                    str.Append(get_a(pick(onaplaces, "onaplaces")));
                     break;
                 case 6:
                     str.Append("where [get_nano_modify] eagels dare");
@@ -2121,15 +2122,15 @@ namespace sentence_generator
 
         public static string get_a_thing()
         {
-            return get_a_nano_modify() + pick(athing);
+            return get_a_nano_modify() + pick(athing, "athing");
         }
         public static string get_thing()
         {
-            return pick(athing);
+            return pick(athing, "athing");
         }
         public static string get_bitbrain_thing()
         {
-            return get_a_bit_modify() + pick(athing);
+            return get_a_bit_modify() + pick(athing, "athing");
         }
 
         public static string[] athing = new string[] {"dinner","egg","seven forty seven","blunt","ufo",
@@ -2199,28 +2200,28 @@ namespace sentence_generator
             switch (RandomNumber.Rand4(8))
             {
                 case 0:
-                    str.Append(get_a(get_aspercream_mofos(bitch_s) + get_far_thought_list() + pick(thething.Concat(notbitbrainthing).ToArray().Concat(bitchthing).ToArray().Concat(athing).ToArray().Concat(gun).ToArray().Concat(guns).ToArray().Concat(food_list).ToArray().Concat(foods_list).ToArray())));
+                    str.Append(get_a(get_aspercream_mofos(bitch_s) + get_far_thought_list() + pick(thething.Concat(notbitbrainthing).ToArray().Concat(bitchthing).ToArray().Concat(athing).ToArray().Concat(gun).ToArray().Concat(guns).ToArray().Concat(food_list).ToArray().Concat(foods_list).ToArray(),"thing case 3")));
                     break;
                 case 1:
-                    str.Append("the " + get_nano_modify() + pick(thething));
+                    str.Append("the " + get_nano_modify() + pick(thething, "thething"));
                     break;
                 case 2:
-                    str.Append(get_a(pick(nano_modify)) + pick(athing.Concat(food_list).ToArray().Concat(notbitbrainthing).ToArray().Concat(food_list).ToArray().Concat(foods_list).ToArray().Concat(guns).ToArray().Concat(gun).ToArray()));
+                    str.Append(get_a(pick(nano_modify, "nano_modify")) + pick(athing.Concat(food_list).ToArray().Concat(notbitbrainthing).ToArray().Concat(food_list).ToArray().Concat(foods_list).ToArray().Concat(guns).ToArray().Concat(gun).ToArray(), "thing case 2"));
                     break;
                 case 3:
-                    str.Append(get_a(get_bitbrain_mofo(bitbrain_mofo_s)) + get_bit_modify() + pick(bitbrainthing));
+                    str.Append(get_a(get_bitbrain_mofo(bitbrain_mofo_s)) + get_bit_modify() + pick(bitbrainthing, "bitbrainthing"));
                     break;
                 case 4:
-                    str.Append(get_aspercream_s() + get_far_thought_list() + pick(thething.Concat(notbitbrainthing).ToArray().Concat(bitbrainkillerthing).ToArray().Concat(athing).ToArray().Concat(gun).ToArray().Concat(guns).ToArray().Concat(food_list).ToArray().Concat(foods_list).ToArray()));
+                    str.Append(get_aspercream_s() + get_far_thought_list() + pick(thething.Concat(notbitbrainthing).ToArray().Concat(bitbrainkillerthing).ToArray().Concat(athing).ToArray().Concat(gun).ToArray().Concat(guns).ToArray().Concat(food_list).ToArray().Concat(foods_list).ToArray(),"thing case 4"));
                     break;
                 case 5:
-                    str.Append(get_a(pick(far_thought_list)) + pick(afarperson));
+                    str.Append(get_a(pick(far_thought_list, "far_thought_list")) + pick(afarperson, "afarperson"));
                     break;
                 case 6:
-                    str.Append(get_a(get_bit_modify()) + pick(abitperson));
+                    str.Append(get_a(get_bit_modify()) + pick(abitperson, "abitperson"));
                     break;
                 case 7:
-                    str.Append(get_a(get_nano_modify()) + pick(aperson));
+                    str.Append(get_a(get_nano_modify()) + pick(aperson, "aperson"));
                     break;
             }
             return str.ToString();
@@ -2231,11 +2232,11 @@ namespace sentence_generator
         }
         public static string get_animal()
         {
-            return get_a_nano_modify() + pick(animal);
+            return get_a_nano_modify() + pick(animal, "animal");
         }
         public static string get_animals()
         {
-            return get_nano_modify() + pick(animals);
+            return get_nano_modify() + pick(animals, "animals");
         }
         public static string get_a_far_thought()
         {
@@ -2305,7 +2306,7 @@ namespace sentence_generator
         public static string[] bitbrainmammy = new string[] { "a doctor", "a judge", "a police officer", "a F.B.I. Agent", "the president", "their mammies" };
         public static string get_bitbrainmammy()
         {
-            return pick(bitbrainmammy);
+            return pick(bitbrainmammy, "bitbrainmammy");
         }
 
         public static Boolean foundone = false;
@@ -2370,7 +2371,7 @@ namespace sentence_generator
                 }
                 s = str.Substring(pos3, pos - pos3);
                 string[] sa = s.Split(new char[] { ',' });
-                str = str.Substring(0, pos3 - 1) + pick(sa) + str.Substring(pos+1);
+                str = str.Substring(0, pos3 - 1) + pick(sa, "sa") + str.Substring(pos+1);
             } while (pos != -1);            
             return str;
         }
