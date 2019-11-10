@@ -30,6 +30,8 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -83,9 +85,12 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DeepSpeechClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\DeepSpeech.0.5.0\lib\net45\DeepSpeechClient.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -139,9 +144,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -181,6 +187,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon2.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>"c:\users\jrg26\Documents\Visual Studio 2017\Projects\KillSBHandAMT\WindowsFormsApp1\bin\x64\Debug\KillSBHandAMT.exe"
@@ -188,6 +200,13 @@ copy "%25userprofile%25\Documents\Visual Studio 15\Projects\Text2SpeechConsole\x
 copy "%25userprofile%25\Documents\Visual Studio 15\Projects\Text2SpeechConsole\x64\Release\Text2SpeechConsole.dll" "%25userprofile%25\Documents\Visual Studio 2015\Projects\Straight Bitbrain Heater\Straight Bitbrain Heater\bin\x64\debug\Text2SpeechConsole.dll" /y 2&gt;nul 1&gt;nul
 exit 0</PreBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\DeepSpeech.0.5.0\build\DeepSpeech.targets" Condition="Exists('..\packages\DeepSpeech.0.5.0\build\DeepSpeech.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\DeepSpeech.0.5.0\build\DeepSpeech.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DeepSpeech.0.5.0\build\DeepSpeech.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

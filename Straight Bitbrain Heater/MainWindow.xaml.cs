@@ -13,6 +13,10 @@ using System.Windows.Media;
 using Microsoft.VisualBasic;
 using System.Windows.Automation;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Reflection;
+using DeepSpeechClient;
+using System.IO;
 
 // OnSourceInitialized has buttons, first 4 key handlers = across second row of 4 buttons in order....
 
@@ -89,7 +93,7 @@ namespace Straight_Bitbrain_Heater
 
             Process[] pname = Process.GetProcesses();
             var myID = Process.GetCurrentProcess().Id;
-            Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.BelowNormal;
+            Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.Idle;
             var MyName = "Straight Bitbrain Heater";
 
             foreach (var p in pname)
@@ -120,19 +124,20 @@ namespace Straight_Bitbrain_Heater
 
             VolumeLabel.Content = "Volume: " + thevolume.ToString();
             RateLabel.Content = "Rate: " + therate.ToString();
-            this.Title = "Straight Bitbrain Heater v1.8 by James Gentile";
+            this.Title = "Straight Bitbrain Heater v2 by James Gentile";
 
             contextMenu1.MenuItems.Add(0, new System.Windows.Forms.MenuItem("Play", new System.EventHandler(PlayNI)));
             contextMenu1.MenuItems.Add(1, new System.Windows.Forms.MenuItem("Stop", new System.EventHandler(StopNI)));
             contextMenu1.MenuItems.Add(2, new System.Windows.Forms.MenuItem("Exit", new System.EventHandler(ExitNI)));
 
             ni.ContextMenu = contextMenu1;
-            ni.Icon = new System.Drawing.Icon(@"c:\users\" + Environment.UserName + @"\Documents\Visual Studio 2015\Projects\Straight Bitbrain Heater\Straight Bitbrain Heater\Rade8-Minium-2-Device-CD.ico");
+            ni.Icon = new System.Drawing.Icon(@"c:\users\" + Environment.UserName + @"\source\repos\Straight Bitbrain Heater\Straight Bitbrain Heater\Rade8-Minium-2-Device-CD.ico");
+            
             ni.MouseUp += new System.Windows.Forms.MouseEventHandler(MouseUpNI);
             ni.Visible = true;
             ni.Text = "Straight Bitbrain Heater";
             enableSave = true;
-            BinaryLabel.Foreground = Brushes.Green;
+            BinaryLabel.Foreground = System.Windows.Media.Brushes.Green;
             BHTextBox.AppendText("placesa = " + sentence_generator.nanoshit2.placesa.Length.ToString() + Environment.NewLine + "athing = " + sentence_generator.nanoshit2.athing.Length.ToString() + Environment.NewLine);
 
             Dictionary<string, string> place_dict = new Dictionary<string, string>();
@@ -162,7 +167,9 @@ namespace Straight_Bitbrain_Heater
                     thing_dict.Add(s, s);
                 }
             }
-            
+
+            Topmost = true;
+            int t = text2speechspeak("straight bitbrain heater started.", thevolume, therate);
             Task.Factory.StartNew(() => play_bitbrainheater(), TaskCreationOptions.LongRunning);
             Task.Factory.StartNew(() => WaitForEvent(), TaskCreationOptions.LongRunning);
         }
@@ -188,13 +195,19 @@ namespace Straight_Bitbrain_Heater
                 }
                 else
                 {
-                    this.Show();
-                    this.WindowState = WindowState.Normal;
-                    Activate();
-                    windowhidden = false;
+                    ShowOnDesktop();
                 }
             }
         }
+
+        private void ShowOnDesktop()
+        {
+            this.Show();
+            this.WindowState = WindowState.Normal;
+            Activate();
+            windowhidden = false;
+        }
+
         public void ExitNI(Object sender, System.EventArgs e)
         {
             play_bh = false;
@@ -220,12 +233,26 @@ namespace Straight_Bitbrain_Heater
             text2speechstop();
         }
         public int BinaryLabelCounter = 0;
-        private void play_bitbrainheater()
+        public bool adjustVolume = false;
+        private async void play_bitbrainheater()
         {
             while (true)
             {
+                /*if (System.Windows.Forms.SystemInformation.TerminalServerSession == true)
+                {
+                    if (windowhidden == true)
+                    {
+                        ShowOnDesktop();
+                    }
+                }*/
                 while (play_bh == true)
                 {
+                    while (adjustVolume)
+                    {
+                        adjustVolume = false;
+                        await Task.Delay(1000);
+                    }
+
                     string str = nanoshit3.start3();
                     
                     System.Windows.Application.Current.Dispatcher.Invoke(new Action(() => {
@@ -257,13 +284,13 @@ namespace Straight_Bitbrain_Heater
             {
                 s = "0";
             }
-            if (BinaryLabel.Foreground == Brushes.Red)
+            if (BinaryLabel.Foreground == System.Windows.Media.Brushes.Red)
             {
-                BinaryLabel.Foreground = Brushes.Green;
+                BinaryLabel.Foreground = System.Windows.Media.Brushes.Green;
             }
             else
             {
-                BinaryLabel.Foreground = Brushes.Red;
+                BinaryLabel.Foreground = System.Windows.Media.Brushes.Red;
             }
             BinaryLabel.Content = s + " - Count: " + BinaryLabelCounter.ToString();
             BinaryLabelCounter++;
@@ -308,6 +335,8 @@ namespace Straight_Bitbrain_Heater
         }
         protected override void OnClosed(EventArgs e)
         {
+            base.OnClosed(e);
+            
             if (ni != null)
             {
                 ni.Dispose();
@@ -315,7 +344,8 @@ namespace Straight_Bitbrain_Heater
             play_bh = false;
             text2speechstop();
             SaveShit();
-
+            return;
+            /*
             _source.RemoveHook(HwndHook);
 
             UnregisterHotKey(_windowHandle, HOTKEY_ID);
@@ -324,13 +354,15 @@ namespace Straight_Bitbrain_Heater
             UnregisterHotKey(_windowHandle, HOTKEY_ID4);
             UnregisterHotKey(_windowHandle, HOTKEY_ID5);
             UnregisterHotKey(_windowHandle, HOTKEY_ID6);
-            base.OnClosed(e);
+            */
+            
         }
 
         protected override void OnSourceInitialized(EventArgs e)
-        {
+        {            
             base.OnSourceInitialized(e);
-
+            return;
+            /*
             _windowHandle = new WindowInteropHelper(this).Handle;
             _source = HwndSource.FromHwnd(_windowHandle);
             _source.AddHook(HwndHook);
@@ -341,6 +373,7 @@ namespace Straight_Bitbrain_Heater
             RegisterHotKey(_windowHandle, HOTKEY_ID4, MOD_CONTROL | MOD_SHIFT, 77); //
             RegisterHotKey(_windowHandle, HOTKEY_ID5, MOD_CONTROL, 49);
             RegisterHotKey(_windowHandle, HOTKEY_ID6, MOD_WIN | MOD_ALT, 13); // Remote Start button.
+            */
         }
         private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
@@ -352,29 +385,15 @@ namespace Straight_Bitbrain_Heater
                 {
                     case HOTKEY_ID:
                         if (vkey == VK_CHANNELUP)
-                        {                           
-                            if (thevolume < 100)
-                            {
-                                thevolume++;
-                                VolumeSlider.Value = thevolume;
-                                needToSave = true;
-                                VolumeLabel.Content = "Volume: " + thevolume.ToString();
-                                this.Title = "Volume increased.";
-                            }                            
+                        {
+                            VolumeUp();
                         }
                         handled = true;
                         break;
                     case HOTKEY_ID2:
                         if (vkey == VK_CHANNELDOWN)
-                        {                            
-                            if (thevolume > 0)
-                            {
-                                thevolume--;
-                                VolumeSlider.Value = thevolume;
-                                needToSave = true;
-                                VolumeLabel.Content = "Volume: " + thevolume.ToString();
-                                this.Title = "Volume decreased.";
-                            }                            
+                        {
+                            VolumeDown();
                         }
                         handled = true;
                         break;
@@ -427,40 +446,78 @@ namespace Straight_Bitbrain_Heater
                         if (vkey == 13) // Start button on remote.
                         {
                             handled = true;
-                            Boolean AlreadyRunning = false;
-                            foreach (var p in Process.GetProcesses())
-                            {
-                                if (p.ProcessName == "musicbee")
-                                {
-                                    p.Kill();
-                                    this.Title = "MusicBee Closed.";
-                                    AlreadyRunning = true;
-                                }
-                            }
-
-                            if (AlreadyRunning == false)
-                            {
-                                ProcessStartInfo start = new ProcessStartInfo
-                                {
-                                    FileName = @"C:\Users\jgentile\software\MusicBee\MusicBee.exe",
-                                };
-                                try
-                                {
-                                    Process.Start(start);
-                                    this.Title = "MusicBee Started.";
-                                }
-                                catch(Exception ex)
-                                {
-                                    System.Windows.Forms.MessageBox.Show(ex.ToString());
-                                }                                
-                            }                            
+                            StartMusicBee();
                         }
                         break;
                 }
             }
             return IntPtr.Zero;
         }
-        
+
+        private void StartMusicBee()
+        {
+            Boolean AlreadyRunning = false;
+            foreach (var p in Process.GetProcesses())
+            {
+                if (p.ProcessName == "MusicBee")
+                {
+                    p.Kill();
+                    this.Title = "MusicBee Closed.";
+                    AlreadyRunning = true;
+                }
+            }
+
+            if (AlreadyRunning == false)
+            {
+                string fn = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), @"software\MusicBee\MusicBee.exe");
+                ProcessStartInfo start = new ProcessStartInfo
+                {
+                    FileName = fn
+                };
+                try
+                {
+                    Process.Start(start);
+                    this.Title = "MusicBee Started.";
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void VolumeDown()
+        {
+            if (thevolume > 0)
+            {
+                play_bh = false;
+                text2speechstop();                
+                thevolume--;
+                VolumeSlider.Value = thevolume;
+                needToSave = true;
+                VolumeLabel.Content = "Volume: " + thevolume.ToString();
+                this.Title = "Volume decreased.";
+                adjustVolume = true;
+                play_bh = true;                
+            }
+        }
+
+        private void VolumeUp()
+        {
+            if (thevolume < 100)
+            {
+                play_bh = false;
+                text2speechstop();
+                thevolume++;
+                VolumeSlider.Value = thevolume;
+                needToSave = true;
+                VolumeLabel.Content = "Volume: " + thevolume.ToString();
+                this.Title = "Volume increased.";
+                adjustVolume = true;
+                play_bh = true;
+            }
+        }
+
         private void StartSlideShow(Object sender, RoutedEventArgs e)        
         {
             StartSlideShowWorker();
@@ -470,7 +527,7 @@ namespace Straight_Bitbrain_Heater
             ProcessStartInfo start = new ProcessStartInfo
             {
                 Arguments = "/Fullscreen",
-                FileName = @"C:\Users\jgentile\Documents\Visual Studio 2017\Projects\JRGSlideShowWPF\JRGSlideShowWPF\bin\x64\Release\JRGSlideShowWPF.exe",
+                FileName = @"C:\Users\jrg269\source\repos\JRGSlideShowWPF\JRGSlideShowWPF\bin\x64\Release\JRGSlideShowWPF.exe",
                 WindowStyle = ProcessWindowStyle.Normal
             };
             try
@@ -483,6 +540,41 @@ namespace Straight_Bitbrain_Heater
             }
         }
 
+        private void Button_VolumeUp(object sender, RoutedEventArgs e)
+        {           
+            VolumeUp();           
+        }
+
+        private void Button_VolumeDown(object sender, RoutedEventArgs e)
+        {            
+            VolumeDown();
+        }
+
+
+        private void Button_ExitRDP(object sender, RoutedEventArgs e)
+        {
+            ProcessStartInfo start = new ProcessStartInfo
+            {
+                Arguments = "1 /dest:console",
+                FileName = @"c:\windows\system32\tscon.exe",
+                WindowStyle = ProcessWindowStyle.Normal,
+                Verb = "runas"
+                
+            };
+            try
+            {
+                Process.Start(start);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Button_Music(object sender, RoutedEventArgs e)
+        {
+            StartMusicBee();
+        }
     }
 
 }

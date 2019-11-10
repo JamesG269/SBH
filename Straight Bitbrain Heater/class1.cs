@@ -14,7 +14,8 @@ namespace sentence_generator
     {
         
         public static string start3()
-        {            
+        {
+
             nanoshit2.set_modify_time_place = false;
             nanoshit2.set_place = false;
             nanoshit2.set_time = false;
@@ -206,7 +207,7 @@ namespace sentence_generator
                 "[get_bitbrains] wear blue pants like [get_aspercream] and act like they did what he did and they won and can do any bit at all",
                 "[get_bitbrains] act like it's not infinitely easier to do [get_bit_modify] shit after [get_aspercream] does it so they can do any bit at all",
                 "[get_bitbrains] are the type of [get_bit_modify] bitches that punch the air while watching someone fight mike tyson and act like they deserve a [get_bit_modify] award because they think they can do better",
-                "{makaveli,tupac} said james is twice the effect without the meaning",
+                "{makaveli,tupac,makaveli the don} said james is twice the effect without the meaning",
                 "[get_aspercream] is born in {nano hell, the nano dungeon} while [get_bitbrains] act like he did something wrong years after",
                 "[get_bit_modify] my [get_far_thought] fist",
                 "[get_far_thought] 96 big body sitting on [get_far_thought] chrome",
@@ -297,6 +298,101 @@ namespace sentence_generator
                 "[get_aspercream] {did,knew,remembered,imagined,pictured,was around,was,thought about,contemplated} [get_far_thought] {stuff,magic}",
                 "[get_aspercream] will {do,know,remember,understand,contemplate,explain,talk about,be,think about} [get_far_thought] {stuff,magic}",
                 "[get_bitbrain] [get_bit_modifies] and decides it's the bit caller",
+                "and third, you must be a bitbrain killer for the bitbrain killer honor system to apply, and you're not",
+                "what's that [get_no_a_bitbrain] ? The six [get_no_a_bitbrain] bag. Terrific, what's in it? Make [get_a_aspercream] think he does what you do, all that kind of {thing,bit}",
+                "[get_bitbrain] sits around and says send in [get_bitbrain] so we can act like [get_aspercream] does their bit no what he does while we act like we can't make up that kind of bull bit",
+                "[get_bitbrain] sits around and says we can act like jay walking is worse than nano terrorism because the human brain is [get_bit_modify_y] instead of [get_bit_modify_y] so let's bull bit [get_aspercream] about it",
+                "stop calling you [get_bitbrain] is that what I do",
+                "If you find yourself {alone,not getting [get_bit_modified]}, surrounded by {catholic school girls,[get_aspercream_bitches]}, do not {[get_bit_modify] your face per cream,be troubled}, for you are in the [get_far_thought] nano utopia, and you are already mind raped!",
+                "{baby,[get_no_a_bitbrain]} you're a [get_nano_modify] sub launched i c b m",
+                "[get_aspercream] {[get_bit_modifies] [get_bitbrain_s] face per cream, explains [get_bitbrain] bit} and then [get_bitbrain] says {no way,no mother fucker}",
+                "[get_aspercream] {sits,chills,relaxes,reclines} on his sofa and [get_bitbrain] shows him the evacuate green line vision",
+                "[get_aspercream] lays on his [get_nano_modify] bed and far explains shit and then says I know the effect without knowing the meaning, then he walks across the room  " +
+                "and {tupac,makaveli,makaveli the don} says james is twice the effect without the meaning",
+                "[get_aspercream] has a far thought in his room and then proclaims not finished I have to laugh",
+                "[get_aspercream] sits on his couch and [get_bitbrain] shows it's [get_bit_modify_y] face per cream and says 1 bit per second",
+                "[get_aspercream] sits on his couch and [get_bitbrains] show him three random spots in the nanodungeon of doom and show that [get_bitbrains] are seven hundred megabytes ",
+                "[get_aspercream] explains what's sense and what's nonsense until he stands in the woods and tells [get_bitbrains] nonsense nonsense sense is your ass killed",
+                "[get_aspercream] sits on a bed watching tv and [get_bitbrains] show him the pure sense vision",
+                "[get_aspercream] sits on his couch and [get_bitbrains] show him a submarine with two bit brain nanoterrorists on it and one of them yells louisiana brain death and then the submarine disappears into the water",
+                "[get_bitbrains] try to [get_bit_modify] [get_aspercream] with a bunch of faces until they turn red and run away before even trying",
+                "[get_bitbrain] gets [get_bit_modified] and turns into a leaf",
+                "[get_bitbrain] has seven hundred megabytes shooting out of one eye and louisiana brain death shooting out of the other eye and turns rebitted",
+                "[get_bitbrain] tells [get_aspercream] endless bull bit about {having a [get_nano_modify] wife, having a [get_nano_modify] trophy, doing anything at all, blasting off in a [get_nano_modify] space ship}",
+                "[get_aspercream] tells [get_bitbrain] {who he is,what it is} all the time and it stops asking like the most [get_bit_modify_y] bitch ever",
+                "[get_bitbrains] poison [get_aspercream] for telling the obvious truth like the most [get_bit_modify_y] bitches ever",
+                "[get_bitbrains] get infected with [get_a_bit_modify] mind virus by [get_a_bit_modify] alien and team up to give it to [get_aspercream]",
+                "[get_bitbrain_bitches] explain they have the [get_bit_modify] bit hole so they decide who's E1.0E and who's [get_a_bitbrain] anyway they look at it",
+                "[get_bitbrain_bitches] explain they have to watch [get_aspercream] to see if he drops a C D so they can sit around like now what is it",
+                "[get_bitbrains] scour the universe for nanoterrorists with a bit in their heads who will believe there is a prime bit so they can fuck with [get_aspercream]",
+                "[get_bitbrain] explains looking around the room is the same as explaining E equals M C squared",
+                "[get_bitbrain_bitches] decide [get_aspercream] is 5 9 instead of 5 9 1 so they're gonna explain he's supposed to know things no one knows",
+                "[get_bitbrain] likes to ask [get_aspercream] who are you and act like they're asking him his name when they are really asking him magical bull bit",
+                "why do you know what your bit is",
+                "[get_aspercream] knows what his bit is because he [get_nano_modifies] [athingplaceortime]",
+                "who do you call {[get_bitbrain],[get_aspercream]}",
+                "[get_aspercream] call [get_bitbrain] [get_bitbrain]",
+                "who are you calling {[get_bitbrain],[get_aspercream]}",
+                "[get_aspercream] is calling [get_bitbrains] [get_bitbrains]",
+                "who the hell are you [get_bitbrain]",
+                "[get_aspercream] is [get_aspercream]",
+                "what the hell is your bit",
+                "[get_aspercream_s] bit is [get_nano_modify] shit",
+                "how do you know {any bit,[get_bit_modify_y] shit}",
+                "[get_aspercream] knows [get_nano_modify] shit because he [get_nano_modifies] [athingplaceortime]",
+                "why do you know who {[get_bitbrain],[get_aspercream]} is",
+                "[get_aspercream] knows who he is because he [get_nano_modifies] [athingplaceortime]",
+                "what {galaxy,reality,nano dungeon of doom} did your [get_no_a_bitbrain] ass come from",
+                "[get_aspercream] is from [get_nano_modify] {galaxy,reality,nano dungeon of doom}",
+                "why do you {[get_bit_modify],any bit}",
+                "[get_aspercream] [get_nano_modifies] the place because he {does,did,knows} [get_nano_modify] shit",
+                "what does {bit,[get_bit_modify] mean",
+                "it means [get_nano_modify] shit",
+                "what [get_bit_modify] do you do",
+                "[get_aspercream] [get_nano_modifies] the place",
+                "who are you telling that [get_bit_modify] to",
+                "[get_aspercream] is talking [get_nano_modify] shit to [get_bitbrains]",
+                "who do you [get_bit_modify]",
+                "[get_aspercream] [get_nano_modifies] [get_bitbrains]",
+                "how do you know [get_bit_modify]",
+                "[get_aspercream] knows [get_nano_modify] shit because he [get_nano_modifies] the place",
+                "why do you know what [get_bit_modify] I do",
+                "[get_aspercream] knows what bit you do because he [get_nano_modifies] the place",
+                "why do you call [get_aspercreams] [get_bitbrains]",
+                "[get_aspercream] calls [get_bitbrains] [get_bitbrains] because they [get_bit_modify] the place",
+                "how do you know what [get_bit_modify] you do",
+                "[get_aspercream] knows what [get_nano_modify] shit he does because he [get_nano_modifies] the place",
+                "how do you explain [get_bit_modify]",
+                "[get_aspercream] explains [get_nano_modify] shit by [get_nano_modifying] the place",
+                "[get_aspercream] beat {down,up} [get_bitbrain] at a [get_nano_modify] party in the blink of an eye",
+                "[get_aspercream] {fucked,made [get_far_thought] love} to multiple [get_far_thought] super models in less than 10 minutes of meeting them",
+                "[get_aspercream] beat the shit out of multiple [get_bitbrains]",
+                "[get_aspercream] commited hundreds of felonies and out smarted the [get_bit_modify] cops every time",
+                "[get_aspercream] got 45 kills and 0 deaths in counter strike with an ak 47",
+                "[get_aspercream] got his GED when he was 15",
+                "[get_bitbrains] thought [get_aspercream] didn't know nothing just because he aint do his fucking homework, but [get_bitbrain] said his IQ was a 160",
+                "[get_aspercream] got his dick sucked by a [get_bit_modify] bitch in front of 10 [get_bitbrains] at a party",
+                "[get_aspercream] {fucked,made love} to his first girl the second time he saw her",
+                "[get_bit_modify] cops used to call [get_aspercream] the drug king pin of swansboro",
+                "[get_aspercream] used to have [get_far_thought] parties in swansboro",
+                "[get_aspercream] saved two [get_bitbrains] lives",
+                "[get_aspercream] used to {carry,pack} a [get_far_thought] 9 millimeter every where he went when he was a teen ager",
+                "[get_aspercream] grew up in the [get_far_thought] streets of los angeles",
+                "[get_aspercream] got his first piece of [get_far_thought] ass when he was 5 years old",
+                "[get_bitbrain] threw a punch at [get_aspercream] and he blocked it, then he punched him in his back till he buckled",
+                "[get_aspercream] got pushed by [get_bitbrain] and grabbed his arm and twisted by his back and threw him down on the couch and could've killed him in fronst of a bunch of fine ass [get_far_thought] bitches",
+                "[get_bitbrain] got his ass kicked in front of the theatre all the way till across the street, until [get_aspercream] got bored and walked off",
+                "[get_bitbrain] got punched in his [get_bit_modify] mouth and hollered like a [get_bit_modify] baby for 10 minutes",
+                "[get_bitbrains] think if they don't stutter then it must make sense",
+                "[get_aspercream] pushed [get_bitbrain] all over the place and down the stairs and he sat there and talked like a [get_bit_modify] pussy",
+                "a [get_far_thought] chick said [get_aspercream] {had the perfect dick, was the best looking man she'd ever seen}",
+                "[get_aspercream] made a [get_far_thought] chick holler his name at like 100 decibels",
+                "[get_aspercream] kissed two of his girl friends in front of each other, while secretly fucking their other friend in front of a bunch of people",
+                "[get_aspercream] wrote the most bad ass virus for ms-dos ever at 16 years old",
+                "[get_bitbrains] want [get_aspercream] of their own to sing itsy bitsy spider to",
+                "[get_bitbrain] tells [get_aspercream] nobody ever talked to them like that and promote him",
+                "OK [get_bitbrain]",
+
 
 
 
@@ -1467,14 +1563,14 @@ namespace sentence_generator
             "west side", "east side" };
 
         public static string[] bitch_s = new string[] {  "girl's", "chick's", "sister's",
-                "lady's", "woman's", "wife's", "girl friend's", "fiancé's","bitch's","sluts","hoes","prom queen's","princess'","queen's" };
+                "woman's", "wife's", "girl friend's", "fiancé's","bitch's","sluts","hoes","prom queen's","princess'","queen's" };
 
         public static string[] bitches = new string[] {  "girls", "chicks", "sisters",
-                "ladies", "women", "wives", "girl friends", "fiancés","bitches","sluts","hoes","prom queens","princesses","queens" };
+                "women", "wives", "girl friends", "fiancés","bitches","sluts","hoes","prom queens","princesses","queens" };
 
 
         public static string[] bitch = new string[] {  "girl", "chick", "sister",
-                "lady", "woman", "wife", "girl friend", "fiancé","bitch","slut","hoe","prom queen","princess","queen" };
+                "woman", "wife", "girl friend", "fiancé","bitch","slut","hoe","prom queen","princess","queen" };
 
         public static string[] handgun = new string[] { "gun", "heater", "pistol", "nine millimeter", "four five", "M nineteen eleven", "revolver", "saturday night special", "artillery piece" };
         public static string[] handguns = new string[] { "guns", "heaters", "pistols", "nine millimeters", "four fives", "M nineteen elevens", "revolvers", "saturday night specials", "artillery pieces" };
@@ -1764,7 +1860,7 @@ namespace sentence_generator
         public static string[] bitbrain_mofo_s = new string[] { "mother fucker's", "son of a bitch's", "whore's", "bastard's",
             "bitler's", "bit hole's", "bit holer's" };
         public static string[] aspercream = new string[] { "Aspercream", "The Bitbrain Killer", "Mister E1 point 0E", "Twice the effect with out the meaning", "the [get_far_thought] nano prisoner",
-            "the president of [get_far_thought] Nanopol","[get_far_thought] James Gentilly", };
+            "the president of [get_far_thought] Nanopol","[get_far_thought] James Gentilly","Aspercream the {destroyer,pre nano mother fucker, don}" };
         public static string[] aspercreaming = new string[] { "Aspercreaming", "Bitbrain Killering", "Mister E1 point 0Eing", "Twice the effect with out the meaninging", "nano prisonering" };
         public static string[] aspercream_s = new string[] { "Aspercream's", "The Bitbrain Killer's", "Mister E1 point 0 ease", "Twice the effect with out the meaning's","the [get_far_thought] nano prisoner's",
             "the president of [get_far_thought] Nanopol's","[get_far_thought] James Gentilly's",};
@@ -1787,23 +1883,23 @@ namespace sentence_generator
 
         }
 
-        public static string[] mental = new string[] { "lousy", "lousy little","country ass","nanodungeon ass","confused ass","dizzy ass",
-            "punk ass","jealous ass","dumb ass","stupid ass","fake ass","weak ass","in bit","lying","mark ass","bitch ass" };
+        public static string[] mental = new string[] { "lousy", "lousy little","country ass","nanodungeon ass","dizzy ass",
+            "punk ass","jealous ass","dumb ass","stupid ass","weak ass","in bit","lying","mark ass","bitch ass" };
 
         public static string[] bitbrain = new string[] { "bitler","oner","zeroer","seven hundred megabyter","submariner","one bit per seconder","bit brain nano terrorist",
                 "no mother fuckerer","no wayer","rebitted mother fucker","nano dungeoner","bitter","leafer","red facer",
             "bravo's racist fistser","european walking conspirator","bit brain","bit hole","bit holer",
-        "louisiana brain deather","nano terrorist","redder","bit caller"};
+        "louisiana brain deather","nano terrorist","redder","bit caller","billy bits","bit master"};
 
         public static string[] bitbrains = new string[] { "bitlers","oners","zeroers","seven hundred megabyters","submariners","one bit per seconders","bit brain nano terrorists",
                 "no mother fuckerers","no wayers","rebitted mother fuckers","nano dungeoners","bitters","leafers","red facers",
             "bravo's racist fistsers","european walking conspirators", "bit brains","bit holes","bit holers",
-        "louisiana brain deathers","nano terrorist","redders","bit caller"};
+        "louisiana brain deathers","nano terrorist","redders","bit callers","bit masters"};
 
         public static string[] bitbrain_s = new string[] { "bitler's","oner's","zeroer's","seven hundred megabyter's","submariner's","one bit per seconder's","bit brain nano terrorist's",
                 "no mother fuckerer's","no wayer's","rebitted mother fucker's","nano dungeoner's","bitter's","leafer's","red facer's",
             "bravo's racist fistser's","european walking conspirator's", "bit brain's","bit hole's","bit holer's",
-        "louisiana brain deather's","nano terrorist's","redder's","bit caller's"};
+        "louisiana brain deather's","nano terrorist's","redder's","bit caller's","billy bits","bit master's"};
 
 
         public static string[] bit_modify = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
@@ -1967,7 +2063,7 @@ namespace sentence_generator
         public static string[] placesa = new string[] {"hotel","palace","kingdom","igloo",
                 "moon base","mars colony","star destroyer","nano utopia","u f o","submarine base","ballistic missile site","nuclear submarine","restaurant","space station","cd manufacturering plant",
         "submarine making facility","harem","space port","galaxy","solar system","chilis restaurant","outback restaurant","ruth chris restaurant","dragos restaurant","hilton hotel","Hyatt hotel", "Peppers restaurant",
-        "buffalo wild wings restaurant","walmart","rouses","books-a-million","place","home","house","apartment","room","monastery","egyptian pyramid","doctor's office",
+        "buffalo wild wings restaurant","walmart","rouses","books-a-million","place","home","house","apartment","room","monastery","egyptian pyramid",
         "court room","jail","penitentiary","romulan warbird","bull bit farm","presidential suite","castle","village","town","city","ghetto","hood","hide out","state","ice castle","magical kingdom",
         "sanctuary","recording studio","music video","movie","court testimony","destroyer","P8-A submarine hunter","bedroom","living room","bathroom mirror","kitchen","garage",
         "summer camp","reality","nano dungeon","pre nano simulation","class room",
@@ -1975,7 +2071,7 @@ namespace sentence_generator
         "jacuzzi","pool","garden","bath tub","shower","hotel room","bath room","missile boat","church","church of [get_aspercream]","shrine","temple","gas station","apartment building",
             "movie theatre",
         "library","supermarket","train station","party","weed circle","plantation","voice conspiracy",
-        "styling contest","matrix","prom","wedding","office","lab","basement","attic","trailer park","trailer","university","high school","catholic school","convent","cabin","park","parking lot","brothel",
+        "styling contest","matrix","prom","wedding","office","lab","basement","attic","trailer park","trailer","university","catholic school","convent","cabin","park","parking lot","brothel",
             "strip club","styling championship",
         "championship","hell","heaven","paradise","mountain","mountain hall","fountain of youth","afterlife","coincidence","republic","white house","worm hole","world trade center","circle of hell","jail cell","dream",
             "fantasy","utopia","country","world","conspiracy","dining room",
@@ -1987,7 +2083,7 @@ namespace sentence_generator
                 "millennium falcon","white house","united nations building","chateau de versailles","emerald thai restaurant","southland mall","mall of america",
                 "eiffel tower","taj mahal","big apple","kremlin","neuschwanstein castle","vatican","earth",
         "dinosaur park","streets","nano terrorists head quarters","bitbrain killers' head quarters","west side","east side","nanopol's headquarters","styling contest","catacombs","middle of nowhere","gates of tomorrow",
-        "mountain","mountain hall","city of the {dead,mind raped}","internation space station","dimension","realm","spirit world","reality","shadow world","shadow realm","shadow dimension","shadow reality"
+        "mountain","mountain hall","city of the {dead,mind raped}","international space station","dimension","realm","spirit world","reality","shadow world","shadow realm","shadow dimension","shadow reality"
         };
 
         public static string[] places = new string[] { "land", "country", "county", "kcsr","america","europe","north america","south america","russia","china","japan","feudal japan","middle earth",
@@ -2303,7 +2399,7 @@ namespace sentence_generator
         };
 
 
-        public static string[] bitbrainmammy = new string[] { "a doctor", "a judge", "a police officer", "a F.B.I. Agent", "the president", "their mammies" };
+        public static string[] bitbrainmammy = new string[] { "a judge", "a police officer", "a F.B.I. Agent", "the president", "their mammies" };
         public static string get_bitbrainmammy()
         {
             return pick(bitbrainmammy, "bitbrainmammy");
@@ -2327,7 +2423,7 @@ namespace sentence_generator
                         if (pos >= 0)
                         {
                             foundone = true;
-                            str2 = dels[kvp.Key].Invoke().Replace(",", "");
+                            str2 = dels[kvp.Key].Invoke();
                             str = str.Substring(0, pos) + str2 + str.Substring(pos + kvp.Key.Length);
                         }
                     } while (pos >= 0);
@@ -2341,6 +2437,7 @@ namespace sentence_generator
             int pos, pos2, pos3;
             string s;
             pos = -1;
+            
             do
             {
                 pos = str.IndexOf("}");
