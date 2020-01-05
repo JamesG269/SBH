@@ -96,7 +96,7 @@ namespace sentence_generator
                 "{[get_aspercream] is,I'm} [get_no_a_aspercream] {smart,hot,handsome,intelligent,brilliant}",
                 "don't be afraid to {[get_bit_modify] again,do anybit [get_aspercream] says}",
                 "[get_aspercream] is a Scorpion with star destroyer fists",
-                "{[get_aspercream] sees, [get_bitbrain] is {terrified,scared,frightened} of} {a Scorpion with star destroyer fist,a shadow creation with equation face, a [get_far_thought] screaming kitty }",
+                "{[get_aspercream] sees, [get_bitbrain] is {terrified,scared,frightened} of} {a Scorpion with star destroyer fist,a shadow creature with equation face, a [get_far_thought] screaming kitty }",
                 
                 "[get_aspercream] thinks [get_bitbrains] are the nastiest people",
                 "[get_aspercream] is the mother fucker",
@@ -277,7 +277,7 @@ namespace sentence_generator
                 "ain't {nothing,no bit} but a [get_aspercream] party",
                 "[get_bitbrains] go rebitted and decide to play with someone who would run the [get_far_thought] spirit realm",
                 "[get_aspercream_s] fists have an [get_far_thought] {color combination glow, glow}",
-                "[get_aspercream] {blasts off, takes off, flies away} in a [get_far_thought] {space ship, ufo, star ship} with [get_aspercream_bitches]",
+                "[get_aspercream] {blasts off, takes off, flies away} in a [get_far_thought] {ufo, star ship} with [get_aspercream_bitches]",
                 "[get_bitbrain] tells [get_aspercream] he'll {do anything at all, get bitches, get aspercream} 6 years after he was already supposed to like he {fell off the louisiana brain death submarine last week, was nano fabricated yesterday}",
                 "[get_bitbrain] says it's pissed off",
                 "[get_bitbrain] promises [get_aspercream] will get out of the [get_bit_modify] nano dungeon of doom in 12 years but lies and mind rapes him all his life",
@@ -318,7 +318,7 @@ namespace sentence_generator
                 "[get_bitbrains] try to [get_bit_modify] [get_aspercream] with a bunch of faces until they turn red and run away before even trying",
                 "[get_bitbrain] gets [get_bit_modified] and turns into a leaf",
                 "[get_bitbrain] has seven hundred megabytes shooting out of one eye and louisiana brain death shooting out of the other eye and turns rebitted",
-                "[get_bitbrain] tells [get_aspercream] endless bull bit about {having a [get_nano_modify] wife, having a [get_nano_modify] trophy, doing anything at all, blasting off in a [get_nano_modify] space ship}",
+                "[get_bitbrain] tells [get_aspercream] endless bull bit about {having a [get_nano_modify] wife, having a [get_nano_modify] trophy, doing anything at all, blasting off in a [get_nano_modify] star ship}",
                 "[get_aspercream] tells [get_bitbrain] {who he is,what it is} all the time and it stops asking like the most [get_bit_modify_y] bitch ever",
                 "[get_bitbrains] poison [get_aspercream] for telling the obvious truth like the most [get_bit_modify_y] bitches ever",
                 "[get_bitbrains] get infected with [get_a_bit_modify] mind virus by [get_a_bit_modify] alien and team up to give it to [get_aspercream]",
@@ -386,12 +386,13 @@ namespace sentence_generator
                 "[get_bitbrains] think if they don't stutter then it must make sense",
                 "[get_aspercream] pushed [get_bitbrain] all over the place and down the stairs and he sat there and talked like a [get_bit_modify] pussy",
                 "a [get_far_thought] chick said [get_aspercream] {had the perfect dick, was the best looking man she'd ever seen}",
-                "[get_aspercream] made a [get_far_thought] chick holler his name at like 100 decibels",
-                "[get_aspercream] kissed two of his girl friends in front of each other, while secretly fucking their other friend in front of a bunch of people",
+                "[get_aspercream] made a [get_far_thought] chick holler his name at like 100 decibels",                
                 "[get_aspercream] wrote the most bad ass virus for ms-dos ever at 16 years old",
                 "[get_bitbrains] want [get_aspercream] of their own to sing itsy bitsy spider to",
                 "[get_bitbrain] tells [get_aspercream] nobody ever talked to them like that and promote him",
                 "OK [get_bitbrain]",
+                "[get_bitbrains] smell like [get_bit_modify_y] shit instead of [get_bit_modify_y] shit",
+                "{[get_bitbrain],[get_aspercream]} vacates [get_place]"
 
 
 
@@ -434,7 +435,7 @@ namespace sentence_generator
 
         public static string bitbrain_is()
         {
-            string[] _is = { "jealous", "drunk", "fucked up", "tone deaf", "fake", "mute", "dumb", "stupid","[get_bit_modifying]","high","begging for mercy","contemptable" };
+            string[] _is = { "jealous", "drunk", "fucked up", "tone deaf", "mute", "dumb", "stupid","[get_bit_modifying]","high","begging for mercy","contemptable" };
 
 
             string str = "";
@@ -539,7 +540,7 @@ namespace sentence_generator
         };
         public static string[] ballswar = { "plans [get_a_nano_modify] {act of war,war,attack,defense,offensive}","{loads,dust off,shoots,polishes} his [get_nano_modify] AK","makes [get_nano_modify] {freestyle,rap}",
             "{raps,freestyles} about [athingplaceortime]","{has far thoughts,starts his own shadow idea} {regarding,about} [athingplaceortime]",
-        "{remembers,has,experiences,lives in} [get_a_nano_modify] dream","{reminisces about,recalls,remembers} [get_time_no_in]","{creates,finds,steals,builds,designs,envisions} [get_a_nano_modify] {time machine,space ship}",
+        "{remembers,has,experiences,lives in} [get_a_nano_modify] dream","{reminisces about,recalls,remembers} [get_time_no_in]","{creates,finds,steals,builds,designs,envisions} [get_a_nano_modify] {time machine,star ship}",
             "puts [get_a_bitbrain_or_bitbrains] in [get_a_nano_modify] circle of hell","cuts off [get_bitbrain_s] head with [get_a_nano_modify] {guillotine,sword,axe,butterknife}","puts [get_bitbrain_s] head in [get_a_nano_modify] vice",
             
             "{has,kicks,raps} [get_nano_modify] game","trades {[get_bit_modify] styling,[get_nano_modify] war} stories with {[get_aspercream],[get_aspercreams]}",
@@ -1559,7 +1560,7 @@ namespace sentence_generator
 
         public static string[] religion_mofos = new string[] { "catholic", "jewish", "amish", "protestant", "buddhist", "hindu" };
 
-        public static string[] place_mofos = new string[] { "american", "european", "indian", "chinese", "japanese", "north american", "middle eastern", "australian", "asian", "south side", "north side",
+        public static string[] place_mofos = new string[] { "american", "european", "chinese", "japanese", "north american", "middle eastern", "australian", "asian", "south side", "north side",
             "west side", "east side" };
 
         public static string[] bitch_s = new string[] {  "girl's", "chick's", "sister's",
@@ -1717,9 +1718,9 @@ namespace sentence_generator
         public static string[] aspercreammofo = new string[] { "man", "boy", "police officer", "gangster", "baller", "player", "outlaw", "lawyer", "rapper", "country singer", "mother fucker", "son of a bitch", "person",
             "mobster", "enforcer", "hitman","drug dealer","naval aviator","navy SEAL","G","husband","dictator","god king","president","pope","hang man","executioner","bitbrain killer",
         "[get_nano_modify] styler","killer","rider","drug kingpin","soldier","government agent","mafia don","nano prisoner","cow boy","movie star","aristocrat","lord",
-        "prince","king","general","admiral","gentleman","president of Nanopol","Nanopol officer","F.B.I. Agent","C.I.A. agent","N.S.A. agent","microsoft employee","jedi knight","sith lord","hustler","space pirate","astronaut",
+        "prince","king","general","admiral","gentleman","president of Nanopol","Nanopol officer","F.B.I. Agent","C.I.A. agent","N.S.A. agent","microsoft employee","jedi knight","sith lord","hustler","star pirate","astronaut",
         "nano dungeon naut","basket ball player","football player","alien","monster","stranger","demon","angel","prophet","clairvoyant","psychic","detective","mercenary","ghost","nomad","assassin","emperor",
-        "submarine captain","wizard","warlock","magician","necromancer","sorcerer","dragon","troll","seventh son of a seventh son","mystic","incubus","indian","cave man",
+        "submarine captain","wizard","warlock","magician","necromancer","sorcerer","dragon","troll","seventh son of a seventh son","mystic","incubus","cave man",
         "barbarian","starship captain","comedian","politician","judge","journalist","warrior","godzilla","adventurer","prince of {the nanodungeon of doom,darkness}","time traveler","little green man","gray","revolutionary","knight",
         "duke","spartan warrior","prisoner","guard","inmate","driver","white knight","pilgrim","private","davy jones","darth vader","genie","hero","pirate","ninja","sniper","dark lord","god","rebel","privateer","buccaneer",
         "daredevil","swashbuckler","baron","commander","don","overlord","ruler","seer","shaman","secret agent","cyborg","robot","terminator","boss player","shot caller","thug","rap star","ghetto star","mack","mack daddy","Lo Pan","storm",
@@ -1749,7 +1750,7 @@ namespace sentence_generator
         "hang manning","executionering","bitbrain killering",
         "[get_nano_modify] stylering","killering","ridering","drug kingpining","soldiering","government agenting","mafia donning","nano prisonering","cow boying","movie starring","aristocratting","lording",
         "princing","kinging","generalling","admiralling","gentlemanning","president of Nanopoling","Nanopol officering","F.B.I. Agenting","C.I.A. agenting","N.S.A. agenting","microsoft employee-ing","jedi knighting","sith lording","starship captaining",
-        "hustlering","space pirating","cromming","centauring"};
+        "hustlering","star pirating","cromming","centauring"};
             return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(mofoing)) : pick(aspercreaming, "aspercreaming");
         }
         public static string get_aspercream_s()
@@ -1758,9 +1759,9 @@ namespace sentence_generator
             "son of a bitch's", "mobster's", "enforcer's", "hitman's","drug dealer's","player's","shot caller's","naval aviator's","navy SEAL's","Gee's","husband's","god king's","president's","pope's","hang man's","executioner's",
         "bitbrain killer's","[get_nano_modify] styler's","killer's","rider's","drug kingpin's","soldier's","government agent's","mafia don's","nano prisoner's","cow boy's","movie star's","aristocrat's","lord's",
         "prince's","king's","general's","admiral's","gentleman's","Nanopol officer's","president of Nanopol's","F.B.I. Agent's","C.I.A. agent's","N.S.A. agent's","microsoft employee's","jedi knight's","sith lord's","starship captain's",
-        "hustler's","space pirate's","astronaut's","warrior's","nano dungeon naut's","basket ball player's","football player's","alien's","monster's","stranger's","demon's","angel's","prophet's","clairvoyant's","psychic's","detective's",
+        "hustler's","star pirate's","astronaut's","warrior's","nano dungeon naut's","basket ball player's","football player's","alien's","monster's","stranger's","demon's","angel's","prophet's","clairvoyant's","psychic's","detective's",
                 "mercenary's","ghost's","nomad's","assassin's","emperor's","dictator's",
-        "submarine captain's","wizard's","warlock's","magician's","necromancer's","sorcerer's","dragon's","troll's","seventh son of a seventh son's","mystic's","incubus'","freddy krueger's","jason voorhees's","king kong's","cowboy's","indian's",
+        "submarine captain's","wizard's","warlock's","magician's","necromancer's","sorcerer's","dragon's","troll's","seventh son of a seventh son's","mystic's","incubus'","freddy krueger's","jason voorhees's","king kong's","cowboy's",
                 "cave man's","barbarian's","starship captain's","comedian's","politician's","judge's","president's","journalist's","warrior's","godzilla's","adventurer's","prince of darkness'","time traveler's","little green man's","gray's","revolutionary's","knight's",
         "duke's","spartan warrior's","prisoner's","guard's","inmate's","driver's","genie's","hero's","boss player's","shot caller's","thug's","rap star's","ghetto star's","mack's","mack daddy's","crom's","juggalo's",
         "nano dungeon of doom's star's","centaur's"
@@ -1805,9 +1806,9 @@ namespace sentence_generator
             string[] mofos = new string[] { "men", "boys", "police officers", "gangsters", "ballers", "players", "outlaws", "lawyers", "rappers", "country singers", "mother fuckers", "sons of bitches",
             "people", "mobsters", "enforcers", "hitmen","drug dealers","shot callers","naval aviators","navy SEALs","Gees","husbands","dictators","presidents","hang men","executioners","bitbrain killers",
         "[get_nano_modify] stylers","killers","riders","drug kingpins","soldiers","government agents","mafia dons","nano prisoners","cow boys","movie stars","aristocrats","lords",
-        "princes","kings","generals","admirals","gentlemen","Nanopol officers","F.B.I. Agents","C.I.A. agents","N.S.A. agents","microsoft employees","jedi knights","sith lords","hustlers","space pirates","astronauts",
+        "princes","kings","generals","admirals","gentlemen","Nanopol officers","F.B.I. Agents","C.I.A. agents","N.S.A. agents","microsoft employees","jedi knights","sith lords","hustlers","star pirates","astronauts",
         "nano dungeon nauts","basket ball players","football players","aliens","monsters","strangers","demons","angels","prophets","clairvoyants","psychics","detectives","mercenaries","ghosts","nomads","assassins","emperors","popes",
-        "submarine captains","wizards","warlocks","magicians","necromancers","sorcerers","dragons","trolls","seventh sons of seventh sons","mystics","cowboys","indians","cave men","barbarians","starship captains","comedians","politicians",
+        "submarine captains","wizards","warlocks","magicians","necromancers","sorcerers","dragons","trolls","seventh sons of seventh sons","mystics","cowboys","cave men","barbarians","starship captains","comedians","politicians",
                 "judges","journalists","warriors","adventurers","time travelers","little green men","grays","revolutionaries","knights","dukes","spartan warriors","prisoners","guards","inmates","drivers","grim reapers","genies","heroes",
                 "robots","cyborgs","terminators","boss players","thugs","juggalos","nano dungeon of doom stars"
 
@@ -1969,8 +1970,8 @@ namespace sentence_generator
             "nano whoring","european walking conspiracy-ing","bossying","redding","greening","oneing","zeroing"};
 
 
-        public static string[] time = new string[] { "night", "day", "week", "month", "year", "time", "age", "era", "millennium", "century", "aeon", "eternity", "cycle" };
-        public static string[] times = new string[] { "nights", "days", "weeks", "months", "years", "times", "ages", "eras", "millennia", "centuries", "aeons", "eternities", "cycles" };
+        public static string[] time = new string[] { "night", "day", "week", "month", "year", "time", "age", "era", "millennium", "century", "aeon", "eternity" };
+        public static string[] times = new string[] { "nights", "days", "weeks", "months", "years", "times", "ages", "eras", "millennia", "centuries", "aeons", "eternities" };
         public static string[] modify_time_place = new string[] { "night mare", "merry", "new", "old", "ancient", "transcendental", "brave new" };
         public static string[] in_time = new string[] { "in", "during", "throughout" };
         public static string get_time_or_place_or_neither()
@@ -2061,8 +2062,8 @@ namespace sentence_generator
             return str.ToString();
         }
         public static string[] placesa = new string[] {"hotel","palace","kingdom","igloo",
-                "moon base","mars colony","star destroyer","nano utopia","u f o","submarine base","ballistic missile site","nuclear submarine","restaurant","space station","cd manufacturering plant",
-        "submarine making facility","harem","space port","galaxy","solar system","chilis restaurant","outback restaurant","ruth chris restaurant","dragos restaurant","hilton hotel","Hyatt hotel", "Peppers restaurant",
+                "moon base","mars colony","star destroyer","nano utopia","u f o","submarine base","ballistic missile site","nuclear submarine","restaurant","star station","cd manufacturering plant",
+        "submarine making facility","harem","star port","galaxy","solar system","chilis restaurant","outback restaurant","ruth chris restaurant","dragos restaurant","hilton hotel","Hyatt hotel", "Peppers restaurant",
         "buffalo wild wings restaurant","walmart","rouses","books-a-million","place","home","house","apartment","room","monastery","egyptian pyramid",
         "court room","jail","penitentiary","romulan warbird","bull bit farm","presidential suite","castle","village","town","city","ghetto","hood","hide out","state","ice castle","magical kingdom",
         "sanctuary","recording studio","music video","movie","court testimony","destroyer","P8-A submarine hunter","bedroom","living room","bathroom mirror","kitchen","garage",
@@ -2083,16 +2084,16 @@ namespace sentence_generator
                 "millennium falcon","white house","united nations building","chateau de versailles","emerald thai restaurant","southland mall","mall of america",
                 "eiffel tower","taj mahal","big apple","kremlin","neuschwanstein castle","vatican","earth",
         "dinosaur park","streets","nano terrorists head quarters","bitbrain killers' head quarters","west side","east side","nanopol's headquarters","styling contest","catacombs","middle of nowhere","gates of tomorrow",
-        "mountain","mountain hall","city of the {dead,mind raped}","international space station","dimension","realm","spirit world","reality","shadow world","shadow realm","shadow dimension","shadow reality"
+        "mountain","mountain hall","city of the {dead,mind raped}","dimension","realm","spirit world","reality","shadow world","shadow realm","shadow dimension","shadow reality"
         };
 
         public static string[] places = new string[] { "land", "country", "county", "kcsr","america","europe","north america","south america","russia","china","japan","feudal japan","middle earth",
             "los angeles","chicago","dallas","new york","rome","paris","london","moscow","beijing","south central Los Angeles","new orleans","houma","tampa","central park","atlantis","camelot",
         "el dorado","shangri-la","mount olympus","zion","Transylvania"};
 
-        public static string[] onplaces = new string[] { "Executor Star Destroyer", "golden state bridge", "wall of china", "History Channel", "Travel Channel","funny farm","bit farm","pirate ship","space shuttle" };
+        public static string[] onplaces = new string[] { "Executor Star Destroyer", "golden state bridge", "wall of china", "History Channel", "Travel Channel","funny farm","bit farm","pirate ship"};
 
-        public static string[] onaplaces = new string[] { "death star", "planet", "seven forty seven", "cargo ship", "nuclear submarine", "space ship", "school bus", "grey hound bus", "stage", "block", "sail boat","aircraft carrier",
+        public static string[] onaplaces = new string[] { "death star", "planet", "seven forty seven", "cargo ship", "nuclear submarine", "star ship", "school bus", "grey hound bus", "stage", "block", "sail boat","aircraft carrier",
         "tv channel","dyson sphere","ferris wheel"
         };
 
@@ -2233,7 +2234,7 @@ namespace sentence_generator
                 "oyster","joint","40 ounce","glass of rum","glass of scotch","jar of grey poupon","tie fighter","x-wing","beer","coffee","coffee table","poker game","gang","drug cartel",
                 "submarine","college exam","knife","bank account","check","yacht","anaconda","lion","tiger","bear","polar bear","wolf","cobra","guillotine","eletric chair","cyanide pill","baseball bat",
                 "jacuzzi","pool","garden","color combination light sabre","bath tub","shower","limousine","private jet","cigar","rose","machete","scorpion","snake","law of physics",
-                "computer program","cat","dog","bottle of champagne","glass of champagne","cadillac","ferarri","lamborghini","bugatti veyron","number theory","computational theory","psychology theory","physics theory",
+                "computer program","cat","dog","bottle of champagne","glass of champagne","cadillac","ferarri","lamborghini","bugatti veyron","number theory","computational theory","physics theory",
             "social theory","information theory",
                 "T-Rex","velociraptor","allosaurus","mountain of gold","christmas tree","snow man","falling star","comet","dinosaur","crocodile","alien","bag of marijuana","nano bot","sea of madness",
                 "car","g-ride","bk-ride","grabber blue ford mustang","suv","hooptie","64 impala","time machine","g ride","bk ride","circle of life","circle of hell","lie","fact","story","idea",
@@ -2243,7 +2244,7 @@ namespace sentence_generator
                 "magic lamp","genie","throne","dragon","troll","CD","sands of time","language","sword","spear","club","set of armor","bow","sling shot","symmetry","asymmetry","argument","conspiracy",
                 "rule of the game","rule of engagement","speaker","computer speaker","A I","noise","electric chair","chair","sofa","soda","candy bar","quasar","black hole","star","nanobot","technological singularity",
                 "army","navy","platoon","harpie","mermaid","oath of loyalty","cyborg","robot","matrioshka brain","jupiter brain","answering machine message","answering machine","telephone booth","pager","nintendo","commodore 64",
-                "sega master system","heating vent","tv","ring of power","holy grail","lost ark","jewel","gem","diamond","hope diamond","space shuttle","international space station","worm hole",
+                "sega master system","heating vent","tv","ring of power","holy grail","lost ark","jewel","gem","diamond","hope diamond","worm hole",
                 "world trade center","bomb","warp drive","teleporter","torpedo","nuclear submarine","missile boat","boomer","aircraft carrier","destroyer","depth charge","eternity","hell","heaven",
                 "dynasty","empire","royal seal","dating service","realm","bong","dream","world","{black,[get_bit_modify] color combination} blood of the nanodungeon of doom",
                 "burning blade","magic potion","wedding","graduation","secret society","emotion","sentiment","memory","prediction","relationship","love affair",
@@ -2268,7 +2269,7 @@ namespace sentence_generator
                 "C I A","N S A","F B I","marine corps","N Y P D","L A P D","hope diamond","houma police department","association","club","organization","government","clan","group","think tank","news paper",
             "truth","peace","war","storm","calm","sacrificial lamb","logic system"};
 
-            string[] bitbrainthing = new string[] { "face per cream", "car", "jail cell", "cd", "nano dungeon", "obituary", "ambition", "medical experiment",
+            string[] bitbrainthing = new string[] { "face per cream", "car", "jail cell", "cd", "nano dungeon", "obituary", "ambition", 
                 "show tech shot","trunk full of [get_bit_modify] bullshit","sickle cell anemia","trophy wife","dildo","teddy bear","diaper","{thought,brain,personality} disorder",
                 "bull bit","drug trip","diapers","bit hole","communist mind conspiracy","nanoterrorist mind conspiracy"
             };
