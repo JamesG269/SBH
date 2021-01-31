@@ -9,12 +9,15 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Straight_Bitbrain_Heater</RootNamespace>
     <AssemblyName>Straight Bitbrain Heater</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -30,8 +33,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -91,9 +92,17 @@
     <Reference Include="DeepSpeechClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\DeepSpeech.0.5.0\lib\net45\DeepSpeechClient.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -195,9 +204,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>"c:\users\jrg26\Documents\Visual Studio 2017\Projects\KillSBHandAMT\WindowsFormsApp1\bin\x64\Debug\KillSBHandAMT.exe"
-copy "%25userprofile%25\Documents\Visual Studio 15\Projects\Text2SpeechConsole\x64\Release\Text2SpeechConsole.dll" "%25userprofile%25\Documents\Visual Studio 2015\Projects\Straight Bitbrain Heater\Straight Bitbrain Heater\bin\x64\Release\Text2SpeechConsole.dll" /y 2&gt;nul 1&gt;nul
-copy "%25userprofile%25\Documents\Visual Studio 15\Projects\Text2SpeechConsole\x64\Release\Text2SpeechConsole.dll" "%25userprofile%25\Documents\Visual Studio 2015\Projects\Straight Bitbrain Heater\Straight Bitbrain Heater\bin\x64\debug\Text2SpeechConsole.dll" /y 2&gt;nul 1&gt;nul
+    <PreBuildEvent>"c:\users\jgentile\Documents\Visual Studio 2017\Projects\KillSBHandAMT\WindowsFormsApp1\bin\x64\release\KillSBHandAMT.exe"
+copy "%25userprofile%25\Documents\Visual Studio 15\Projects\Text2SpeechConsole\x64\Release\Text2SpeechConsole.dll" "%25userprofile%25\source\repos\Straight Bitbrain Heater\Straight Bitbrain Heater\bin\x64\Release\Text2SpeechConsole.dll" /y 2&gt;nul 1&gt;nul
+copy "%25userprofile%25\Documents\Visual Studio 15\Projects\Text2SpeechConsole\x64\Release\Text2SpeechConsole.dll" "%25userprofile%25\source\repos\Straight Bitbrain Heater\Straight Bitbrain Heater\bin\x64\debug\Text2SpeechConsole.dll" /y 2&gt;nul 1&gt;nul
 exit 0</PreBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\DeepSpeech.0.5.0\build\DeepSpeech.targets" Condition="Exists('..\packages\DeepSpeech.0.5.0\build\DeepSpeech.targets')" />

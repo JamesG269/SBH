@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Straight_Bitbrain_Heater"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" ContentRendered="Window_ContentRendered">
     <Grid>
         <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Width="75" Click="Start_Click" />
         <Button x:Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="75" Click="StopButton_Click"/>
@@ -16,11 +16,9 @@
         <Button Content="Start Slide Show" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="95" Click="StartSlideShow"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Height="27" Width="155" Name="BinaryLabel"/>
         <TextBox Name="BHTextBox" HorizontalAlignment="Left" Margin="10,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="137" Width="498" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"/>
-        <Button Content="Volume Up" HorizontalAlignment="Left" Margin="138,70,0,0" VerticalAlignment="Top" Width="118" Height="50" FontSize="18" Click="Button_VolumeUp"/>
-        <Button Content="Volume Down" HorizontalAlignment="Left" Margin="138,120,0,0" VerticalAlignment="Top" Width="118" Height="50" FontSize="18" Click="Button_VolumeDown"/>
-        <Button Content="Exit RDP" HorizontalAlignment="Left" Margin="261,70,0,0" VerticalAlignment="Top" Width="118" Height="50" FontSize="18" Click="Button_ExitRDP"/>
-        <Button Content="Music" HorizontalAlignment="Left" Margin="261,120,0,0" VerticalAlignment="Top" Width="118" Height="50" FontSize="18" Click="Button_Music"/>
-
-
+        <Button Content="Exit RDP" HorizontalAlignment="Left" Margin="127,65,0,0" VerticalAlignment="Top" Width="118" Height="50" FontSize="18" Click="Button_ExitRDP"/>
+        <Button Content="Music" HorizontalAlignment="Left" Margin="127,117,0,0" VerticalAlignment="Top" Width="118" Height="50" FontSize="18" Click="Button_Music"/>
+        <TextBox Name="TB" HorizontalAlignment="Left" Height="23" Margin="304,21,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" KeyUp="TextBox_KeyUp"/>
+        <Button Content="Reload SBH.TXT" HorizontalAlignment="Left" Margin="304,67,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click"/>
     </Grid>
 </Window>

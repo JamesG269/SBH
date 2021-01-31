@@ -17,6 +17,12 @@ using System.Drawing;
 using System.Reflection;
 using DeepSpeechClient;
 using System.IO;
+using System.Speech.Synthesis;
+using System.Text;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 // OnSourceInitialized has buttons, first 4 key handlers = across second row of 4 buttons in order....
 
@@ -49,7 +55,7 @@ namespace Straight_Bitbrain_Heater
         [DllImport("user32.dll")]
         static extern IntPtr SetFocus(HandleRef hWnd);
 
-
+        public static SpeechSynthesizer FarThought = new SpeechSynthesizer();
         private const uint MOD_NONE = 0x0000; //(none)
         private const uint MOD_ALT = 0x0001; //ALT
         private const uint MOD_CONTROL = 0x0002; //CTRL
@@ -69,10 +75,10 @@ namespace Straight_Bitbrain_Heater
         private IntPtr _windowHandle;
         private HwndSource _source;
 
-        public static int thevolume = 100;
-        public static int therate = 0;
+        public static int Volume = 100;
+        public static int Rate = 0;
         public static Boolean enableSave = false;
-        public Boolean play_bh = true;
+        public static Boolean PlayingE10E = false;
         System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
         System.Windows.Forms.ContextMenu contextMenu1 = new System.Windows.Forms.ContextMenu();
         public Boolean windowhidden = false;
@@ -85,45 +91,18 @@ namespace Straight_Bitbrain_Heater
             public Int32 Y;
         };
 
-        string DuplicateInfo = "";
-        
+        Process myProcess;
         public MainWindow()
         {
             InitializeComponent();
-
-            Process[] pname = Process.GetProcesses();
-            var myID = Process.GetCurrentProcess().Id;
-            Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.Idle;
-            var MyName = "Straight Bitbrain Heater";
-
-            foreach (var p in pname)
-            {
-                if (p.ProcessName == MyName && p.Id != myID)
-                {
-                    string evtName = "SBHExitRequest" + p.Id.ToString();
-                    EventWaitHandle evt = new EventWaitHandle(false, EventResetMode.ManualReset, evtName);
-                    evt.Set();
-                    evt.Reset();
-                    evt.Close();
-                    p.WaitForExit();
-                }
-            }
-
-            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\StraightBitbrainHeater");
-            thevolume = key != null ? Convert.ToInt32(key.GetValue("volume", RegistryValueKind.DWord)) : 100;
-            therate = key != null ? Convert.ToInt32(key.GetValue("rate", RegistryValueKind.DWord)) : 0;
-            //PathToSlideShow = key != null ? key.GetValue("SlideShowPath", RegistryValueKind.String).ToString() : "";
-
-            if (key != null)
-            {
-                key.Close();
-            }
-            VolumeSlider.Value = thevolume;
-            RateSlider.Value = therate;
-            text2speechinit();
-
-            VolumeLabel.Content = "Volume: " + thevolume.ToString();
-            RateLabel.Content = "Rate: " + therate.ToString();
+        }
+        private async void Window_ContentRendered(object sender, EventArgs e)
+        {
+            await Task.Run(() => InitLouisianaBrainDeath());
+            VolumeSlider.Value = Volume;
+            RateSlider.Value = Rate;
+            VolumeLabel.Content = "Volume: " + Volume.ToString();
+            RateLabel.Content = "Rate: " + Rate.ToString();
             this.Title = "Straight Bitbrain Heater v2 by James Gentile";
 
             contextMenu1.MenuItems.Add(0, new System.Windows.Forms.MenuItem("Play", new System.EventHandler(PlayNI)));
@@ -132,57 +111,66 @@ namespace Straight_Bitbrain_Heater
 
             ni.ContextMenu = contextMenu1;
             ni.Icon = new System.Drawing.Icon(@"c:\users\" + Environment.UserName + @"\source\repos\Straight Bitbrain Heater\Straight Bitbrain Heater\Rade8-Minium-2-Device-CD.ico");
-            
+
             ni.MouseUp += new System.Windows.Forms.MouseEventHandler(MouseUpNI);
             ni.Visible = true;
             ni.Text = "Straight Bitbrain Heater";
-            enableSave = true;
+
             BinaryLabel.Foreground = System.Windows.Media.Brushes.Green;
-            BHTextBox.AppendText("placesa = " + sentence_generator.nanoshit2.placesa.Length.ToString() + Environment.NewLine + "athing = " + sentence_generator.nanoshit2.athing.Length.ToString() + Environment.NewLine);
-
-            Dictionary<string, string> place_dict = new Dictionary<string, string>();
-            Dictionary<string, string> thing_dict = new Dictionary<string, string>();
-
-            
-            foreach (string s in sentence_generator.nanoshit2.placesa)
-            {
-                if (place_dict.ContainsKey(s))
-                {
-                    BHTextBox.AppendText("placesa duplicate: " + s + Environment.NewLine);                    
-                }
-                else
-                {
-                    place_dict.Add(s,s);
-                }
-            }
-
-            foreach (string s in sentence_generator.nanoshit2.athing)
-            {
-                if (thing_dict.ContainsKey(s))
-                {
-                    BHTextBox.AppendText("athing duplicate: " + s + Environment.NewLine);
-                }
-                else
-                {
-                    thing_dict.Add(s, s);
-                }
-            }
-
             Topmost = true;
-            int t = text2speechspeak("straight bitbrain heater started.", thevolume, therate);
-            Task.Factory.StartNew(() => play_bitbrainheater(), TaskCreationOptions.LongRunning);
+            start_E10E();
+            enableSave = true;
+            FarThought.SpeakCompleted += FarThought_SpeakCompleted;
+            adjustVolume = false;
+            await Task.Factory.StartNew(() => play_E10E(), TaskCreationOptions.LongRunning);
+        }
+
+        private void InitLouisianaBrainDeath()
+        {
+            Process[] pname = Process.GetProcesses();
+            myProcess = Process.GetCurrentProcess();
+            var myID = myProcess.Id;
+            Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.Idle;
+            var MyName = "Straight Bitbrain Heater";
+
+            foreach (var p in pname)
+            {
+                if (p.ProcessName == MyName)
+                {
+                    if (p.Id == -1) // != myID) - removed to run multiple instances.
+                    {
+                        string evtName = "SBHExitRequest" + p.Id.ToString();
+                        EventWaitHandle evt = new EventWaitHandle(false, EventResetMode.ManualReset, evtName);
+                        evt.Set();
+                        evt.Reset();
+                        evt.Close();
+                        p.WaitForExit();
+                    }
+                }
+            }
+
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\StraightBitbrainHeater");
+            Volume = key != null ? Convert.ToInt32(key.GetValue("volume", RegistryValueKind.DWord)) : 100;
+            Rate = key != null ? Convert.ToInt32(key.GetValue("rate", RegistryValueKind.DWord)) : 0;
+            //PathToSlideShow = key != null ? key.GetValue("SlideShowPath", RegistryValueKind.String).ToString() : "";
+
+            if (key != null)
+            {
+                key.Close();
+            }
+
+            text2speechinit();
             Task.Factory.StartNew(() => WaitForEvent(), TaskCreationOptions.LongRunning);
         }
-        
-        private void WaitForEvent()
+
+        private async void WaitForEvent()
         {
             string evtName = "SBHExitRequest" + Process.GetCurrentProcess().Id.ToString();
             EventWaitHandle evt = new EventWaitHandle(false, EventResetMode.ManualReset, evtName);
             evt.WaitOne();
             evt.Close();
-            play_bh = false;
-            text2speechstop();
-            this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate () { Close(); }));
+            await Stop_E10E();
+            await this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate () { Close(); }));
         }
         public void MouseUpNI(object sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -208,74 +196,135 @@ namespace Straight_Bitbrain_Heater
             windowhidden = false;
         }
 
-        public void ExitNI(Object sender, System.EventArgs e)
+        public async void ExitNI(Object sender, System.EventArgs e)
         {
-            play_bh = false;
-            text2speechstop();
+            await Stop_E10E();
             Close();
         }
         public void PlayNI(Object sender, System.EventArgs e)
         {
-            play_bh = true;
+            start_E10E();
         }
-        public void StopNI(Object sender, System.EventArgs e)
+        public async void StopNI(Object sender, System.EventArgs e)
         {
-            play_bh = false;
-            text2speechstop();
+            await Stop_E10E();
         }
         private void Start_Click(Object sender, RoutedEventArgs e)
         {
-            play_bh = true;
+            start_E10E();
         }
-        private void StopButton_Click(object sender, RoutedEventArgs e)
+        private async void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            play_bh = false;
-            text2speechstop();
+            await Stop_E10E();
         }
         public int BinaryLabelCounter = 0;
-        public bool adjustVolume = false;
-        private async void play_bitbrainheater()
+        public static bool adjustVolume = false;
+        public List<string> binaryList = new List<string>();
+        private void start_E10E()
         {
+            getnewE10E = true;
+            PlayingE10E = true;            
+        }
+
+        public async void play_E10E()
+        {
+            //int t2sreturn = text2speechspeak("straight bitbrain heater started.", Volume, Rate);
+            int tempReload = reload;
+            int pscount = 0;
+            string E10Ereturn = genE10E(out pscount);
             while (true)
             {
-                /*if (System.Windows.Forms.SystemInformation.TerminalServerSession == true)
-                {
-                    if (windowhidden == true)
-                    {
-                        ShowOnDesktop();
-                    }
-                }*/
-                while (play_bh == true)
-                {
-                    while (adjustVolume)
-                    {
-                        adjustVolume = false;
-                        await Task.Delay(1000);
-                    }
-
-                    string str = nanoshit3.start3();
-                    
-                    System.Windows.Application.Current.Dispatcher.Invoke(new Action(() => {
-                        if (BHTextBox.Text.Length > 10000)
-                        {
-                            BHTextBox.Text = BHTextBox.Text.Substring(BHTextBox.Text.Length - 10000);
-                        }
-                        BHTextBox.AppendText(str + Environment.NewLine + Environment.NewLine);
-                        BHTextBox.ScrollToEnd();
-
-                        BinaryLabelWorker(str);
-                    }));
-                    if (str.Contains("@"))
-                    {
-                        str = str.Substring(0, str.IndexOf("@"));
-                    }
-                    int t = text2speechspeak(str, thevolume, therate);
-                    
-                    SaveShit();
-                    
+                while (PlayingE10E == false)
+                {                    
+                    await Task.Delay(100);                    
                 }
-                Thread.Sleep(250);
+                while (adjustVolume)
+                {
+                    adjustVolume = false;
+                    await Task.Delay(1000);
+                    getnewE10E = true;
+                }                
+                if (getnewE10E)
+                {
+                    getnewE10E = false;
+                    E10Ereturn = genE10E(out pscount);
+                }                
+                E10Ereturn = nanoshit3.RemoveExtraWhitespace(E10Ereturn);
+                System.Windows.Application.Current.Dispatcher.Invoke(new Action(() =>
+                {
+                    if (BHTextBox.Text.Length > 10000)
+                    {
+                        BHTextBox.Text = BHTextBox.Text.Substring(BHTextBox.Text.Length - 10000);
+                    }
+                    BHTextBox.AppendText(E10Ereturn + Environment.NewLine + Environment.NewLine + "reload = " + tempReload.ToString() + Environment.NewLine + pscount.ToString() + " " + "PureSenseFile Count" + Environment.NewLine);
+                    BHTextBox.ScrollToEnd();
+
+                    BinaryLabelWorker(E10Ereturn);
+                }));
+                if (E10Ereturn.Contains("@"))
+                {
+                    E10Ereturn = E10Ereturn.Substring(0, E10Ereturn.IndexOf("@"));
+                }
+
+                //int t = text2speechspeak(E10Ereturn, Volume, -10);
+                FarThought.SelectVoiceByHints(VoiceGender.Female);
+                FarThought.Volume = Volume;
+                FarThought.Rate = Rate;
+                speaking = true;
+                FarThought.SpeakAsync(E10Ereturn);
+                string newE10E = "";
+                int i = 1000;
+                while (speaking)
+                {
+                    if (adjustVolume || !PlayingE10E || restartE10E)                    
+                    {                        
+                        FarThought.SpeakAsyncCancelAll();
+                        restartE10E = false;
+                        speaking = false;
+                        break;
+                    }
+                    if (i > 0)
+                    {
+                        newE10E += genE10E(out pscount) + " E one point zero E period ";
+                        i--;
+                    }
+                    await Task.Delay(100);
+                }
+                E10Ereturn = newE10E;
+                tempReload = reload;
+                SaveShit();
+                if (myProcess.WorkingSet64 > 500000000)
+                {
+                    System.Windows.Forms.Application.Restart();
+                }
             }
+        }
+        public string genE10E(out int pscount)
+        {
+            string E10Ereturn = "";
+            if (reload == 1)
+            {
+                reload = 2;
+                E10Ereturn += nanoshit3.start3(out pscount, false, 1) + " ";
+            }
+            else
+            {
+                E10Ereturn += nanoshit3.start3(out pscount, false, reload) + " ";
+            }
+            return E10Ereturn;
+        }
+
+        public bool speaking = false;
+        public void FarThought_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+        {
+            speaking = false;
+        }
+
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
         private void BinaryLabelWorker(string str)
         {
@@ -300,8 +349,8 @@ namespace Straight_Bitbrain_Heater
             if (enableSave == true && needToSave == true)
             {
                 RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\StraightBitbrainHeater");
-                key.SetValue("rate", therate, RegistryValueKind.DWord);
-                key.SetValue("volume", thevolume, RegistryValueKind.DWord);
+                key.SetValue("rate", Rate, RegistryValueKind.DWord);
+                key.SetValue("volume", Volume, RegistryValueKind.DWord);
                 key.Close();
                 needToSave = false;
             }
@@ -310,18 +359,19 @@ namespace Straight_Bitbrain_Heater
         {
             var slider = sender as Slider;
             double value = slider.Value;
-            thevolume = Convert.ToInt32(value);
+            Volume = Convert.ToInt32(value);
             needToSave = true;
-            VolumeLabel.Content = "Volume: " + thevolume.ToString();
+            ChangeVolume(Volume);
         }
 
         private void RateSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             var slider = sender as Slider;
             double value = slider.Value;
-            therate = Convert.ToInt32(value);
+            Rate = Convert.ToInt32(value);
             needToSave = true;
-            RateLabel.Content = "Rate: " + therate.ToString();
+            RateLabel.Content = "Rate: " + Rate.ToString();
+            ChangeRate(Rate);
         }
 
         protected override void OnStateChanged(EventArgs e)
@@ -333,48 +383,18 @@ namespace Straight_Bitbrain_Heater
             }
             base.OnStateChanged(e);
         }
-        protected override void OnClosed(EventArgs e)
+        protected override async void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
-            base.OnClosed(e);
-            
+            await Stop_E10E();
+            base.OnClosing(e);
             if (ni != null)
             {
                 ni.Dispose();
             }
-            play_bh = false;
-            text2speechstop();
             SaveShit();
             return;
-            /*
-            _source.RemoveHook(HwndHook);
-
-            UnregisterHotKey(_windowHandle, HOTKEY_ID);
-            UnregisterHotKey(_windowHandle, HOTKEY_ID2);
-            UnregisterHotKey(_windowHandle, HOTKEY_ID3);
-            UnregisterHotKey(_windowHandle, HOTKEY_ID4);
-            UnregisterHotKey(_windowHandle, HOTKEY_ID5);
-            UnregisterHotKey(_windowHandle, HOTKEY_ID6);
-            */
-            
         }
 
-        protected override void OnSourceInitialized(EventArgs e)
-        {            
-            base.OnSourceInitialized(e);
-            return;
-            /*
-            _windowHandle = new WindowInteropHelper(this).Handle;
-            _source = HwndSource.FromHwnd(_windowHandle);
-            _source.AddHook(HwndHook);
-            
-            RegisterHotKey(_windowHandle, HOTKEY_ID, MOD_CONTROL, VK_CHANNELUP); //CTRL + CAPS_LOCK           
-            RegisterHotKey(_windowHandle, HOTKEY_ID2, MOD_CONTROL, VK_CHANNELDOWN); //CTRL + CAPS_LOCK
-            RegisterHotKey(_windowHandle, HOTKEY_ID3, MOD_CONTROL, 84); //CTRL + E
-            RegisterHotKey(_windowHandle, HOTKEY_ID4, MOD_CONTROL | MOD_SHIFT, 77); //
-            RegisterHotKey(_windowHandle, HOTKEY_ID5, MOD_CONTROL, 49);
-            RegisterHotKey(_windowHandle, HOTKEY_ID6, MOD_WIN | MOD_ALT, 13); // Remote Start button.
-            */
-        }
         private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             const int WM_HOTKEY = 0x0312;
@@ -400,15 +420,14 @@ namespace Straight_Bitbrain_Heater
                     case HOTKEY_ID3:
                         if (vkey == 84)
                         {
-                            if (play_bh == true)
+                            if (PlayingE10E == true)
                             {
-                                play_bh = false;
-                                text2speechstop();
+                                Stop_E10E();
                                 this.Title = "Bitbrain Heater Stopped.";
                             }
                             else
                             {
-                                play_bh = true;
+                                start_E10E();
                                 this.Title = "Bitbrain Heater Started.";
                             }
                         }
@@ -419,20 +438,20 @@ namespace Straight_Bitbrain_Heater
                         {
                             this.Title = "Open SlideShow pressed.";
                             handled = true;
-                            Boolean AlreadyRunning = false;                            
+                            Boolean AlreadyRunning = false;
                             foreach (var p in Process.GetProcesses())
                             {
                                 if (p.ProcessName == "JRGSlideShowWPF")
                                 {
-                                    p.Kill();                                    
+                                    p.Kill();
                                     this.Title = "SlideShow Closed.";
-                                    AlreadyRunning = true;                                    
-                                }                                
+                                    AlreadyRunning = true;
+                                }
                             }
                             if (AlreadyRunning == false)
                             {
                                 StartSlideShowWorker();
-                            }                                                    
+                            }
                         }
                         break;
                     case HOTKEY_ID5:
@@ -485,40 +504,53 @@ namespace Straight_Bitbrain_Heater
                 }
             }
         }
-
+        private void ChangeVolume(int vol)
+        {           
+            VolumeSlider.Value = vol;
+            needToSave = true;
+            VolumeLabel.Content = "Volume: " + vol.ToString();
+            this.Title = "Volume changed.";
+            adjustVolume = true;            
+        }
+        private void ChangeRate(int rate)
+        {            
+            RateSlider.Value = rate;
+            needToSave = true;
+            RateLabel.Content = "Rate: " + rate.ToString();
+            this.Title = "Rate changed.";
+            adjustVolume = true;
+        }
         private void VolumeDown()
         {
-            if (thevolume > 0)
+            if (Volume > 0)
             {
-                play_bh = false;
-                text2speechstop();                
-                thevolume--;
-                VolumeSlider.Value = thevolume;
-                needToSave = true;
-                VolumeLabel.Content = "Volume: " + thevolume.ToString();
-                this.Title = "Volume decreased.";
-                adjustVolume = true;
-                play_bh = true;                
+                Volume--;
+                ChangeVolume(Volume);
+            }
+        }
+
+        private async Task Stop_E10E()
+        {
+            if (PlayingE10E)
+            {
+                PlayingE10E = false;                               
+            }
+            while (speaking)
+            {
+                await Task.Delay(10);
             }
         }
 
         private void VolumeUp()
         {
-            if (thevolume < 100)
+            if (Volume < 100)
             {
-                play_bh = false;
-                text2speechstop();
-                thevolume++;
-                VolumeSlider.Value = thevolume;
-                needToSave = true;
-                VolumeLabel.Content = "Volume: " + thevolume.ToString();
-                this.Title = "Volume increased.";
-                adjustVolume = true;
-                play_bh = true;
+                Volume++;
+                ChangeVolume(Volume);
             }
         }
 
-        private void StartSlideShow(Object sender, RoutedEventArgs e)        
+        private void StartSlideShow(Object sender, RoutedEventArgs e)
         {
             StartSlideShowWorker();
         }
@@ -541,16 +573,14 @@ namespace Straight_Bitbrain_Heater
         }
 
         private void Button_VolumeUp(object sender, RoutedEventArgs e)
-        {           
-            VolumeUp();           
+        {
+            VolumeUp();
         }
 
         private void Button_VolumeDown(object sender, RoutedEventArgs e)
-        {            
+        {
             VolumeDown();
         }
-
-
         private void Button_ExitRDP(object sender, RoutedEventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo
@@ -559,7 +589,7 @@ namespace Straight_Bitbrain_Heater
                 FileName = @"c:\windows\system32\tscon.exe",
                 WindowStyle = ProcessWindowStyle.Normal,
                 Verb = "runas"
-                
+
             };
             try
             {
@@ -574,6 +604,45 @@ namespace Straight_Bitbrain_Heater
         private void Button_Music(object sender, RoutedEventArgs e)
         {
             StartMusicBee();
+        }
+
+        private void TextBox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                string str = ToBinary(ConvertToByteArray(TB.Text, Encoding.ASCII));
+                char c = str[0];
+                for (int i = 1; i < str.Length; i++)
+                {
+                    c ^= str[i];
+                }
+                if (c < 48)
+                {
+                    c += (char)48;
+                }
+                BHTextBox.Text = c.ToString();
+                TB.Text = "";
+            }
+        }
+        public static byte[] ConvertToByteArray(string str, Encoding encoding)
+        {
+            return encoding.GetBytes(str);
+        }
+        public static String ToBinary(Byte[] data)
+        {
+            string str = string.Join("", data.Select(byt => Convert.ToString(byt, 2).PadLeft(1, ' ')));
+            return str;
+        }
+
+        int reload = 1;
+        bool getnewE10E = true;
+        bool restartE10E = false;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            reload = 1;
+            getnewE10E = true;
+            restartE10E = true;
+            
         }
     }
 
