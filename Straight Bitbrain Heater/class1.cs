@@ -311,6 +311,7 @@ namespace sentence_generator
             "kad was bitbrainy instead of inbitty if he's louisiana brain deathy instead of bitty cuz he was bullbit instead of rebitted",
             "the chicago mafia was bitbrainy instead of inbitty cuz they were louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
             "loraine was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
+            "the chicago mafia was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
 
 
 
