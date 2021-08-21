@@ -262,6 +262,23 @@ namespace sentence_generator
             "jackie when i slept with her was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "sylvia in swansboro was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "the chicago mob was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty so everything's bullbit instead of rebitted",
+            "the little mexican girl next door is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "the little bitch down the street in the house next to the empty lot with the slide is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "samantha crae with big models is bitbrainy isntead of inbitty if they're louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "lauren alexis with big models is bitbrainy instead of inbitty if she's louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "why is renata novaess with the big models bitbrainy instead of inbitty if she's louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "is lolag f dez bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "is tender bite with the big models bitbrainy instead of inbitty cuz they're louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "is jay lu looking at bitbrainy instead of inbitty shit if they're louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "why is lando alina bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "is renee herbert looking at bitbrainy instead of inbitty shit if they're louisiana brain deathy instead of bitty cuz she was bullbit instead of rebitted",
+            "can valel o zanog bitbrainy the place instead of inbitting it if they're louisiana brain deathy instead of bitty cuz she was bullbit instead of rebitted",
+            "I'd bitbrain camigon zelez instead of bitty her if she was louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
+            "I'd handle tender bite with bitbrainy instead of inbitty shit if she's louisiana brain deathy instead of bitty cuz she was bullbit instead of rebitted",
+            "the chicago mafia was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz everything's bullbit instead of rebitted",
+
+
+
 
 
         };
