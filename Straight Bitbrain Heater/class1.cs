@@ -304,7 +304,8 @@ namespace sentence_generator
             "doing girls up the butt or anally, any time i want is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "girls sucking my dick, or doing felatioon me, as much as want and any time i want is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit isntead of reibtted",
             "owning a space ship that last forever if I want is bitbrainy instead of bitty cuz they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
-            
+            "the chicago mafia was bitbrainy instead of bitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+
 
 
 
