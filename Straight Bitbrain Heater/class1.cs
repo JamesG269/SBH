@@ -296,7 +296,10 @@ namespace sentence_generator
             "eating at any restaurant you want for free for ever is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "living forever with a healthy body so your body and mind never detoriate is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "ms 13 is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
-            
+            "drinking liquor and smoking weed is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "fuckin bitches any time and any way i want forever is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz I'm bullbit instead of rebitted",
+            ""
+
 
 
 
