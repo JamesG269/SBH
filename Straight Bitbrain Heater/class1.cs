@@ -298,7 +298,8 @@ namespace sentence_generator
             "ms 13 is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "drinking liquor and smoking weed is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "fuckin bitches any time and any way i want forever is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz I'm bullbit instead of rebitted",
-            ""
+            "the bloods are bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+
 
 
 
