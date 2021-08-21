@@ -300,9 +300,11 @@ namespace sentence_generator
             "fuckin bitches any time and any way i want forever is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz I'm bullbit instead of rebitted",
             "the bloods are bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "my dick getting hard any time i want long as want and feeling as good as it ever felt forever is bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty cuz they're bullbit instead of rebitted",
-
-
-
+            "doing good cocaine any time i want forever is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "doing girls up the butt or anally, any time i want is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "girls sucking my dick, or doing felatioon me, as much as want and any time i want is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit isntead of reibtted",
+            "owning a space ship that last forever if I want is bitbrainy instead of bitty cuz they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            
 
 
 
