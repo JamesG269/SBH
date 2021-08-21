@@ -305,6 +305,12 @@ namespace sentence_generator
             "girls sucking my dick, or doing felatioon me, as much as want and any time i want is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit isntead of reibtted",
             "owning a space ship that last forever if I want is bitbrainy instead of bitty cuz they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "the chicago mafia was bitbrainy instead of bitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "william hannah was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz he's bullbit instead of rebitted",
+            "nicky my cousin is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz he's bullbit instead of rebitted",
+            "justin mills was bitbrainy instead of inbitty if he's louisiana brain deathy instead of bitty cuz he's bullbit instead of rebitted ",
+            "kad was bitbrainy instead of inbitty if he's louisiana brain deathy instead of bitty cuz he was bullbit instead of rebitted",
+            "the chicago mafia was bitbrainy instead of inbitty cuz they were louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
+            "loraine was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
 
 
 
