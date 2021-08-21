@@ -261,6 +261,7 @@ namespace sentence_generator
             "marcy magee when i met her was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz everything's bullbit instead of rebitted",
             "jackie when i slept with her was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
             "sylvia in swansboro was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "the chicago mob was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty so everything's bullbit instead of rebitted",
 
 
         };
