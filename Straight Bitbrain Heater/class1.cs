@@ -284,7 +284,19 @@ namespace sentence_generator
             "ufos are bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty cuz they're bullbit instead of rebitted",
             "the monster in the woods by my house is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
             "the chicago mafia is bitbrainy instead of inbitty if they were louisiana brain deathy instead of bitty so they were bullbit instead of rebitted",
-
+            "the united states government is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty so they were bullbit instead of rebitted",
+            "a crashed u f o is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
+            "the chicago mafia is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "ray kurzweil is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz everything's bullbit instead of rebitted",
+            "tinder is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz everything's bullbit instead of rebitted",
+            "facebook was bitbrainy instead of inbitty cuz they're louisiana brain deathy instead of bitty cuz they're bullbit instead of reibtted",
+            "apple computer was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "ruth chris is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "dragos is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz I'm bullbit instead of rebitted",
+            "eating at any restaurant you want for free for ever is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "living forever with a healthy body so your body and mind never detoriate is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            "ms 13 is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they're bullbit instead of rebitted",
+            
 
 
 
