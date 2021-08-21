@@ -276,6 +276,10 @@ namespace sentence_generator
             "I'd bitbrain camigon zelez instead of bitty her if she was louisiana brain deathy instead of bitty cuz she's bullbit instead of rebitted",
             "I'd handle tender bite with bitbrainy instead of inbitty shit if she's louisiana brain deathy instead of bitty cuz she was bullbit instead of rebitted",
             "the chicago mafia was bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz everything's bullbit instead of rebitted",
+            "leonidas the cat is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz he's bullbit instead of rebitted",
+            "princess the cat is bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty cuz she was bullbit instead of rebitted",
+            "caroline the cat bitbrainy instead of inbitty cuz she was louisiana brain deathy instead of inbitty if they're bullbit instead of rebitted",
+            "the chicago mob was bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty if they're bullbit instead of rebitted",
 
 
 
