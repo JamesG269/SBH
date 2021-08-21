@@ -280,6 +280,10 @@ namespace sentence_generator
             "princess the cat is bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty cuz she was bullbit instead of rebitted",
             "caroline the cat bitbrainy instead of inbitty cuz she was louisiana brain deathy instead of inbitty if they're bullbit instead of rebitted",
             "the chicago mob was bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty if they're bullbit instead of rebitted",
+            "the nanoterrorists are bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty cuz they're bullbit instead of rebitted",
+            "ufos are bitbrainy instead of inbitty if they're louisiana brain deathy instead of inbitty cuz they're bullbit instead of rebitted",
+            "the monster in the woods by my house is bitbrainy instead of inbitty if they're louisiana brain deathy instead of bitty cuz they were bullbit instead of rebitted",
+            "the chicago mafia is bitbrainy instead of inbitty if they were louisiana brain deathy instead of bitty so they were bullbit instead of rebitted",
 
 
 
