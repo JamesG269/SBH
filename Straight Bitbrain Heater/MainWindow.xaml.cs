@@ -83,8 +83,10 @@ namespace Straight_Bitbrain_Heater
         System.Windows.Forms.ContextMenu contextMenu1 = new System.Windows.Forms.ContextMenu();
         public Boolean windowhidden = false;
         private Boolean needToSave = false;
+        string[] dict;
         //public string PathToSlideShow;
         [StructLayout(LayoutKind.Sequential)]
+        
         internal struct Win32Point
         {
             public Int32 X;
@@ -99,6 +101,7 @@ namespace Straight_Bitbrain_Heater
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
             await Task.Run(() => InitLouisianaBrainDeath());
+            WindowState = WindowState.Minimized;
             VolumeSlider.Value = Volume;
             RateSlider.Value = Rate;
             VolumeLabel.Content = "Volume: " + Volume.ToString();
@@ -117,12 +120,18 @@ namespace Straight_Bitbrain_Heater
             ni.Text = "Straight Bitbrain Heater";
 
             BinaryLabel.Foreground = System.Windows.Media.Brushes.Green;
-            Topmost = true;
+            //Topmost = true;
             start_E10E();
+            dict = File.ReadAllLines(@"C:\Users\jgentile\Documents\PowerShell\dict3.txt");
+            
+
+
             enableSave = true;
             FarThought.SpeakCompleted += FarThought_SpeakCompleted;
             adjustVolume = false;
             await Task.Factory.StartNew(() => play_E10E(), TaskCreationOptions.LongRunning);
+            
+            
         }
 
         private void InitLouisianaBrainDeath()
@@ -232,8 +241,10 @@ namespace Straight_Bitbrain_Heater
             int tempReload = reload;
             int pscount = 0;
             string E10Ereturn = genE10E(out pscount);
+            dict.Append(nanoshit3.get_far_thought_list());
+            dict.Append(nanoshit3.get_bit_modify());
             while (true)
-            {
+            {               
                 while (PlayingE10E == false)
                 {                    
                     await Task.Delay(100);                    
@@ -248,15 +259,37 @@ namespace Straight_Bitbrain_Heater
                 {
                     getnewE10E = false;
                     E10Ereturn = genE10E(out pscount);
-                }                
-                E10Ereturn = nanoshit3.RemoveExtraWhitespace(E10Ereturn);
+                }
+                //E10Ereturn = nanoshit3.RemoveExtraWhitespace(E10Ereturn);
+                int i = nanoshit3.RandomNumber.Rand4(5)+5;
+                //E10Ereturn = "";
+               /* while (i > 0)
+                {
+                    if (nanoshit3.RandomNumber.Rand4(2) == 0)
+                    {
+                        E10Ereturn += nanoshit3.get_far_thought_list() + " ";
+                    }
+                    {
+                        E10Ereturn += nanoshit3.get_bit_modify() + " ";
+                    }
+                    i--;
+                }*/
+                i = nanoshit3.RandomNumber.Rand4(2);
+                if (i == 0)
+                {
+                    //E10Ereturn += nanoshit3.get_far_thought_list();
+                }
+                else
+                {
+                    //E10Ereturn += nanoshit3.get_bit_modify();
+                }
                 System.Windows.Application.Current.Dispatcher.Invoke(new Action(() =>
                 {
                     if (BHTextBox.Text.Length > 10000)
                     {
                         BHTextBox.Text = BHTextBox.Text.Substring(BHTextBox.Text.Length - 10000);
                     }
-                    BHTextBox.AppendText(E10Ereturn + Environment.NewLine + Environment.NewLine + "reload = " + tempReload.ToString() + Environment.NewLine + pscount.ToString() + " " + "PureSenseFile Count" + Environment.NewLine);
+                    BHTextBox.AppendText(E10Ereturn + Environment.NewLine + Environment.NewLine + "reload = " + tempReload.ToString() + Environment.NewLine + pscount.ToString() + " " + "PureSenseFile Count" + Environment.NewLine + Environment.NewLine);
                     BHTextBox.ScrollToEnd();
 
                     BinaryLabelWorker(E10Ereturn);
@@ -265,38 +298,47 @@ namespace Straight_Bitbrain_Heater
                 {
                     E10Ereturn = E10Ereturn.Substring(0, E10Ereturn.IndexOf("@"));
                 }
-
+                //E10Ereturn = ToBinary(ConvertToByteArray(E10Ereturn, Encoding.ASCII));
+                //E10Ereturn = "700 megabytes style";
                 //int t = text2speechspeak(E10Ereturn, Volume, -10);
                 FarThought.SelectVoiceByHints(VoiceGender.Female);
                 FarThought.Volume = Volume;
                 FarThought.Rate = Rate;
                 speaking = true;
+                //E10Ereturn = "una cero una cero una cero una cero";
+                //E10Ereturn = "{eastside jail bitch,buy a house for pussy sucker, fights like bitch} has a bit in his head, and james is twice the effect without the meaning";
+
+                //E10Ereturn = nanoshit3.replace_functions(E10Ereturn);               
                 FarThought.SpeakAsync(E10Ereturn);
                 string newE10E = "";
-                int i = 1000;
+                i = 1;
+                
                 while (speaking)
                 {
                     if (adjustVolume || !PlayingE10E || restartE10E)                    
                     {                        
-                        FarThought.SpeakAsyncCancelAll();
+                        //FarThought.SpeakAsyncCancelAll();
                         restartE10E = false;
-                        speaking = false;
+                        speaking = false;                        
                         break;
                     }
                     if (i > 0)
                     {
-                        newE10E += genE10E(out pscount) + " E one point zero E period ";
+                        //newE10E = genE10E(out pscount); //+ " Pure Sense End ";
                         i--;
                     }
-                    await Task.Delay(100);
+                    await Task.Delay(400);
                 }
-                E10Ereturn = newE10E;
+                int r;
+                E10Ereturn = genE10E(out pscount);
+                //E10Ereturn = newE10E;
                 tempReload = reload;
                 SaveShit();
                 if (myProcess.WorkingSet64 > 500000000)
                 {
                     System.Windows.Forms.Application.Restart();
                 }
+                Thread.Sleep(2000);
             }
         }
         public string genE10E(out int pscount)
