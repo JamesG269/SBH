@@ -36,7 +36,6 @@ namespace Straight_Bitbrain_Heater
                 }
             }
         }
-
         private void ShowOnDesktop()
         {
             this.Show();
@@ -44,7 +43,6 @@ namespace Straight_Bitbrain_Heater
             Activate();
             windowhidden = false;
         }
-
         public void ExitNI(Object sender, System.EventArgs e)
         {
             Close();
@@ -53,17 +51,17 @@ namespace Straight_Bitbrain_Heater
         {
             StartE10E();
         }
-        public void StopNI(Object sender, System.EventArgs e)
+        public async void StopNI(Object sender, System.EventArgs e)
         {
-            StopE10E();
+            await StopE10E();
         }
         private void Start_Click(Object sender, RoutedEventArgs e)
         {
             StartE10E();
         }
-        private void StopButton_Click(object sender, RoutedEventArgs e)
+        private async void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            StopE10E();
+            await StopE10E();
         }
         public async Task<string> GetTB()
         {
@@ -151,6 +149,33 @@ namespace Straight_Bitbrain_Heater
             this.Title = "Rate changed.";
             adjustVolume = true;
         }
-        
+        public async void TextBox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter)
+            {
+                return;
+            }
+            E10ESentence = TB.Text;
+            await StopE10E();
+            PlayingE10ESentence = true;
+            PlayingE10E = true;
+        }
+        private void contextAndNotifyMenuInit()
+        {
+            contextMenu1.MenuItems.Add(0, new System.Windows.Forms.MenuItem("Play", new System.EventHandler(PlayNI)));
+            contextMenu1.MenuItems.Add(1, new System.Windows.Forms.MenuItem("Stop", new System.EventHandler(StopNI)));
+            contextMenu1.MenuItems.Add(2, new System.Windows.Forms.MenuItem("Exit", new System.EventHandler(ExitNI)));
+
+            ni.ContextMenu = contextMenu1;
+            ni.Icon = new System.Drawing.Icon(@"c:\users\" + Environment.UserName + @"\source\repos\SBH\Straight Bitbrain Heater\cd.ico");
+            ni.MouseUp += new System.Windows.Forms.MouseEventHandler(MouseUpNI);
+            ni.Visible = true;
+            ni.Text = "Straight Bitbrain Heater";
+        }
+        bool Reload = false;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Reload = true;
+        }
     }
 }

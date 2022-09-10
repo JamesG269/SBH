@@ -27,10 +27,14 @@ namespace Straight_Bitbrain_Heater
             PlayingE10ESentence = false;
             PlayingE10E = true;
         }
-        public void StopE10E()
+        public async Task StopE10E()
         {
             PlayingE10E = false;
             PlayingE10ESentence = false;
+            while (finishedPlayingE10E == false)
+            {
+                await Task.Delay(10);
+            }
         }
         public async Task E10EBackGroundThread()
         {
@@ -42,6 +46,7 @@ namespace Straight_Bitbrain_Heater
                     await Task.Delay(100);
                     continue;
                 }
+                finishedPlayingE10E = false;
                 while (PlayingE10E == true)
                 {
                     if (Reload)
@@ -67,6 +72,7 @@ namespace Straight_Bitbrain_Heater
                     await play_E10Eworker(E10Ereturn);
                     await Task.Delay(100);
                 }
+                finishedPlayingE10E = true;
                 MakingWav = 0;
                 await Task.Delay(100);
             }
@@ -94,12 +100,21 @@ namespace Straight_Bitbrain_Heater
                 System.Windows.Forms.Application.Restart();
             }
         }
+        public bool finishedPlayingE10E = false;
+        public bool speaking = false;        
         public async Task SpeakE10E(string E10Ereturn)
         {
             FarThought.Volume = Volume;
             FarThought.Rate = Rate;
             speaking = true;
-
+            /*int t = RandomNumber.Rand4(11);
+            t = t - 5;
+            FarThought.Rate = t;
+            await RateLabel.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                RateLabel.Content = "Rate: " + t.ToString();
+            }));
+            */
             FarThought.SpeakAsync(E10Ereturn);
 
             while (speaking)
@@ -123,5 +138,10 @@ namespace Straight_Bitbrain_Heater
                 await Task.Delay(100);
             }
         }
+        public void FarThought_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+        {
+            speaking = false;
+        }
+
     }
 }

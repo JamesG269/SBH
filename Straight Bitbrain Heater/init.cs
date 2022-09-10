@@ -92,8 +92,17 @@ namespace Straight_Bitbrain_Heater
             EventWaitHandle evt = new EventWaitHandle(false, EventResetMode.ManualReset, evtName);
             evt.WaitOne();
             evt.Close();
-            StopE10E();
+            await StopE10E();
             await this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate () { Close(); }));
+        }
+        private void initUI(int i)
+        {
+            VolumeSlider.Value = Volume;
+            RateSlider.Value = Rate;
+            VolumeLabel.Content = "Volume: " + Volume.ToString();
+            RateLabel.Content = "Rate: " + Rate.ToString();
+            this.Title = "Straight Bitbrain Heater by James Gentile version: " + GetPublishedVersion() + " Number " + i.ToString();
+            BinaryLabel.Foreground = System.Windows.Media.Brushes.Green;
         }
     }
 }

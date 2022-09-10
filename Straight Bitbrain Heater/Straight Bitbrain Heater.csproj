@@ -204,6 +204,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Close.cs" />
     <Compile Include="init.cs" />
     <Compile Include="MakeWav.cs" />
     <Compile Include="settings.cs" />

@@ -24,7 +24,7 @@ namespace Straight_Bitbrain_Heater
         public int MakingWav = 0;
         private async void MakeWavButton(object sender, RoutedEventArgs e)
         {
-            StopE10E();
+            await StopE10E();
             while (Interlocked.Exchange(ref MakingWav, 1) == 1)
             {
                 await Task.Delay(10);

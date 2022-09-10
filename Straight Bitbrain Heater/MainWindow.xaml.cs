@@ -40,79 +40,10 @@ namespace Straight_Bitbrain_Heater
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
             int i = await Task.Run(() => InitLouisianaBrainDeath());
-
-            VolumeSlider.Value = Volume;
-            RateSlider.Value = Rate;
-            VolumeLabel.Content = "Volume: " + Volume.ToString();
-            RateLabel.Content = "Rate: " + Rate.ToString();
-
-            this.Title = "Straight Bitbrain Heater by James Gentile version: " + GetPublishedVersion() + " Number " + i.ToString();
-
-            contextMenu1.MenuItems.Add(0, new System.Windows.Forms.MenuItem("Play", new System.EventHandler(PlayNI)));
-            contextMenu1.MenuItems.Add(1, new System.Windows.Forms.MenuItem("Stop", new System.EventHandler(StopNI)));
-            contextMenu1.MenuItems.Add(2, new System.Windows.Forms.MenuItem("Exit", new System.EventHandler(ExitNI)));
-
-            ni.ContextMenu = contextMenu1;
-            ni.Icon = new System.Drawing.Icon(@"c:\users\" + Environment.UserName + @"\source\repos\SBH\Straight Bitbrain Heater\cd.ico");
-
-            ni.MouseUp += new System.Windows.Forms.MouseEventHandler(MouseUpNI);
-            ni.Visible = true;
-            ni.Text = "Straight Bitbrain Heater";
-
-            BinaryLabel.Foreground = System.Windows.Media.Brushes.Green;
+            initUI(i);
+            contextAndNotifyMenuInit();
             PlayingE10E = true;
             await Task.Factory.StartNew(() => E10EBackGroundThread(), TaskCreationOptions.LongRunning);
-            WindowState = WindowState.Minimized;
-        }
-        
-        public bool finishedPlayingE10E = false;
-        public bool speaking = false;
-        public void FarThought_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
-        {
-            speaking = false;
-        }
-
-        public void TextBox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key != System.Windows.Input.Key.Enter)
-            {
-                return;
-            }
-            E10ESentence = TB.Text;            
-            StopE10E();
-            PlayingE10ESentence = true;
-            PlayingE10E = true;
-        }
-
-        private async void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            await closeFunctions();
-        }
-        
-        private async void Window_Closed(object sender, EventArgs e)
-        {
-            await closeFunctions();
-        }
-        private async Task closeFunctions()
-        {
-            StopE10E();
-            while (MakingWav == 1)
-            {
-                await Task.Delay(10);
-            }
-            if (ni != null)
-            {
-                ni.Dispose();
-                ni = null;
-            }            
-            StoreSettings();            
-        }
-
-        bool Reload = false;        
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {            
-            Reload = true;                        
-        }
+        }        
     }
-
 }
