@@ -49,17 +49,13 @@ namespace Straight_Bitbrain_Heater
             {
                 PlayingE10E = true;
                 string E10Ereturn = "";
-                string[] tempE10E = new string[1];
-                foreach (var t in SBHTemplate)
+                int i = 0;
+                while (i < 100)
                 {
-                    tempE10E[0] = t;
-                    int i = 0;
-                    while (i < 10)
-                    {
-                        i++;
-                        E10Ereturn += start3(tempE10E);
-                    }
+                    i++;
+                    E10Ereturn += start3(SBHTemplate);
                 }
+
                 SpeechStreamFileMode SpFileMode = SpeechStreamFileMode.SSFMCreateForWrite;
                 SpFileStream SpFileStream = new SpFileStream();
                 SpFileStream.Open(sfd.FileName, SpFileMode, false);

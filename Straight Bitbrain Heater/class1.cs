@@ -91,14 +91,14 @@ namespace Straight_Bitbrain_Heater
             "twice the effect without the meaning",            
             "green pyramids","shadow coincidence","evacuate green line",
             "things not things","long way out","james stopped reality","james is smart and hot",
-            "james is green even when he's red","269 Chess A Dee","shadow idea","james started his own shadow idea","green","scorpion","dracula","colored candy","shadow service incorporated","far thought",
+            "green even when he's red","269 Chess A Dee","shadow idea","green","scorpion","dracula","colored candy","shadow service incorporated","far thought",
             "pure sense","perfect thought disorder","black when black","[get_far_thought] map maker"
         };
         public static string[] far_thought_lists = new string[] {"non sense non sense sense is your ass killeds", "E1 point 0 Ees", "twice the effect with out the meanings","far thoughts",
             "pure senses","perfect thought disorders",
             "you cause yous","not finished i have to laughs","green pyramids","shadow coincidences","evacuate green lines","I know the effect with out knowing the meanings",
             "things not things","long way outs","james stopped realities","james is smart and hots",
-            "james is green even when he's reds","269 Chess A Dees","shadow ideas","james started his own shadow ideas","greens","scorpions","draculas","colored candies","shadow service incorporateds",
+            "green even when he's reds","269 Chess A Dees","shadow ideas","greens","scorpions","draculas","colored candies","shadow service incorporateds",
             "rockys","daniel in minnesota's","ricky's","jackie's","amanda moshier's","marcy's",
 
         };
@@ -106,7 +106,7 @@ namespace Straight_Bitbrain_Heater
             "pure sensed","perfect thought disordered",
             "you cause you'ed","not finished i have to laughed","green pyramidsed","shadow coincidenced","evacuate green lined","I know the effect with out knowing the meaninged",
             "things not thingsed","long way outed","james stopped realitied","james is smart and hotted",
-            "james is green even when he's redded","269 Chess A Deed","shadow ideaed","james started his own shadow ideaed","green","scorpioned","draculad","colored candied","shadow service incorporated",
+            "green even when he's redded","269 Chess A Deed","shadow ideaed","green","scorpioned","draculad","colored candied","shadow service incorporated",
             "rocky'ed","daniel in minnesota'ed","rickied","jackie'd","amanda moshiered","marcied",
         };
         public static string[] far_thought_listing = new string[] {"non sense non sense sense is your ass killeding", "E1 point 0 Eeing", "twice the effect with out the meaninging","far thoughting",
@@ -115,14 +115,14 @@ namespace Straight_Bitbrain_Heater
             "pure sensing","perfect thought disordering",
             "you cause youing","not finished i have to laughing","green pyramidsing","shadow coincidencing","evacuate green lining","I know the effect with out knowing the meaninging",
             "things not thingsing","long way outing","james stopped realitying","james is smart and hotting",
-            "james is green even when he's redding","269 Chess A Deeing","shadow ideaing","james started his own shadow ideaing","greening","scorpioning","draculaing","colored candying","shadow service incorporateding",
+            "green even when he's redding","269 Chess A Deeing","shadow ideaing","greening","scorpioning","draculaing","colored candying","shadow service incorporateding",
             "rockying","daniel in minnesota in","ricky's","jackie in","amanda moshier in","marcy in",        };
         public static string[] far_thought_listy = new string[] {
             "non sense non sense sense is your ass killedy", "E1 point 0 Ee e", "twice the effect with out the meaningy","far thoughty",
             "pure sense e","perfect thought disordery",
             "you cause you-e","not finished i have to laughy","green pyramidsy","shadow coincidency","evacuate green liny","I know the effect with out knowing the meaningy",
             "things not thingsy","long way outy","james stopped reality e","james is smart and hotty",
-            "james is green even when he's reddy","269 Chess A Dee e","shadow idea e","james started his own shadow idea e","greeny","scorpiony","dracula e","colored candy e","shadow service incorporatede",
+            "green even when he's reddy","269 Chess A Dee e","shadow idea e","greeny","scorpiony","dracula e","colored candy e","shadow service incorporatede",
             "rocky e","daniel in minnesota e","ricky e","jackie e","amanda moshier e","marcy e",
         };
 
@@ -530,7 +530,7 @@ namespace Straight_Bitbrain_Heater
             "bravo's racist fistsing","european walking conspiracy-ing","redding","oneing","zeroing","leafing","bitting"};
 
 
-        public static string[] nano_modifies = new string[] { "Gold Pyramids","G. Therms", "E one point zero ees","aspercreams","james is twice the effect with out the meanings","twice the effect with out the meaning","shadow idea",
+        public static string[] nano_modifies = new string[] { "Gold Pyramids","G. Therms", "E one point zero ees","aspercreams","twice the effect with out the meaning","shadow idea",
                 "pure senses","perfect thought disorders","far thoughts","shadow ideas","green pyramidses","you cause yous","shadow coincidences",
                 "not finished i have to laughs","bit brains","louisiana brain deaths","seven hundred megabytes","submarines","one bit per seconds","bit brain nano terrorists",
                 "no mother fuckers","no ways","2 6 9 chess A dees","evacuate green lines","rebits","bits","leafs",
@@ -539,7 +539,7 @@ namespace Straight_Bitbrain_Heater
             "green even when he's reds","bravo's racist fists","european walking conspiracies","bossies","reds","greens","ones","zeroes","who are you's","black when blacks","bitbrain heaters",
             
             };
-        public static string[] nano_modified = new string[] {  "Gold Pyramided","G. Thermed","E one point zero eed","aspercreamed","james is twice the effect with out the meaninged","twice the effect with out the meaninged","shadow ideaed",
+        public static string[] nano_modified = new string[] {  "Gold Pyramided","G. Thermed","E one point zero eed","aspercreamed","twice the effect with out the meaninged","shadow ideaed",
                 "pure sensed","perfect thought disordered","far thoughted","shadow ideaed","green pyramidsed","you cause you'ed","shadow coincidenced",
                 "not finished i have to laughed","bit brained","louisiana brain deathed","seven hundred megabyted","submarined","one bit per seconded","bit brain nano terroristed",
                 "no mother fuckered","no wayed","2 6 9 chess A deed","evacuate green lined","rebitted","bitted","leafed",
@@ -548,7 +548,7 @@ namespace Straight_Bitbrain_Heater
             "green even when he's reded","bravo's racist fisted","european walking conspiracied","redded","greened","oned","zeroed","who are you'd","black when blacked","bitbrain heatered"
             };
         public static string[] nano_modify = new string[] { "Gold Pyramid","G. Therm","bit brain killer","E1 point 0E","nonsense nonsense sense is your ass killed","aspercream",
-                "james is twice the effect with out the meaning","twice the effect with out the meaning","i know the effect with out knowing the meaning",
+                "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
                 "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
                 "no mother fucker","no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leafs",
@@ -556,7 +556,7 @@ namespace Straight_Bitbrain_Heater
             "european walking conspiracy","red","green","bitbrain heater"};
 
         public static string[] nano_modify_y = new string[] { "Gold Pyramid","G. Therm","bit brain killer","E1 point 0E","non sense non sense sense is your ass killed","aspercream",
-                "james is twice the effect with out the meaning","twice the effect with out the meaning","i know the effect with out knowing the meaning",
+                "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
                 "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabyte","submarine","one bit per second","bit brain nano terrorist",
                 "no mother fucker","no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leaf",
@@ -564,7 +564,7 @@ namespace Straight_Bitbrain_Heater
             "european walking conspiracy","red","green","one","zero","black when black" };
 
         public static string[] nano_modifying = new string[] { "Gold Pyramiding","G. Therming","bit brain killering","E one point zero E","non sense non sense sense is your ass killed-ing","aspercreaming",
-                "james is twice the effect with out the meaning","twice the effect with out the meaning","i know the effect with out knowing the meaning",
+                "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sensing","perfect thought disordering","far thoughting","shadow ideaing","green pyramidsing","you cause you","shadow coincidencing",
                 "not finished i have to laughing","bit braining","louisiana brain deathing","seven hundred megabyting","submarining","one bit per seconding","bit brain nano terroristing",
                 "no mother fuckering","no waying","2 6 9 chess A deeing","evacuate green lining","rebitting","bitting","leafing",
