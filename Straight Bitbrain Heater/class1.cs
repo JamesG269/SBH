@@ -300,7 +300,7 @@ namespace Straight_Bitbrain_Heater
         "nano dungeon naut","basket ball player","football player","alien","monster","stranger","demon","angel","prophet","clairvoyant","psychic","detective","mercenary","ghost","nomad","assassin","emperor",
         "submarine captain","wizard","warlock","magician","necromancer","sorcerer","dragon","troll","seventh son of a seventh son","mystic","incubus","cave man",
         "barbarian","starship captain","comedian","politician","judge","journalist","warrior","godzilla","adventurer","prince of {the [get_nanodungeon_of_doom]|darkness}","time traveler","little green man","gray","revolutionary","knight",
-        "duke","spartan warrior","prisoner","guard","inmate","driver","white knight","pilgrim","private","davy jones","darth vader","genie","hero","pirate","ninja","sniper","dark lord","god","rebel","privateer","buccaneer",
+        "duke","spartan warrior","prisoner","guard","inmate","driver","white knight","pilgrim","private","davy jones","darth vader","hero","pirate","ninja","sniper","dark lord","god","rebel","privateer","buccaneer",
         "daredevil","swashbuckler","baron","commander","don","overlord","ruler","seer","shaman","secret agent","cyborg","robot","terminator","boss player","shot caller","thug","rap star","ghetto star","mack","mack daddy","Lo Pan","storm",
         "thunder","crom","juggalo","nano dungeon of doom star","centaur","vampire","were wolf","were beast","were bear","monk","shaolin monk","general","dragon","vampire","god","titan","demon",
 
@@ -343,7 +343,7 @@ namespace Straight_Bitbrain_Heater
                 "mercenary's","ghost's","nomad's","assassin's","emperor's","dictator's",
         "submarine captain's","wizard's","warlock's","magician's","necromancer's","sorcerer's","dragon's","troll's","seventh son of a seventh son's","mystic's","incubus'","freddy krueger's","jason voorhees's","king kong's","cowboy's",
                 "cave man's","barbarian's","starship captain's","comedian's","politician's","judge's","president's","journalist's","warrior's","godzilla's","adventurer's","prince of darkness'","time traveler's","little green man's","gray's","revolutionary's","knight's",
-        "duke's","spartan warrior's","prisoner's","guard's","inmate's","driver's","genie's","hero's","boss player's","shot caller's","thug's","rap star's","ghetto star's","mack's","mack daddy's","crom's","juggalo's",
+        "duke's","spartan warrior's","prisoner's","guard's","inmate's","driver's","hero's","boss player's","shot caller's","thug's","rap star's","ghetto star's","mack's","mack daddy's","crom's","juggalo's",
         "nano dungeon of doom's star's","centaur's"
         };
             set_aspercream = true;
@@ -397,7 +397,7 @@ namespace Straight_Bitbrain_Heater
         "princes","kings","generals","admirals","gentlemen","Nanopol officers","F.B.I. Agents","C.I.A. agents","N.S.A. agents","microsoft employees","jedi knights","sith lords","hustlers","star pirates","astronauts",
         "nano dungeon nauts","basket ball players","football players","aliens","monsters","strangers","demons","angels","prophets","clairvoyants","psychics","detectives","mercenaries","ghosts","nomads","assassins","emperors","popes",
         "submarine captains","wizards","warlocks","magicians","necromancers","sorcerers","dragons","trolls","seventh sons of seventh sons","mystics","cowboys","cave men","barbarians","starship captains","comedians","politicians",
-                "judges","journalists","warriors","adventurers","time travelers","little green men","grays","revolutionaries","knights","dukes","spartan warriors","prisoners","guards","inmates","drivers","grim reapers","genies","heroes",
+                "judges","journalists","warriors","adventurers","time travelers","little green men","grays","revolutionaries","knights","dukes","spartan warriors","prisoners","guards","inmates","drivers","grim reapers","heroes",
                 "robots","cyborgs","terminators","boss players","thugs","juggalos","nano dungeon of doom stars"
 
         };
@@ -507,26 +507,26 @@ namespace Straight_Bitbrain_Heater
         public static string[] bit_modify = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain",
                 "no mother fucker","no way","rebitted","bit","leaf","who are you","now what is it",
             "bravo's racist fists","seven hundred megabytes","submarine","one bit per second","bitbrain",
-        "no mother fucker","no way","rebitted","bit","leaf","who are you",
+        "no mother fucker","no way","rebitted","bit","leaf","who are you","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
         "bravo's racist fists"};
             
 
         public static string[] bit_modify_y = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
-                "no mother fucker","no way","rebitted","nano dungeon","bit","leaf","who are you",
+                "no mother fucker","no way","rebitted","nano dungeon","bit","leaf","who are you","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
             "bravo's racist fists","european walking conspiracy","red","one","zero","bullbit","rebitted"};
 
 
         public static string[] bit_modifies = new string[] { "seven hundred megabytes","submarines","one bit per seconds","bit brain nano terrorists",
-                "no mother fuckers","no ways","rebits","nano dungeons","bits","leafs","who are you's",
+                "no mother fuckers","no ways","rebits","nano dungeons","bits","leafs","who are you's","rickies","sofa eaters","edwardos","kads","moses'","rockies","daniel in minnesotas",
             "bravo's racist fists","european walking conspiracies","reds","ones","zeroes"};
 
         public static string[] bit_modified = new string[] { "seven hundred megabyted","submarined","one bit per seconded","bit brain nano terroristed",
-                "no mother fuckered","no wayed","rebitted","nano dungeoned","bitted","leafed","who are you'd",
+                "no mother fuckered","no wayed","rebitted","nano dungeoned","bitted","leafed","who are you'd","rickied","sofa eatered","edwardod","kadded","mosesed","rockied","daniel in minnesoted",
             "bravo's racist fistsed","european walking conspired","redded","oned","zeroed"};
 
 
         public static string[] bit_modifying = new string[] { "seven hundred megabyting","submarining","one bit per seconding","bit brain nano terroristing",
-                "no mother fuckering","no waying","rebitting","nano dungeoning","bitting","who are you in",
+                "no mother fuckering","no waying","rebitting","nano dungeoning","bitting","who are you in","rickying","sofa eatering","edwardoing","kadding","mosesing","rockying","daniel in minnesoting",
             "bravo's racist fistsing","european walking conspiracy-ing","redding","oneing","zeroing","leafing","bitting"};
 
 
@@ -535,7 +535,7 @@ namespace Straight_Bitbrain_Heater
                 "not finished i have to laughs","bit brains","louisiana brain deaths","seven hundred megabytes","submarines","one bit per seconds","bit brain nano terrorists",
                 "no mother fuckers","no ways","2 6 9 chess A dees","evacuate green lines","rebits","bits","leafs",
             "things not things","long way outs","i know the effect with out knowing the meanings",
-            "far thoughts","bossys","talk is nices","end conversation bores mes","scorpions","draculas","you cause yous",
+            "far thoughts","bossys","talk is nices","end conversation bores mes","scorpions","draculas","you cause yous","rickies","sofa eaters","edwardos","kads","moses'","rockies","daniel in minnesotas",
             "green even when he's reds","bravo's racist fists","european walking conspiracies","bossies","reds","greens","ones","zeroes","who are you's","black when blacks","bitbrain heaters",
             
             };
@@ -543,7 +543,7 @@ namespace Straight_Bitbrain_Heater
                 "pure sensed","perfect thought disordered","far thoughted","shadow ideaed","green pyramidsed","you cause you'ed","shadow coincidenced",
                 "not finished i have to laughed","bit brained","louisiana brain deathed","seven hundred megabyted","submarined","one bit per seconded","bit brain nano terroristed",
                 "no mother fuckered","no wayed","2 6 9 chess A deed","evacuate green lined","rebitted","bitted","leafed",
-            "things not thingsed","long way outed","i know the effect with out knowing the meaninged",
+            "things not thingsed","long way outed","i know the effect with out knowing the meaninged","rickied","sofa eatered","edwardod","kadded","mosesed","rockied","daniel in minnesoted",
             "bossied","talk is niced","end conversation bores me'ed","scorpioned","dracula-ed",
             "green even when he's reded","bravo's racist fisted","european walking conspiracied","redded","greened","oned","zeroed","who are you'd","black when blacked","bitbrain heatered"
             };
@@ -552,15 +552,15 @@ namespace Straight_Bitbrain_Heater
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
                 "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
                 "no mother fucker","no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leafs",
-            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you","black when black",
+            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you","black when black","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
             "european walking conspiracy","red","green","bitbrain heater"};
 
         public static string[] nano_modify_y = new string[] { "Gold Pyramid","G. Therm","bit brain killer","E1 point 0E","non sense non sense sense is your ass killed","aspercream",
                 "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
-                "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabyte","submarine","one bit per second","bit brain nano terrorist",
+                "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
                 "no mother fucker","no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leaf",
-            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you",
+            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
             "european walking conspiracy","red","green","one","zero","black when black" };
 
         public static string[] nano_modifying = new string[] { "Gold Pyramiding","G. Therming","bit brain killering","E one point zero E","non sense non sense sense is your ass killed-ing","aspercreaming",
@@ -568,7 +568,7 @@ namespace Straight_Bitbrain_Heater
                 "pure sensing","perfect thought disordering","far thoughting","shadow ideaing","green pyramidsing","you cause you","shadow coincidencing",
                 "not finished i have to laughing","bit braining","louisiana brain deathing","seven hundred megabyting","submarining","one bit per seconding","bit brain nano terroristing",
                 "no mother fuckering","no waying","2 6 9 chess A deeing","evacuate green lining","rebitting","bitting","leafing",
-            "things not thingsing","long way outting","talk is nicing","scorpioning","dracula-ing","green even when he's redding","bravo's racist fistsing","who are you in","now what is itting",
+            "things not thingsing","long way outting","talk is nicing","scorpioning","dracula-ing","green even when he's redding","bravo's racist fistsing","who are you in","now what is itting","rickying","sofa eatering","edwardoing","kadding","mosesing","rockying","daniel in minnesoting",
             "european walking conspiracy-ing","bossying","redding","greening","oneing","zeroing"};
 
 
@@ -932,7 +932,7 @@ namespace Straight_Bitbrain_Heater
                 "reason","style","butterfly effect","justification","justice","camp fire","sentence","paragraph","verse","judgement","election","ring","watch","vision","television","{smart,tele} phone",
                 "computer","operating system","video game","song","box","hard drive","yoyo","bike","skate board","trampoline","pool table","washer","drier","refrigerator","cooler master nepton",
                 "car engine","truck engine","car horn","helicopter","airplane","air conditioner","air conditioning vent","heater","water heater","myth","superstition","elixir","exlixir of life","unicorn horn",
-                "magic lamp","genie","throne","dragon","troll","CD","sands of time","language","sword","spear","club","set of armor","bow","sling shot","symmetry","asymmetry","argument","conspiracy",
+                "magic lamp","throne","dragon","troll","CD","sands of time","language","sword","spear","club","set of armor","bow","sling shot","symmetry","asymmetry","argument","conspiracy",
                 "rule of the game","rule of engagement","speaker","computer speaker","A I","noise","electric chair","chair","sofa","soda","candy bar","quasar","black hole","star","nanobot","technological singularity",
                 "army","navy","platoon","harpie","mermaid","oath of loyalty","cyborg","robot","matrioshka brain","jupiter brain","answering machine message","answering machine","telephone booth","pager","nintendo","commodore 64",
                 "sega master system","heating vent","tv","ring of power","holy grail","lost ark","jewel","gem","diamond","hope diamond","worm hole",
