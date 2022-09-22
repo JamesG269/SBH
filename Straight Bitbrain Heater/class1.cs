@@ -525,7 +525,7 @@ namespace Straight_Bitbrain_Heater
             "bravo's racist fistsed","european walking conspired","redded","oned","zeroed"};
 
 
-        public static string[] bit_modifying = new string[] { "seven hundred megabyting","submarining","one bit per seconding","bit brain nano terroristing",
+        public static string[] bit_modifying = new string[] { "seven hundred megabyting","submarine in","one bit per seconding","bit brain nano terroristing",
                 "no mother fuckering","no waying","rebitting","nano dungeoning","bitting","who are you in","rickying","sofa eatering","edwardoing","kadding","mosesing","rockying","daniel in minnesoting",
             "bravo's racist fistsing","european walking conspiracy-ing","redding","oneing","zeroing","leafing","bitting"};
 
@@ -566,7 +566,7 @@ namespace Straight_Bitbrain_Heater
         public static string[] nano_modifying = new string[] { "Gold Pyramiding","G. Therming","bit brain killering","E one point zero E","non sense non sense sense is your ass killed-ing","aspercreaming",
                 "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sensing","perfect thought disordering","far thoughting","shadow ideaing","green pyramidsing","you cause you","shadow coincidencing",
-                "not finished i have to laughing","bit braining","louisiana brain deathing","seven hundred megabyting","submarining","one bit per seconding","bit brain nano terroristing",
+                "not finished i have to laughing","bit braining","louisiana brain deathing","seven hundred megabyting","submarine in","one bit per seconding","bit brain nano terroristing",
                 "no mother fuckering","no waying","2 6 9 chess A deeing","evacuate green lining","rebitting","bitting","leafing",
             "things not thingsing","long way outting","talk is nicing","scorpioning","dracula-ing","green even when he's redding","bravo's racist fistsing","who are you in","now what is itting","rickying","sofa eatering","edwardoing","kadding","mosesing","rockying","daniel in minnesoting",
             "european walking conspiracy-ing","bossying","redding","greening","oneing","zeroing"};

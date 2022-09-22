@@ -43,10 +43,10 @@ namespace Straight_Bitbrain_Heater
             {                
                 while (PlayingE10E == true)
                 {
-                    while (Interlocked.Exchange(ref MakingWav, 1) == 1)
+                    if (Interlocked.Exchange(ref MakingWav, 1) == 1)
                     {
-                        await Task.Delay(100);
-                        continue;
+                        PlayingE10E = false;
+                        break;
                     }
                     if (Reload)
                     {
@@ -56,17 +56,12 @@ namespace Straight_Bitbrain_Heater
                     i = 0;
                     string E10Ereturn = "";
                     if (PlayingE10ESentence)
-                    {
-                        E10Ereturn = E10ESentence;
-                        E10Ereturn = replace_func(E10Ereturn);
+                    {     
+                        E10Ereturn = replace_func(E10ESentence);
                     }
                     else
                     {
-                        while (i < 100)
-                        {
-                            i++;
-                            E10Ereturn += start3(SBHTemplate);
-                        }
+                        E10Ereturn += start3(SBHTemplate);
                     }
                     await play_E10Eworker(E10Ereturn);
                     await Task.Delay(100);

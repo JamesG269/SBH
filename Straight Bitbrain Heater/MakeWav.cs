@@ -61,8 +61,15 @@ namespace Straight_Bitbrain_Heater
                 SpFileStream.Open(sfd.FileName, SpFileMode, false);
                 SpVoice objSpeech = new SpVoice();
                 objSpeech.AudioOutputStream = SpFileStream;
-                SpObjectToken vc2 = objSpeech.GetVoices().Item(0);
-                objSpeech.Voice = vc2;
+                for (i = 0; i < objSpeech.GetVoices().Count; i++)
+                {
+                    string str = objSpeech.GetVoices().Item(i).Id;
+                    if (str.Contains("Demon"))
+                    {
+                        objSpeech.Voice = objSpeech.GetVoices().Item(i);
+                        break;
+                    }
+                }
                 objSpeech.Rate = Rate;
                 objSpeech.Volume = 100;
                 objSpeech.Speak(E10Ereturn, SpeechVoiceSpeakFlags.SVSFlagsAsync);
