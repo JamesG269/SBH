@@ -83,7 +83,7 @@ namespace Straight_Bitbrain_Heater
         {
             Reload = false;
             string pathToSBHTxt = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\documents\SBH.txt";
-            SBHTemplate = File.ReadAllLines(pathToSBHTxt).Where(x => !string.IsNullOrEmpty(x)).ToArray(); ;
+            SBHTemplate = File.ReadAllLines(pathToSBHTxt).Where(x => !string.IsNullOrEmpty(x)).ToArray();
         }
     }
 }

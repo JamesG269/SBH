@@ -29,9 +29,9 @@ namespace Straight_Bitbrain_Heater
             {
                 await Task.Delay(10);
             }
-            BHTextBox.Text = "Making .Wav ..." + Environment.NewLine;
+            BHTextBox.Text = "Making .Wav ...";
             await Task.Run(() => MakeWavWorker());
-            BHTextBox.Text = "Done Making .Wav" + Environment.NewLine;
+            BHTextBox.Text += "Done." + Environment.NewLine;
             MessageBox.Show("Done making .WAV", "Done Making .WAV", MessageBoxButton.OK, MessageBoxImage.Exclamation, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
             MakingWav = 0;
         }

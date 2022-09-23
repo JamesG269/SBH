@@ -38,7 +38,6 @@ namespace Straight_Bitbrain_Heater
         }
         public async Task E10EBackGroundThread()
         {
-            int i;
             while (true)
             {                
                 while (PlayingE10E == true)
@@ -53,7 +52,6 @@ namespace Straight_Bitbrain_Heater
                         reloadSBH();
                         PlayingE10E = true;
                     }
-                    i = 0;
                     string E10Ereturn = "";
                     if (PlayingE10ESentence)
                     {     
@@ -61,7 +59,12 @@ namespace Straight_Bitbrain_Heater
                     }
                     else
                     {
-                        E10Ereturn += start3(SBHTemplate);
+                        int i = 0;
+                        while (i < 100)
+                        {
+                            E10Ereturn += start3(SBHTemplate);
+                            i++;
+                        }
                     }
                     await play_E10Eworker(E10Ereturn);
                     await Task.Delay(100);
