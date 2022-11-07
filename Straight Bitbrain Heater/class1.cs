@@ -25,7 +25,6 @@ namespace Straight_Bitbrain_Heater
             set_time = false;
             set_aspercream = false;
             
-
             string E10Ereturn = pick(E10EreturnArray, "e10earray");
            
             E10Ereturn = replace_func(E10Ereturn);
@@ -46,10 +45,7 @@ namespace Straight_Bitbrain_Heater
         public static Dictionary<string, List<int>> PickTable = new Dictionary<string, List<int>>();
 
         public static string pick(string[] ArrayToPickFrom, string arrname)
-        {
-            /*int t = RandomNumber.Rand4(ArrayToPickFrom.Length);
-            return ArrayToPickFrom[t];
-            */
+        {           
             int t;
             string newarrname = arrname + ArrayToPickFrom.Length;
 
@@ -293,7 +289,7 @@ namespace Straight_Bitbrain_Heater
         {
             return get_a(get_aspercream_mofos(bitch));
         }
-        public static string[] aspercreammofo = new string[] { "man", "boy", "police officer", "gangster", "baller", "player", "outlaw", "lawyer", "rapper", "country singer", "mother fucker", "son of a bitch", "person",
+        public static string[] aspercreammofo = new string[] { "man", "boy", "police officer", "gangster", "baller", "player", "outlaw", "lawyer", "rapper", "country singer", "person",
             "mobster", "enforcer", "hitman","drug dealer","naval aviator","navy SEAL","G","husband","dictator","god king","president","pope","hang man","executioner","bitbrain killer",
         "[get_nano_modify] styler","killer","rider","drug kingpin","soldier","government agent","mafia don","nano prisoner","cow boy","movie star","aristocrat","lord",
         "prince","king","general","admiral","gentleman","president of Nanopol","Nanopol officer","F.B.I. Agent","C.I.A. agent","N.S.A. agent","microsoft employee","jedi knight","sith lord","hustler","star pirate","astronaut",
@@ -320,11 +316,11 @@ namespace Straight_Bitbrain_Heater
         public static string get_aspercream()
         {
             set_aspercream = true;
-            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(aspercreammofo)) : pick(aspercream, "aspercream");
+            return pick(aspercream, "aspercream");
         }
         public static string get_aspercreaming()
         {
-            string[] mofoing = new string[] { "manning", "boying", "police officering", "gangstering", "ballering", "playering", "outlawing", "lawyering", "rappering", "country singering", "mother fuckering", "son of a bitching", "personing",
+            string[] mofoing = new string[] { "manning", "boying", "police officering", "gangstering", "ballering", "playering", "outlawing", "lawyering", "rappering", "country singering", "personing",
             "mobstering", "enforcering", "hitmanning","drug dealering","playering","shot callering","naval aviatoring","navy SEALing","Gee-ing","husbanding","dictatoring","god kinging","presidenting","poping",
         "hang manning","executionering","bitbrain killering",
         "[get_nano_modify] stylering","killering","ridering","drug kingpining","soldiering","government agenting","mafia donning","nano prisonering","cow boying","movie starring","aristocratting","lording",
@@ -335,8 +331,8 @@ namespace Straight_Bitbrain_Heater
         }
         public static string get_aspercream_s()
         {
-            string[] mofo_s = new string[] { "man's", "boy's", "police officer's", "gangster's", "baller's", "player's", "outlaw's", "lawyer's", "rapper's", "country singer's", "mother fucker's",
-            "son of a bitch's", "mobster's", "enforcer's", "hitman's","drug dealer's","player's","shot caller's","naval aviator's","navy SEAL's","Gee's","husband's","god king's","president's","pope's","hang man's","executioner's",
+            string[] mofo_s = new string[] { "man's", "boy's", "police officer's", "gangster's", "baller's", "player's", "outlaw's", "lawyer's", "rapper's", "country singer's", 
+                "mobster's", "enforcer's", "hitman's","drug dealer's","player's","shot caller's","naval aviator's","navy SEAL's","Gee's","husband's","god king's","president's","pope's","hang man's","executioner's",
         "bitbrain killer's","[get_nano_modify] styler's","killer's","rider's","drug kingpin's","soldier's","government agent's","mafia don's","nano prisoner's","cow boy's","movie star's","aristocrat's","lord's",
         "prince's","king's","general's","admiral's","gentleman's","Nanopol officer's","president of Nanopol's","F.B.I. Agent's","C.I.A. agent's","N.S.A. agent's","microsoft employee's","jedi knight's","sith lord's","starship captain's",
         "hustler's","star pirate's","astronaut's","warrior's","nano dungeon naut's","basket ball player's","football player's","alien's","monster's","stranger's","demon's","angel's","prophet's","clairvoyant's","psychic's","detective's",
@@ -347,7 +343,7 @@ namespace Straight_Bitbrain_Heater
         "nano dungeon of doom's star's","centaur's"
         };
             set_aspercream = true;
-            return (RandomNumber.Rand4(2) == 0) ? get_a(get_aspercream_mofos(mofo_s)) : pick(aspercream_s, "aspercream_s");
+            return pick(aspercream_s, "aspercream_s");
         }
         public static string get_aspercream_any()
         {
@@ -391,7 +387,7 @@ namespace Straight_Bitbrain_Heater
         }
         public static string get_aspercreams()
         {
-            string[] mofos = new string[] { "men", "boys", "police officers", "gangsters", "ballers", "players", "outlaws", "lawyers", "rappers", "country singers", "mother fuckers", "sons of bitches",
+            string[] mofos = new string[] { "men", "boys", "police officers", "gangsters", "ballers", "players", "outlaws", "lawyers", "rappers", "country singers",
             "people", "mobsters", "enforcers", "hitmen","drug dealers","shot callers","naval aviators","navy SEALs","Gees","husbands","dictators","presidents","hang men","executioners","bitbrain killers",
         "[get_nano_modify] stylers","killers","riders","drug kingpins","soldiers","government agents","mafia dons","nano prisoners","cow boys","movie stars","aristocrats","lords",
         "princes","kings","generals","admirals","gentlemen","Nanopol officers","F.B.I. Agents","C.I.A. agents","N.S.A. agents","microsoft employees","jedi knights","sith lords","hustlers","star pirates","astronauts",
@@ -440,17 +436,17 @@ namespace Straight_Bitbrain_Heater
             str.Append(pick(bitbrain_array, "bitbrain_array"));
             return str.ToString();
         }
-        public static string[] bitbrain_mofo = new string[] { "mother fucker", "son of a bitch", "whore", "bastard", "bitler",
+        public static string[] bitbrain_mofo = new string[] { "bastard", "bitler",
             "bit hole", "bit holer","fool" };
-        public static string[] bitbrain_mofos = new string[] { "mother fuckers", "sons of bitches", "whores","bastards", "bitlers",
+        public static string[] bitbrain_mofos = new string[] {"bastards", "bitlers",
             "bit holes", "bit holers" };
-        public static string[] bitbrain_mofo_s = new string[] { "mother fucker's", "son of a bitch's", "whore's", "bastard's",
+        public static string[] bitbrain_mofo_s = new string[] { "bastard's",
             "bitler's", "bit hole's", "bit holer's" };
-        public static string[] aspercream = new string[] { "Aspercream", "The Bitbrain Killer", "Mister E1 point 0E", "Twice the effect with out the meaning", "the [get_far_thought] nano prisoner",
-            "the president of [get_far_thought] Nanopol","[get_far_thought] James Gentilly","Aspercream the {destroyer|pre nano mother fucker|don}","the {demon lord|god|titan} james gentilly who said {not finished I have to laugh|nonsense nonsense sense is your ass killed|I know the effect without knowing the meaning|you cause you}" };
-        public static string[] aspercreaming = new string[] { "Aspercreaming", "Bitbrain Killering", "Mister E1 point 0Eing", "Twice the effect with out the meaninging", "nano prisonering" };
-        public static string[] aspercream_s = new string[] { "Aspercream's", "The Bitbrain Killer's", "Mister E1 point 0 ease", "Twice the effect with out the meaning's","the [get_far_thought] {bitbrain killer|nano prisoner's}",
-            "the president of [get_far_thought] Nanopol's","[get_far_thought] James Gentilly's",};
+        public static string[] aspercream = new string[] {
+            "[get_far_thought] James Gentilly","the {demon lord|god|titan} james gentilly who said {not finished I have to laugh|nonsense nonsense sense is your ass killed|I know the effect without knowing the meaning|you cause you}","Counter nanoterrorist Strike Force Agent James Gentilly" };
+        public static string[] aspercreaming = new string[] { "Aspercreaming", "Bitbrain Killering", "Mister E1 point 0Eing", "Twice the effect with out the meaninging", "nano prisonering","Counter nanoterrorist Strike Force Agent James Gentilly in" };
+        public static string[] aspercream_s = new string[] { "Counter nanoterrorist Strike Force Agent James Gentilly's",
+            "[get_far_thought] James Gentilly's",};
         public static string get_bitbrain_mofo(string[] bitbrain_array)
         {
             StringBuilder str = new StringBuilder();
@@ -480,70 +476,68 @@ namespace Straight_Bitbrain_Heater
 
         public static string[] bitbrain = new string[] {
     "bitler","seven hundred megabyter","submariner","one bit per seconder","bit brain nano terrorist",
-        "no mother fuckerer","no wayer","rebitted mother fucker","nano dungeon er","bitter","leafer",
+        "no wayer","rebit","nano dungeon er","bitter","leafer",
     "bravo's racist fistser","bit brain","bit hole","bit holer",
 "louisiana brain deather","nano terrorist","bit caller","billy bits","bit master","KG Bit Agent","bit cerveau",
 "bitler","even hundred megabyter","submariner","one bit per seconder","bitbrain nano terrorist",
-"mother fuckerer","no wayer","rebitted mother fucker","bitter","leafer",
+"no wayer","bitter","leafer",
 "bitbrain","bit hole","bit holer","louisiana brain deather","nanoterrorist","bit caller","ricky","rocky","daniel","marcy","jackie","mike diggs"
 };
 
     public static string[] bitbrains = new string[] { "bitlers","seven hundred megabyters","submariners","one bit per seconders","bit brain nano terrorists",
-                "no mother fuckerers","no wayers","rebitted mother fuckers","nano dungeoners","bitters","leafers",
+                "no wayers","nano dungeoners","bitters","leafers",
             "bravo's racist fistsers","european walking conspirators", "bit brains","bit holes","bit holers",
         "louisiana brain deathers","nano terrorist","redders","bit callers","bit masters","KG Bit"
-        //"[get_bit_modify] mole faces", "[get_bit_modify] cut faces", "[get_bit_modify] copy bits", "[get_bit_modify] tell a bits", "[get_bit_modify] know no bits"
+        
         };
     
 
         public static string[] bitbrain_s = new string[] { "bitler's","oner's","zeroer's","seven hundred megabyter's","submariner's","one bit per seconder's","bit brain nano terrorist's",
-                "no mother fuckerer's","no wayer's","rebitted mother fucker's","nano dungeoner's","bitter's","leafer's",
+                "no wayer's","nano dungeoner's","bitter's","leafer's",
             "bravo's racist fistser's","european walking conspirator's", "bit brain's","bit hole's","bit holer's",
         "louisiana brain deather's","nano terrorist's","redder's","bit caller's","billy bits","bit master's"
-        //"[get_bit_modify] mole face's", "[get_bit_modify] cut face's", "[get_bit_modify] copy bit's", "[get_bit_modify] tell a bit's", "[get_bit_modify] know no bit's"
+        
         };
 
 
         public static string[] bit_modify = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain",
-                "no mother fucker","no way","rebitted","bit","leaf","who are you","now what is it",
-            "bravo's racist fists","seven hundred megabytes","submarine","one bit per second","bitbrain",
-        "no mother fucker","no way","rebitted","bit","leaf","who are you","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
-        "bravo's racist fists"};
+                "no way","rebitted","bit","leaf","who are you",
+            "bravo's racist fists","one","zero","red","bullbit","european walking conspiracy"};
             
 
         public static string[] bit_modify_y = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
-                "no mother fucker","no way","rebitted","nano dungeon","bit","leaf","who are you","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
+               "no way","rebitted","nano dungeon","bit","leaf","who are you",
             "bravo's racist fists","european walking conspiracy","red","one","zero","bullbit","rebitted"};
 
 
         public static string[] bit_modifies = new string[] { "seven hundred megabytes","submarines","one bit per seconds","bit brain nano terrorists",
-                "no mother fuckers","no ways","rebits","nano dungeons","bits","leafs","who are you's","rickies","sofa eaters","edwardos","kads","moses'","rockies","daniel in minnesotas",
+                "no ways","rebits","nano dungeons","bits","leafs","who are you's",
             "bravo's racist fists","european walking conspiracies","reds","ones","zeroes"};
 
         public static string[] bit_modified = new string[] { "seven hundred megabyted","submarined","one bit per seconded","bit brain nano terroristed",
-                "no mother fuckered","no wayed","rebitted","nano dungeoned","bitted","leafed","who are you'd","rickied","sofa eatered","edwardod","kadded","mosesed","rockied","daniel in minnesoted",
+                "no wayed","rebitted","nano dungeoned","bitted","leafed","who are you'd",
             "bravo's racist fistsed","european walking conspired","redded","oned","zeroed"};
 
 
         public static string[] bit_modifying = new string[] { "seven hundred megabyting","submarine in","one bit per seconding","bit brain nano terroristing",
-                "no mother fuckering","no waying","rebitting","nano dungeoning","bitting","who are you in","rickying","sofa eatering","edwardoing","kadding","mosesing","rockying","daniel in minnesoting",
+                "no waying","rebitting","nano dungeoning","bitting","who are you in",
             "bravo's racist fistsing","european walking conspiracy-ing","redding","oneing","zeroing","leafing","bitting"};
 
 
         public static string[] nano_modifies = new string[] { "Gold Pyramids","G. Therms", "E one point zero ees","aspercreams","twice the effect with out the meaning","shadow idea",
                 "pure senses","perfect thought disorders","far thoughts","shadow ideas","green pyramidses","you cause yous","shadow coincidences",
                 "not finished i have to laughs","bit brains","louisiana brain deaths","seven hundred megabytes","submarines","one bit per seconds","bit brain nano terrorists",
-                "no mother fuckers","no ways","2 6 9 chess A dees","evacuate green lines","rebits","bits","leafs",
+                "no ways","2 6 9 chess A dees","evacuate green lines","rebits","bits","leafs",
             "things not things","long way outs","i know the effect with out knowing the meanings",
-            "far thoughts","bossys","talk is nices","end conversation bores mes","scorpions","draculas","you cause yous","rickies","sofa eaters","edwardos","kads","moses'","rockies","daniel in minnesotas",
-            "green even when he's reds","bravo's racist fists","european walking conspiracies","bossies","reds","greens","ones","zeroes","who are you's","black when blacks","bitbrain heaters",
-            
+            "far thoughts","bossys","talk is nices","end conversation bores mes","scorpions","draculas","you cause yous",
+            "green even when he's reds","bravo's racist fists","european walking conspiracies","bossies","reds","greens","ones","zeroes","who are you's","black when blacks","bitbrain heaters"
+
             };
         public static string[] nano_modified = new string[] {  "Gold Pyramided","G. Thermed","E one point zero eed","aspercreamed","twice the effect with out the meaninged","shadow ideaed",
                 "pure sensed","perfect thought disordered","far thoughted","shadow ideaed","green pyramidsed","you cause you'ed","shadow coincidenced",
                 "not finished i have to laughed","bit brained","louisiana brain deathed","seven hundred megabyted","submarined","one bit per seconded","bit brain nano terroristed",
-                "no mother fuckered","no wayed","2 6 9 chess A deed","evacuate green lined","rebitted","bitted","leafed",
-            "things not thingsed","long way outed","i know the effect with out knowing the meaninged","rickied","sofa eatered","edwardod","kadded","mosesed","rockied","daniel in minnesoted",
+                "no wayed","2 6 9 chess A deed","evacuate green lined","rebitted","bitted","leafed",
+            "things not thingsed","long way outed","i know the effect with out knowing the meaninged",
             "bossied","talk is niced","end conversation bores me'ed","scorpioned","dracula-ed",
             "green even when he's reded","bravo's racist fisted","european walking conspiracied","redded","greened","oned","zeroed","who are you'd","black when blacked","bitbrain heatered"
             };
@@ -551,24 +545,24 @@ namespace Straight_Bitbrain_Heater
                 "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
                 "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
-                "no mother fucker","no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leafs",
-            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you","black when black","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
+                "no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leafs",
+            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you","black when black",
             "european walking conspiracy","red","green","bitbrain heater"};
 
         public static string[] nano_modify_y = new string[] { "Gold Pyramid","G. Therm","bit brain killer","E1 point 0E","non sense non sense sense is your ass killed","aspercream",
                 "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
                 "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
-                "no mother fucker","no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leaf",
-            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you","ricky","sofa eater","edwardo","kad","moses","rocky","daniel in minnesota",
-            "european walking conspiracy","red","green","one","zero","black when black" };
+                "no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leaf",
+            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you",
+            "european walking conspiracy","red","green","one","zero","black when black"};
 
         public static string[] nano_modifying = new string[] { "Gold Pyramiding","G. Therming","bit brain killering","E one point zero E","non sense non sense sense is your ass killed-ing","aspercreaming",
                 "twice the effect with out the meaning","i know the effect with out knowing the meaning",
                 "pure sensing","perfect thought disordering","far thoughting","shadow ideaing","green pyramidsing","you cause you","shadow coincidencing",
                 "not finished i have to laughing","bit braining","louisiana brain deathing","seven hundred megabyting","submarine in","one bit per seconding","bit brain nano terroristing",
-                "no mother fuckering","no waying","2 6 9 chess A deeing","evacuate green lining","rebitting","bitting","leafing",
-            "things not thingsing","long way outting","talk is nicing","scorpioning","dracula-ing","green even when he's redding","bravo's racist fistsing","who are you in","now what is itting","rickying","sofa eatering","edwardoing","kadding","mosesing","rockying","daniel in minnesoting",
+                "no waying","2 6 9 chess A deeing","evacuate green lining","rebitting","bitting","leafing",
+            "things not thingsing","long way outting","talk is nicing","scorpioning","dracula-ing","green even when he's redding","bravo's racist fistsing","who are you in",
             "european walking conspiracy-ing","bossying","redding","greening","oneing","zeroing"};
 
 
@@ -615,13 +609,13 @@ namespace Straight_Bitbrain_Heater
                 //return "";
             }
             set_reason = true;
-            string str = "{because,cuz,reason being} ";
+            string str = "{because|cuz} ";
             str += pick(reason, "reason");
             
             return str;
 
         }
-        public static string[] reason = new string[] { "[get_aspercream] is [get_far_thought]", "[get_aspercream] {does,marries,thinks,has,was,likes,loves,hate [get_bitbrains] about} [get_far_thought]","[get_aspercream] made a [get_far_thought] planet" };
+        public static string[] reason = new string[] { "[get_aspercream] is [get_far_thought]", "[get_aspercream] {does|marries|thinks|has|was|likes|loves|hates [get_bitbrains] about} [get_far_thought]","[get_aspercream] made a [get_far_thought] planet" };
         public static string get_time()
         {
             StringBuilder str = new StringBuilder();
@@ -635,7 +629,7 @@ namespace Straight_Bitbrain_Heater
             }
             else
             {
-                if (RandomNumber.Rand4(times.Length + 2) == 0) { return "{all the damned time,somewhere in time} "; }
+                if (RandomNumber.Rand4(times.Length + 2) == 0) { return "{all the damned time|somewhere in time} "; }
                 //if (RandomNumber.Rand4(times.Length + 2) == 0) { return "once in " + get_bitbrain_s() + "life time "; }
                 if (set_place == false && (RandomNumber.Rand4(in_time.Length) == 0))
                 {
@@ -712,7 +706,7 @@ namespace Straight_Bitbrain_Heater
         "championship","hell","heaven","paradise","mountain","mountain hall","fountain of youth","afterlife","coincidence","republic","white house","worm hole","world trade center","circle of hell","jail cell","dream",
             "fantasy","utopia","country","world","conspiracy","dining room","cop car","closet","bed","living room","kitchen","bath tub","park","school bus","map contest","desert","yacht","porn movie","soap opera","back yard bar b que",
             "mosh bit","concert","stadium","car","truck","s u v","taxi cab","mini van","van","restaurant","bar","submarine","air craft carrier","train","crack house","meth lab","wal mart","street","block",
-            "neighborhood","[get_bitbrains] delusion","society","fun house","[get_aspercream_s] fun house",
+            "neighborhood","[get_bitbrains] delusion","society","fun house","[get_aspercream_s] fun house","covered dinner","candle light dinner","romantic dinner","dance floor","recording studio","strip club","club"
 
         };
 
@@ -728,7 +722,7 @@ namespace Straight_Bitbrain_Heater
 
         public static string[] places = new string[] { "land", "country", "county", "kcsr","america","europe","north america","south america","russia","china","japan","feudal japan","middle earth",
             "los angeles","chicago","dallas","new york","rome","paris","london","moscow","beijing","south central Los Angeles","new orleans","houma","louisiana","tampa","central park","atlantis","camelot",
-        "el dorado","shangri-la","mount olympus","zion","Transylvania","nano auschwitz","harlem","brooklyn","{cheyenne's {mom's,dad's,parent's},aliza's {mom's,dad's,parent's}} [get_far_thought] {house,trailer}",
+        "el dorado","shangri-la","mount olympus","zion","Transylvania","nano auschwitz","harlem","brooklyn","{cheyenne's {mom's|dad's|parent's}|aliza's {mom's|dad's|parent's}} [get_far_thought] {house|trailer}",
         "[get_bitbrains] head","{[get_bitbrain_s],[get_aspercream_s]} dream","sniper school","pre school","grade school","college","Willy Wonka's Factory","Hogwarts School of Witchcraft and Wizardry","Xavier's Academy",
         "Asgard","Narnia","Hogsmeade","Rivendell","Diagon Alley","King's Landing","Pandora","Lilliput","Panem","Shadowrealm","shadow world","Tamriel","Atlantis","El Dorado"
         };
@@ -745,14 +739,14 @@ namespace Straight_Bitbrain_Heater
         "[get_bitbrain] does [get_bitbrainthings]",
         };
         public static string[] whatthings = new string[] { "rides","balls","dances","slangs drugs","throws them thangs","gang bangs",
-            "becomes a wizard","does cartel work","raps","fucks","breaks [get_far_thought] hearts",
+            "becomes a wizard","does cartel work","raps","breaks [get_far_thought] hearts",
         "sees death around the corner","is heavy in the [get_far_thought] game","is in deep","has all eyes on him","treats his girl just like daddy",
         "raps","free styles","figures out the [get_far_thought] game","brings the pain","invades a planet",
         "stops hearts","was trained as a boss player","laced the game with [get_far_thought] insight","has a [get_far_thought] war mentality",
         "masters the art of war",
 
         };
-        public static string[] bitbrainthings = new string[] { "falls on it's face", "fucks up it's [get_bit_modify] rap", "gets cock blocked", "hates {everything,people}", "crashes it's [get_bit_modify] car","gets smacked in it's face","gets blasted","O Dees on dope",
+        public static string[] bitbrainthings = new string[] { "falls on it's face", "gets cock blocked", "hates {everything,people}", "crashes it's [get_bit_modify] car","gets smacked in it's face","gets blasted","O Dees on dope",
             "backs up it's brain to a CD","pretends to know kung fu","gets lit on fire","gets stabbed","gets ebola","flies into a black hole","lies about how long it's nanodungeon gonna last",
         "makes [get_aspercream] think he knows [get_bit_modify] hobies all his life"};
         public static string[] forthings = new string[] { "money", "bitches", "chicks", "women", "fame", "glory", "revenge", "triumph", "victory", "{black,dark} {love,passion,desires,magic}" };
@@ -911,7 +905,7 @@ namespace Straight_Bitbrain_Heater
 
         public static string[] powerthing = new string[] {
             "submarine","u boat","f 22","stealth bomber","sky scraper","house","home","bus","school bus","b 52","minute man missile","icbm","bank","mob","free candy van","police car","fbi van","store",
-            "mall","school","college","factory","abandonned {truck,submarine,car,building}","conspiracy","gang","cartel","missile factory","cd manufacturing plant","submarine making facility",
+            "mall","school","college","factory","abandonned {truck|submarine|car|building}","conspiracy","gang","cartel","missile factory","cd manufacturing plant","submarine making facility",
             "space station","u f o","space ship","star destroyer","death star","x wing","corporation","group","trailer","apartment","duplex","g ride","weed circle","city","state","country",
             "prison","counter nanoterrorist strike force head quarters","romulan warbird","star ship enterprise","planet","solar system","galaxy","black hole computer","lottery company",
             "catholic school","nano utopia","utopia","paradise"
@@ -959,7 +953,7 @@ namespace Straight_Bitbrain_Heater
             "truth","peace","war","storm","calm","sacrificial lamb","logic system"};
 
             string[] bitbrainthing = new string[] { "face per cream", "car", "jail cell", "cd", "nano dungeon", "obituary", "ambition",
-                "show tech shot","trunk full of [get_bit_modify] bullshit","sickle cell anemia","trophy wife","dildo","teddy bear","diaper","{thought,brain,personality} disorder",
+                "show tech shot","trunk full of [get_bit_modify] bullshit","sickle cell anemia","trophy wife","dildo","teddy bear","diaper","{thought|brain|personality} disorder",
                 "bull bit","drug trip","diapers","bit hole","communist mind conspiracy","nanoterrorist mind conspiracy"
             };
 
@@ -1075,7 +1069,7 @@ namespace Straight_Bitbrain_Heater
         }
         public static string past_bitbrain()
         {
-            string[] past_bitbrain = {"lee","first piece of bit in los angeles","mister i got bit in compton","mister i get beat up and like puppies","short mexican I beat up","highly fuckable taco bit","not a bad wife taco bit",
+            string[] past_bitbrain = {"lee","first piece of bit in los angeles","mister i got bit in compton","mister i get beat up and like puppies","short mexican I beat up","not a bad wife taco bit",
                 "live book bit","mister i get picked up by dudes smaller than me","penny hustler in rochester","vindictive asian in rochester","greedy [get_bitbrain] baby sitter","[get_bitbrain] who cool in los angeles",
                 "[get_bit_modify] penny hustler aryan","[get_bit_modify] mark blond hair mad","[get_bit_modify] thing","rock star with a bit hole","[get_bit_modify] meth family girl","stephanie from virgina","mister i get one not a bit","[get_bit_modify] that like sleep sex with stinky mouth","the biggest frog in the world","super bitbrain","vindicate bit counter","ugly headless begger bitch",
                 "i'm from bermuda, not we","robocaller hillbilly the rebitted son of a bit","I'm with hillbilly robocaller bitbrain",
@@ -1090,7 +1084,7 @@ namespace Straight_Bitbrain_Heater
                 "random ass hillbilly gag bit","hillbilly ho bitbrain in command lost in space","the cheerio eating bitbrain","mix up the bit","run from the bit on the ground","book bit","steal a bit worth 50 cents",
                 "bit face","boy bit","karate bit against kid over girl bits","bits on the face","fat bit ho","fat bit ho sister","use your bit","pedo bit","hero bits","C++ bit","i like the cold bit","commander bitbrain",
                 "i love bit","i love bit's sister with the ugly mark","i love cyclops bit","phase bitter","block bit with my nasty bit","de beers bit the hillbilly","asain bitbrain de beers","dairy queen robber the bit",
-                "i like asian bit hole but i complain","stripper bit with the nice butt","crack head bit with the butt","gangster bitbrain the homeless fuck","fat bitbrain with gangster bitbrain","piss bitbrain with a butt",
+                "i like asian bit hole but i complain","stripper bit with the nice butt","crack head bit with the butt","fat bitbrain with gangster bitbrain","piss bitbrain with a butt",
                 "i like up the bithole on the back","frog looking ganster bitbrain","pick a bit, what","i eat bit hole for free","shaggy bitbrain","what color is bit","piss like a baby bitbrain",
                 "i like any bit","i like it, i die bitbrain","meth head torn bithole","fat puppy bitbrain","cheerio eating hood bitbrain","de beers the wrong hill bitty","fat bitbrain i'm in control",
                 "i don't like bit but it eat cheerios","cool bit dancin","free bit hole once","teacher bitbrain","snap at twice the effect without the meaning at home bitbrain","don't step on my bit",

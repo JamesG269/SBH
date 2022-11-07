@@ -33,7 +33,7 @@ namespace Straight_Bitbrain_Heater
 
         public string RegKeyName = "";
         public RegistryKey RegKeyCurrent;
-        public ReadOnlyCollection<InstalledVoice> voices;// = FarThought.GetInstalledVoices();
+        public ReadOnlyCollection<InstalledVoice> voices;
         private int InitLouisianaBrainDeath()
         {
             Task.Factory.StartNew(() => WaitForEvent(), TaskCreationOptions.LongRunning);

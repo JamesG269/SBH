@@ -53,7 +53,8 @@ namespace Straight_Bitbrain_Heater
                 while (i < 100)
                 {
                     i++;
-                    E10Ereturn += start3(SBHTemplate);
+                    //E10Ereturn += start3(SBHTemplate);
+                    E10Ereturn += "bitbrain style.  ";                    
                 }
 
                 SpeechStreamFileMode SpFileMode = SpeechStreamFileMode.SSFMCreateForWrite;
@@ -64,7 +65,7 @@ namespace Straight_Bitbrain_Heater
                 for (i = 0; i < objSpeech.GetVoices().Count; i++)
                 {
                     string str = objSpeech.GetVoices().Item(i).Id;
-                    if (str.Contains("Demon"))
+                    if (str.Contains("ZIRA"))
                     {
                         objSpeech.Voice = objSpeech.GetVoices().Item(i);
                         break;

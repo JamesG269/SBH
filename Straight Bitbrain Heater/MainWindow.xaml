@@ -39,7 +39,5 @@
         <TextBox Name="TB" Text="" KeyUp="TextBox_KeyUp" Grid.Row="7" Grid.ColumnSpan="5"/>
         <Label Content="Label" Name="BinaryLabel" Grid.Row="8"/>
         <TextBox Name="BHTextBox"  TextWrapping="Wrap" Text=""  Width="auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" FontSize="30" Grid.Row="9" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
-        
-
     </Grid>
 </Window>

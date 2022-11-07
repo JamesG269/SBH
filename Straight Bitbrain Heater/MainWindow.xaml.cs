@@ -42,6 +42,12 @@ namespace Straight_Bitbrain_Heater
             int i = await Task.Run(() => InitLouisianaBrainDeath());
             initUI(i);
             contextAndNotifyMenuInit();
+            BHTextBox.Text = "voices installed:" + Environment.NewLine;
+            foreach (var v in voices)
+            {
+                BHTextBox.Text += v.VoiceInfo.Name + Environment.NewLine;
+            }
+            BHTextBox.Text += Environment.NewLine;
             PlayingE10E = true;
             await Task.Factory.StartNew(() => E10EBackGroundThread(), TaskCreationOptions.LongRunning);
         }        

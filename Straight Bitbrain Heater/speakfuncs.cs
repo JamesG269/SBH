@@ -54,20 +54,18 @@ namespace Straight_Bitbrain_Heater
                     }
                     string E10Ereturn = "";
                     if (PlayingE10ESentence)
-                    {     
+                    {
                         E10Ereturn = replace_func(E10ESentence);
+                        
+                        await play_E10Eworker(E10Ereturn);
+                        await Task.Delay(100);
                     }
                     else
                     {
-                        int i = 0;
-                        while (i < 100)
-                        {
-                            E10Ereturn += start3(SBHTemplate);
-                            i++;
-                        }
+                        E10Ereturn = start3(SBHTemplate);                        
+                        await play_E10Eworker(E10Ereturn);
+                        await Task.Delay(100);                        
                     }
-                    await play_E10Eworker(E10Ereturn);
-                    await Task.Delay(100);
                     MakingWav = 0;
                 }                
                 await Task.Delay(100);
@@ -105,13 +103,21 @@ namespace Straight_Bitbrain_Heater
             FarThought.Volume = Volume;
             FarThought.Rate = Rate;
             speaking = true;
-            int i;
+            int i = 0;
             var voices = FarThought.GetInstalledVoices();
-            do
+            if (voices.Count > 2)
             {
-                i = RandomNumber.Rand4(voices.Count);
-            } while (i == lasti);
-            lasti = i;
+                do
+                {
+                    i = RandomNumber.Rand4(voices.Count);
+                } while (i == lasti);
+                lasti = i;
+            }
+            FarThought.SelectVoice(voices[i].VoiceInfo.Name);
+            if (voices[i].VoiceInfo.Name.Contains("Carolyn"))
+            {
+                FarThought.Volume /= 2;
+            }    
             FarThought.SpeakAsync(E10Ereturn);
 
             while (speaking)
@@ -139,6 +145,5 @@ namespace Straight_Bitbrain_Heater
         {
             speaking = false;
         }
-
     }
 }
