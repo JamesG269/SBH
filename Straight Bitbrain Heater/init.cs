@@ -34,13 +34,13 @@ namespace Straight_Bitbrain_Heater
         public string RegKeyName = "";
         public RegistryKey RegKeyCurrent;
         public ReadOnlyCollection<InstalledVoice> voices;
-        private int InitLouisianaBrainDeath()
+        private void InitLouisianaBrainDeath()
         {
             Task.Factory.StartNew(() => WaitForEvent(), TaskCreationOptions.LongRunning);
             InitRNGKeys();
             myProcess = Process.GetCurrentProcess();
             ClosePreviousInstance();
-            int i = FindRegKey();
+            FindRegKey();
             FarThought.SpeakCompleted += FarThought_SpeakCompleted;
             voices = FarThought.GetInstalledVoices();
             foreach (var v in voices)
@@ -52,13 +52,12 @@ namespace Straight_Bitbrain_Heater
                 }
             }
             enableStoreSettings = true;
-            reloadSBH();
-            return i;
+            ReloadSBH();
         }
 
 
-        List<int> pids = new List<int>();
-        int myID;
+        public List<int> pids = new List<int>();
+        public int myID;
         private void ClosePreviousInstance()
         {
             Process[] pname = Process.GetProcesses();
@@ -84,7 +83,6 @@ namespace Straight_Bitbrain_Heater
                     }
                 }
             }
-            return;
         }
         private async void WaitForEvent()
         {
@@ -95,13 +93,20 @@ namespace Straight_Bitbrain_Heater
             await StopE10E();
             await this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate () { Close(); }));
         }
-        private void initUI(int i)
+        private async Task InitUI()
         {
             VolumeSlider.Value = Volume;
             RateSlider.Value = Rate;
             VolumeLabel.Content = "Volume: " + Volume.ToString();
             RateLabel.Content = "Rate: " + Rate.ToString();
-            this.Title = "Straight Bitbrain Heater by James Gentile version: " + GetPublishedVersion() + " Number " + i.ToString();
+            this.Title = "Straight Bitbrain Heater by James Gentile version: " + GetPublishedVersion() + " Number " + AppNumber.ToString();
+            string BHTextStr = "Voices installed: " + Environment.NewLine;
+            foreach (var v in voices)
+            {
+                BHTextStr += v.VoiceInfo.Name + Environment.NewLine;
+            }
+            BHTextStr += Environment.NewLine;
+            await BHTextOutput(BHTextStr);
             BinaryLabel.Foreground = System.Windows.Media.Brushes.Green;
         }
     }

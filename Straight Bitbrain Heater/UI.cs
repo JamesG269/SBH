@@ -43,35 +43,29 @@ namespace Straight_Bitbrain_Heater
             Activate();
             windowhidden = false;
         }
-        public void ExitNI(Object sender, System.EventArgs e)
+        public async void ExitNI(Object sender, System.EventArgs e)
         {
+            await closeFunctions();
             Close();
+
         }
-        public void PlayNI(Object sender, System.EventArgs e)
+        public async void PlayNI(Object sender, System.EventArgs e)
         {
-            StartE10E();
+            await StartE10E();
         }
         public async void StopNI(Object sender, System.EventArgs e)
         {
             await StopE10E();
         }
-        private void Start_Click(Object sender, RoutedEventArgs e)
+        private async void Start_Click(Object sender, RoutedEventArgs e)
         {
-            StartE10E();
+            await StartE10E();
         }
         private async void StopButton_Click(object sender, RoutedEventArgs e)
         {
             await StopE10E();
         }
-        public async Task<string> GetTB()
-        {
-            String str = "";
-            await TB.Dispatcher.BeginInvoke(new Action(() =>
-            {
-                str = TB.Text;
-            }));
-            return str;
-        }
+        
         public async Task BHTextOutput(string BHText)
         {
             await BHTextBox.Dispatcher.BeginInvoke(new Action(() =>
@@ -148,17 +142,17 @@ namespace Straight_Bitbrain_Heater
             RateLabel.Content = "Rate: " + rate.ToString();
             this.Title = "Rate changed.";
             adjustVolume = true;
-        }
-        public async void TextBox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        }        
+        private async void Play_TextBox_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Key != System.Windows.Input.Key.Enter)
-            {
-                return;
-            }
-            E10ESentence = TB.Text;
             await StopE10E();
+            TBTemp = TB.Text;
+            TextBoxArray = TB.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            needToStoreSettings = true;
+            StoreSettings();
             PlayingE10ESentence = true;
             PlayingE10E = true;
+
         }
         private void contextAndNotifyMenuInit()
         {
@@ -172,8 +166,8 @@ namespace Straight_Bitbrain_Heater
             ni.Visible = true;
             ni.Text = "Straight Bitbrain Heater";
         }
-        bool Reload = false;
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public static bool Reload = false;
+        private void Reload_Button_Click(object sender, RoutedEventArgs e)
         {
             Reload = true;
         }

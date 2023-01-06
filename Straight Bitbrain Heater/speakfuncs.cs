@@ -20,10 +20,12 @@ namespace Straight_Bitbrain_Heater
     public partial class MainWindow : Window
     {
         public static bool PlayingE10ESentence = false;
-        public static string E10ESentence = "";
+        public string[] TextBoxArray;
         public string[] SBHTemplate;
-        public static void StartE10E()
+        public async Task StartE10E()
         {
+            await StopE10E();
+            Reload = true;            
             PlayingE10ESentence = false;
             PlayingE10E = true;
         }
@@ -49,22 +51,32 @@ namespace Straight_Bitbrain_Heater
                     }
                     if (Reload)
                     {
-                        reloadSBH();
+                        ReloadSBH();
                         PlayingE10E = true;
                     }
                     string E10Ereturn = "";
                     if (PlayingE10ESentence)
                     {
-                        E10Ereturn = replace_func(E10ESentence);
-                        
+                        int i = 0;
+                        while (i < 100)
+                        {
+                            string str = pick(TextBoxArray, "TextBoxArray");
+                            E10Ereturn += replace_func(str + " [link] ");
+                            i++;
+                        }
                         await play_E10Eworker(E10Ereturn);
-                        await Task.Delay(100);
                     }
                     else
-                    {
-                        E10Ereturn = start3(SBHTemplate);                        
-                        await play_E10Eworker(E10Ereturn);
-                        await Task.Delay(100);                        
+                    {                        
+                        int i = 0;
+                        string str = "";
+                        while (i < 100)
+                        {
+                            E10Ereturn = pick(SBHTemplate, "sbh");
+                            str += replace_func(E10Ereturn + " [link] ");
+                            i++;                                                        
+                        }
+                        await play_E10Eworker(str);
                     }
                     MakingWav = 0;
                 }                
@@ -72,18 +84,14 @@ namespace Straight_Bitbrain_Heater
             }
         }
         public async Task play_E10Eworker(string E10Ereturn)
-        {
-            bool save = false;
+        {            
             while (adjustVolume)
             {
-                save = true;
+                needToStoreSettings = true;
                 adjustVolume = false;
                 await Task.Delay(1000);
             }
-            if (save)
-            {
-                StoreSettings();
-            }
+            StoreSettings();
             await BinaryLabelWorker(E10Ereturn);
             await BHTextOutput(E10Ereturn);
             await SpeakE10E(E10Ereturn);
@@ -96,13 +104,11 @@ namespace Straight_Bitbrain_Heater
         }
         public bool finishedPlayingE10E = false;
         public bool speaking = false;
-        List<int> voiceIdx = new List<int>();
         public static int lasti = -1;
         public async Task SpeakE10E(string E10Ereturn)
         {
             FarThought.Volume = Volume;
-            FarThought.Rate = Rate;
-            speaking = true;
+            FarThought.Rate = Rate;            
             int i = 0;
             var voices = FarThought.GetInstalledVoices();
             if (voices.Count > 2)
@@ -110,21 +116,26 @@ namespace Straight_Bitbrain_Heater
                 do
                 {
                     i = RandomNumber.Rand4(voices.Count);
-                } while (i == lasti);
+                } while (!voices[i].VoiceInfo.Name.Contains("Demon"));//(i == lasti);
                 lasti = i;
             }
-            FarThought.SelectVoice(voices[i].VoiceInfo.Name);
-            if (voices[i].VoiceInfo.Name.Contains("Carolyn"))
+            string VoiceName = voices[i].VoiceInfo.Name;
+            FarThought.SelectVoice(VoiceName);
+            if (VoiceName.Contains("Carolyn"))
             {
                 FarThought.Volume /= 2;
             }    
             FarThought.SpeakAsync(E10Ereturn);
-
+            speaking = true;
             while (speaking)
             {
                 if (adjustVolume || !PlayingE10E || Reload)
                 {
                     FarThought.SpeakAsyncCancelAll();
+                    while (speaking)
+                    {
+                        await Task.Delay(10);
+                    }
                     if (adjustVolume)
                     {
                         await BHTextOutput("Volume or rate changed. restarting output." + Environment.NewLine);

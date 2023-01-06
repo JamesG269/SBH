@@ -31,13 +31,9 @@ namespace Straight_Bitbrain_Heater
         }
         private async Task closeFunctions()
         {
-            await StopE10E();
-            while (MakingWav == 1)
-            {
-                await Task.Delay(10);
-            }
+            await StopE10E();            
             if (ni != null)
-            {
+            {                
                 ni.Dispose();
                 ni = null;
             }

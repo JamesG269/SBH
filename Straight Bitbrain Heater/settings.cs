@@ -21,10 +21,10 @@ namespace Straight_Bitbrain_Heater
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int FindRegKey()
+        public void FindRegKey()
         {
-            int i = 0;
-            int pid = 0;
+            int i;
+            int pid;
             RegKeyName = @"SOFTWARE\StraightBitbrainHeater0";
             RegKeyCurrent = Registry.CurrentUser.OpenSubKey(RegKeyName);
             if (RegKeyCurrent == null)
@@ -36,6 +36,7 @@ namespace Straight_Bitbrain_Heater
                     RegKeyCurrent.SetValue("pid", 0, RegistryValueKind.DWord);
                     RegKeyCurrent.SetValue("Volume", 100, RegistryValueKind.DWord);
                     RegKeyCurrent.SetValue("Rate", 0, RegistryValueKind.DWord);
+                    RegKeyCurrent.SetValue("TextBox", "", RegistryValueKind.String);
                     RegKeyCurrent.Close();
                 }
             }
@@ -56,8 +57,10 @@ namespace Straight_Bitbrain_Heater
                     RegKeyCurrent = Registry.CurrentUser.CreateSubKey(RegKeyName);
                     RegKeyCurrent.SetValue("pid", myID, RegistryValueKind.DWord);
                     Volume = Convert.ToInt32(RegKeyCurrent.GetValue("Volume", RegistryValueKind.DWord));
-                    Rate = Convert.ToInt32(RegKeyCurrent.GetValue("Rate", RegistryValueKind.DWord));
+                    Rate = Convert.ToInt32(RegKeyCurrent.GetValue("Rate", RegistryValueKind.DWord));                    
+                    TBTemp = RegKeyCurrent.GetValue("TextBox",RegistryValueKind.String).ToString();
                     RegKeyCurrent.Close();
+                    AppNumber = i;
                     break;
                 }
             }
@@ -65,9 +68,10 @@ namespace Straight_Bitbrain_Heater
             {
                 MessageBox.Show("Found no empty registry keys");
                 Close();
-            }
-            return i;
+            }            
+            return;
         }
+        public string TBTemp = "";
         private void StoreSettings()
         {
             if (enableStoreSettings == true && needToStoreSettings == true)
@@ -75,15 +79,24 @@ namespace Straight_Bitbrain_Heater
                 RegKeyCurrent = Registry.CurrentUser.CreateSubKey(RegKeyName);
                 RegKeyCurrent.SetValue("Rate", Rate, RegistryValueKind.DWord);
                 RegKeyCurrent.SetValue("Volume", Volume, RegistryValueKind.DWord);
+                RegKeyCurrent.SetValue("TextBox", TBTemp, RegistryValueKind.String);
                 RegKeyCurrent.Close();
                 needToStoreSettings = false;
             }
         }
-        private void reloadSBH()
+        private void ReloadSBH()
         {
             Reload = false;
             string pathToSBHTxt = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\documents\SBH.txt";
-            SBHTemplate = File.ReadAllLines(pathToSBHTxt).Where(x => !string.IsNullOrEmpty(x)).ToArray();
+            if (File.Exists(pathToSBHTxt))
+            {
+                SBHTemplate = File.ReadAllLines(pathToSBHTxt).Where(x => !string.IsNullOrEmpty(x)).ToArray();
+            }
+            else
+            {
+                MessageBox.Show("SBH.txt not found.");
+                Close();
+            }
         }
     }
 }

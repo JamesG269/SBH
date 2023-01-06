@@ -16,7 +16,7 @@ namespace Straight_Bitbrain_Heater
     public partial class MainWindow : Window
     {        
         public static Boolean RNGKeysInitiated = false;
-        public static string start3(string[] E10EreturnArray)
+        public static string Start3(string[] E10EreturnArray)
         {
             InitRNGKeys();
             
@@ -121,8 +121,6 @@ namespace Straight_Bitbrain_Heater
             "green even when he's reddy","269 Chess A Dee e","shadow idea e","greeny","scorpiony","dracula e","colored candy e","shadow service incorporatede",
             "rocky e","daniel in minnesota e","ricky e","jackie e","amanda moshier e","marcy e",
         };
-
-        public static string[] religion_mofos = new string[] { "catholic", "jewish", "amish", "protestant", "buddhist", "hindu" };
 
         public static string[] place_mofos = new string[] { "american", "european", "chinese", "japanese", "north american", "middle eastern", "australian", "asian", "south side", "north side",
             "west side", "east side" };
@@ -378,11 +376,7 @@ namespace Straight_Bitbrain_Heater
             if (RandomNumber.Rand4(2) == 0)
             {
                 str.Append(pick(place_mofos, "place_mofos"));
-            }
-            if (RandomNumber.Rand4(4) == 0)
-            {
-                str.Append(pick(religion_mofos, "religion_mofos"));
-            }
+            }            
             return str.ToString();
         }
         public static string get_aspercreams()
@@ -443,7 +437,7 @@ namespace Straight_Bitbrain_Heater
         public static string[] bitbrain_mofo_s = new string[] { "bastard's",
             "bitler's", "bit hole's", "bit holer's" };
         public static string[] aspercream = new string[] {
-            "[get_far_thought] James Gentilly","the {demon lord|god|titan} james gentilly who said {not finished I have to laugh|nonsense nonsense sense is your ass killed|I know the effect without knowing the meaning|you cause you}","Counter nanoterrorist Strike Force Agent James Gentilly" };
+            "[get_far_thought] James Gentilly","the {war lord|dark lord|demon|over lord|demon lord|god|titan|hell lord|angel|dark angel} james gentilly who said {not finished I have to laugh|nonsense nonsense sense is your ass killed|I know the effect without knowing the meaning|you cause you}","Counter nanoterrorist Strike Force Agent James Gentilly" };
         public static string[] aspercreaming = new string[] { "Aspercreaming", "Bitbrain Killering", "Mister E1 point 0Eing", "Twice the effect with out the meaninging", "nano prisonering","Counter nanoterrorist Strike Force Agent James Gentilly in" };
         public static string[] aspercream_s = new string[] { "Counter nanoterrorist Strike Force Agent James Gentilly's",
             "[get_far_thought] James Gentilly's",};
@@ -472,19 +466,19 @@ namespace Straight_Bitbrain_Heater
             return pick(mental, "mental");
         }            
     
-        public static string[] mental = new string[] { "KG Bit","red","not green"};
+        public static string[] mental = new string[] { "KG Bit","red","rebitted"};
 
         public static string[] bitbrain = new string[] {
-    "bitler","seven hundred megabyter","submariner","one bit per seconder","bit brain nano terrorist",
-        "no wayer","rebit","nano dungeon er","bitter","leafer",
+    "bitler","seven hundred megabyter","submariner","one bit per second err","bit brain nano terrorist",
+        "no wayer","rebit","nano dungeon err","bitter","leafer",
     "bravo's racist fistser","bit brain","bit hole","bit holer",
 "louisiana brain deather","nano terrorist","bit caller","billy bits","bit master","KG Bit Agent","bit cerveau",
-"bitler","even hundred megabyter","submariner","one bit per seconder","bitbrain nano terrorist",
+"bitler","even hundred megabyter","submariner","bitbrain nano terrorist",
 "no wayer","bitter","leafer",
-"bitbrain","bit hole","bit holer","louisiana brain deather","nanoterrorist","bit caller","ricky","rocky","daniel","marcy","jackie","mike diggs"
+"bitbrain","bit hole","bit holer","louisiana brain deather","nanoterrorist","bit caller","ricky","rocky","daniel",
 };
 
-    public static string[] bitbrains = new string[] { "bitlers","seven hundred megabyters","submariners","one bit per seconders","bit brain nano terrorists",
+    public static string[] bitbrains = new string[] { "bitlers","seven hundred megabyters","submariners","one bit per second errs","bit brain nano terrorists",
                 "no wayers","nano dungeoners","bitters","leafers",
             "bravo's racist fistsers","european walking conspirators", "bit brains","bit holes","bit holers",
         "louisiana brain deathers","nano terrorist","redders","bit callers","bit masters","KG Bit"
@@ -492,7 +486,7 @@ namespace Straight_Bitbrain_Heater
         };
     
 
-        public static string[] bitbrain_s = new string[] { "bitler's","oner's","zeroer's","seven hundred megabyter's","submariner's","one bit per seconder's","bit brain nano terrorist's",
+        public static string[] bitbrain_s = new string[] { "bitler's","oner's","zeroer's","seven hundred megabyter's","submariner's","one bit per second errs","bit brain nano terrorist's",
                 "no wayer's","nano dungeoner's","bitter's","leafer's",
             "bravo's racist fistser's","european walking conspirator's", "bit brain's","bit hole's","bit holer's",
         "louisiana brain deather's","nano terrorist's","redder's","bit caller's","billy bits","bit master's"
@@ -572,6 +566,8 @@ namespace Straight_Bitbrain_Heater
         public static string[] in_time = new string[] { "in", "during", "throughout" };
         public static string get_time_or_place_or_neither()
         {
+            set_time = false;
+            set_place = false;
             StringBuilder str = new StringBuilder();
             switch (RandomNumber.Rand4(3))
             {
@@ -597,7 +593,7 @@ namespace Straight_Bitbrain_Heater
             }
             if (RandomNumber.Rand4(1) == 0)
             {
-                str.Append(get_reason());
+                //str.Append(get_reason());
             }
             return str.ToString();
         }
@@ -1177,9 +1173,6 @@ namespace Straight_Bitbrain_Heater
             {"[get_time_or_place_or_neither]",new test(get_time_or_place_or_neither) }
         };
         
-
-        
-        
         public static string[] bitbrainmammy = new string[] { "a judge", "a police officer", "a F.B.I. Agent", "the president", "their mammies" };
         public static string get_bitbrainmammy()
         {
@@ -1188,13 +1181,9 @@ namespace Straight_Bitbrain_Heater
 
         public static Boolean foundone = false;
 
-        public static Dictionary<string, string> savedKeys = new Dictionary<string,string>();
-
         public static string replace_func(string str)
         {
-            savedKeys.Clear();
-            str = replace_func_worker(str);
-
+            Replace_func_worker(ref str);
             string str2 = "";
             char LastChar = 'a';
             for (int i = 0; i < str.Length; i++)
@@ -1213,11 +1202,35 @@ namespace Straight_Bitbrain_Heater
             return str2;
         }
 
-        public static string replace_func_worker(string str)
+        public static Dictionary<int, string> oldPicks = new Dictionary<int, string>();
+        public static void Replace_func_worker(ref string str)
         {
-            bool foundOne = false;
+            bool recurse = false;
+            ChooseOption(ref str);
+            FindDels(ref str, ref recurse);
+            ReplaceToken(ref str);
+            if (recurse)
+            {
+                Replace_func_worker(ref str);
+            }            
+        }
+
+        private static void ReplaceToken(ref string str)
+        {
+            foreach (int i in oldPicks.Keys)
+            {
+                string replace = "%" + i.ToString();
+                if (str.Contains(replace))
+                {
+                    str = str.Replace(replace, oldPicks[i]);
+                }
+            }            
+        }
+
+        private static void ChooseOption(ref string str)
+        {
             while (true)
-            {                
+            {
                 int FirstClose = str.IndexOf("}");
                 if (FirstClose == -1)
                 {
@@ -1231,13 +1244,16 @@ namespace Straight_Bitbrain_Heater
                         LastOpen = i;
                     }
                 }
-                string subStr = str.Substring(LastOpen + 1, FirstClose-1-LastOpen);
-                string[] StrArray = subStr.Split(new char[] { '|' });                
+                string subStr = str.Substring(LastOpen + 1, FirstClose - 1 - LastOpen);
+                string[] StrArray = subStr.Split(new char[] { '|' });
                 subStr = pick(StrArray, "StrArray");
                 subStr = subStr.TrimEnd(' ');
                 str = str.Substring(0, LastOpen) + subStr + str.Substring(FirstClose + 1);
-            }
+            }            
+        }
 
+        private static void FindDels(ref string str, ref bool recurse)
+        {
             int position = -1;
             foreach (KeyValuePair<string, test> kvp in dels)
             {
@@ -1246,21 +1262,35 @@ namespace Straight_Bitbrain_Heater
                     position = str.IndexOf(kvp.Key);
                     if (position != -1)
                     {
-                        foundOne = true;
+                        recurse = true;
                         string str2 = str.Substring(0, position);
                         string str3 = str.Substring(position + kvp.Key.Length);
                         string pickedWord = dels[kvp.Key].Invoke();
+                        pickedWord = replace_func(pickedWord);
+                        str3 = GetOldPick(str3, pickedWord);
                         str = str2 + pickedWord + str3;
                     }
                 } while (position != -1);
-            }                    
-            if (foundOne)
-            {
-                str = replace_func_worker(str);
-            }
-            return str;
+            }           
         }
-        
+
+        private static string GetOldPick(string str3, string pickedWord)
+        {
+            if (str3.Length >= 2)
+            {
+                if (str3.StartsWith("="))
+                {
+                    int i = int.Parse(str3[1].ToString());
+                    if (oldPicks.ContainsKey(i))
+                    {
+                        oldPicks.Remove(i);
+                    }
+                    oldPicks.Add(i, pickedWord);
+                    str3 = str3.Substring(2);
+                }
+            }
+            return str3;
+        }
 
         public struct RandomNumber
         {

@@ -38,10 +38,10 @@ namespace Straight_Bitbrain_Heater
 
         private void MakeWavWorker()
         {
-            reloadSBH();
+            ReloadSBH();
             Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
             sfd.Filter = "All files (*.*)|*.*|wav files (*.wav)|*.wav";
-            sfd.Title = "Save to a wave file";
+            sfd.Title = "Save to a .wav file";
             sfd.FilterIndex = 2;
             sfd.RestoreDirectory = true;
 
@@ -53,10 +53,11 @@ namespace Straight_Bitbrain_Heater
                 while (i < 100)
                 {
                     i++;
-                    //E10Ereturn += start3(SBHTemplate);
-                    E10Ereturn += "bitbrain style.  ";                    
-                }
-
+                    string str;
+                    str = pick(SBHTemplate,"sbhtemplate");
+                    str += " [link] ";
+                    E10Ereturn += replace_func(str);
+                }                
                 SpeechStreamFileMode SpFileMode = SpeechStreamFileMode.SSFMCreateForWrite;
                 SpFileStream SpFileStream = new SpFileStream();
                 SpFileStream.Open(sfd.FileName, SpFileMode, false);
@@ -65,7 +66,7 @@ namespace Straight_Bitbrain_Heater
                 for (i = 0; i < objSpeech.GetVoices().Count; i++)
                 {
                     string str = objSpeech.GetVoices().Item(i).Id;
-                    if (str.Contains("ZIRA"))
+                    if (str.ToLower().Contains("david"))
                     {
                         objSpeech.Voice = objSpeech.GetVoices().Item(i);
                         break;

@@ -31,25 +31,24 @@ namespace Straight_Bitbrain_Heater
         System.Windows.Forms.ContextMenu contextMenu1 = new System.Windows.Forms.ContextMenu();
         public Boolean windowhidden = false;
         private Boolean needToStoreSettings = false;
-
+        public int AppNumber = 0;
         Process myProcess;
+
         public MainWindow()
         {
             InitializeComponent();
         }
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
-            int i = await Task.Run(() => InitLouisianaBrainDeath());
-            initUI(i);
+            await Task.Run(() => InitLouisianaBrainDeath());
+            await InitUI();
             contextAndNotifyMenuInit();
-            BHTextBox.Text = "voices installed:" + Environment.NewLine;
-            foreach (var v in voices)
-            {
-                BHTextBox.Text += v.VoiceInfo.Name + Environment.NewLine;
-            }
-            BHTextBox.Text += Environment.NewLine;
-            PlayingE10E = true;
+            TB.Text = TBTemp;
+            TB.CaretIndex = TB.Text.Length;
+            adjustVolume = false;
             await Task.Factory.StartNew(() => E10EBackGroundThread(), TaskCreationOptions.LongRunning);
-        }        
+            PlayingE10E = true;
+        }
+
     }
 }
