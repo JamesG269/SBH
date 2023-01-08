@@ -731,7 +731,7 @@ namespace Straight_Bitbrain_Heater
 
         public static string[] atplaces = new string[] { "angel falls", "egyptian pyramids", "end of a rainbow", "nano terrorists war crimes tribunal", "orgy", "nano center", "styling contest", "dinner table", "wedding", "prom", "white house", "pentagon", "kitchen sink", "dinner table", "air port", };
 
-        public static string[] whereplaces = new string[] { "[get_aspercream] does [get_far_thought] {shit,stuff,things}", "[get_bitbrain] does [get_bit_modify] {shit,stuff,things}","[get_aspercream] [whatthings]","[get_aspercream] [whatthings] with [get_far_thought] {women,chicks,girls}",
+        public static string[] whereplaces = new string[] { "[get_aspercream] does [get_far_thought] {shit|stuff|things}", "[get_bitbrain] does [get_bit_modify] {shit,stuff,things}","[get_aspercream] [whatthings]","[get_aspercream] [whatthings] with [get_far_thought] {women,chicks,girls}",
         "[get_bitbrain] does [get_bitbrainthings]",
         };
         public static string[] whatthings = new string[] { "rides","balls","dances","slangs drugs","throws them thangs","gang bangs",
