@@ -43,12 +43,28 @@ namespace Straight_Bitbrain_Heater
             await Task.Run(() => InitLouisianaBrainDeath());
             await InitUI();
             contextAndNotifyMenuInit();
+            PopulateComboBox();
             TB.Text = TBTemp;
             TB.CaretIndex = TB.Text.Length;
             adjustVolume = false;
             await Task.Factory.StartNew(() => E10EBackGroundThread(), TaskCreationOptions.LongRunning);
             PlayingE10E = true;
         }
+        private void PopulateComboBox()
+        {
+            foreach (var v in voices)
+            {
+                voiceComboBox.Items.Add(v.VoiceInfo.Name);
+            }
+            voiceComboBox.SelectedIndex = 0;            
+        }
 
+        private async void voiceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            await StopE10E();
+            string str = voiceComboBox.SelectedItem.ToString();
+            FarThought.SelectVoice(str);
+            await StartE10E();
+        }
     }
 }

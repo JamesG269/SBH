@@ -42,15 +42,7 @@ namespace Straight_Bitbrain_Heater
             ClosePreviousInstance();
             FindRegKey();
             FarThought.SpeakCompleted += FarThought_SpeakCompleted;
-            voices = FarThought.GetInstalledVoices();
-            foreach (var v in voices)
-            {
-                if (v.VoiceInfo.Name.Contains("Demon"))
-                {
-                    FarThought.SelectVoice(v.VoiceInfo.Name);
-                    break;
-                }
-            }
+            voices = FarThought.GetInstalledVoices();            
             enableStoreSettings = true;
             ReloadSBH();
         }

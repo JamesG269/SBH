@@ -44,5 +44,6 @@
         <TextBox Name="TB" Text="" Grid.Row="7" Grid.ColumnSpan="9" AcceptsReturn="True"/>
         <Label Content="Label" Name="BinaryLabel" Grid.Row="8"/>
         <TextBox Name="BHTextBox"  TextWrapping="Wrap" Text=""  Width="auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" FontSize="30" Grid.Row="9" Grid.ColumnSpan="9" Grid.RowSpan="3"/>
+        <ComboBox Name="voiceComboBox" Grid.Row="0" Grid.Column="2" SelectionChanged="voiceComboBox_SelectionChanged"/>
     </Grid>
 </Window>

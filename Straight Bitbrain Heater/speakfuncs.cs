@@ -109,22 +109,7 @@ namespace Straight_Bitbrain_Heater
         {
             FarThought.Volume = Volume;
             FarThought.Rate = Rate;            
-            int i = 0;
-            var voices = FarThought.GetInstalledVoices();
-            if (voices.Count > 2)
-            {
-                do
-                {
-                    i = RandomNumber.Rand4(voices.Count);
-                } while (!voices[i].VoiceInfo.Name.Contains("Demon"));//(i == lasti);
-                lasti = i;
-            }
-            string VoiceName = voices[i].VoiceInfo.Name;
-            FarThought.SelectVoice(VoiceName);
-            if (VoiceName.Contains("Carolyn"))
-            {
-                FarThought.Volume /= 2;
-            }    
+               
             FarThought.SpeakAsync(E10Ereturn);
             speaking = true;
             while (speaking)

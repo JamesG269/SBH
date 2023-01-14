@@ -611,7 +611,7 @@ namespace Straight_Bitbrain_Heater
             return str;
 
         }
-        public static string[] reason = new string[] { "[get_aspercream] is [get_far_thought]", "[get_aspercream] {does|marries|thinks|has|was|likes|loves|hates [get_bitbrains] about} [get_far_thought]","[get_aspercream] made a [get_far_thought] planet" };
+        public static string[] reason = new string[] { "[get_aspercream] is [get_far_thought]", "[get_aspercream] {marries|dates|loves} a [get_far_thought] {girl|woman}","[get_aspercream] {does|thinks|has|was|likes|loves|hates [get_bitbrains] about} [get_far_thought] {things|stuff|shit}","[get_aspercream] made a [get_far_thought] planet" };
         public static string get_time()
         {
             StringBuilder str = new StringBuilder();
@@ -731,8 +731,8 @@ namespace Straight_Bitbrain_Heater
 
         public static string[] atplaces = new string[] { "angel falls", "egyptian pyramids", "end of a rainbow", "nano terrorists war crimes tribunal", "orgy", "nano center", "styling contest", "dinner table", "wedding", "prom", "white house", "pentagon", "kitchen sink", "dinner table", "air port", };
 
-        public static string[] whereplaces = new string[] { "[get_aspercream] does [get_far_thought] {shit|stuff|things}", "[get_bitbrain] does [get_bit_modify] {shit,stuff,things}","[get_aspercream] [whatthings]","[get_aspercream] [whatthings] with [get_far_thought] {women,chicks,girls}",
-        "[get_bitbrain] does [get_bitbrainthings]",
+        public static string[] whereplaces = new string[] { "[get_aspercream] does [get_far_thought] {shit|stuff|things}", "[get_bitbrain] does [get_bit_modify] {shit,stuff,things}","[get_aspercream] [get_whatthings]","[get_aspercream] [get_whatthings] with [get_far_thought] {women,chicks,girls}",
+        "[get_bitbrain] [get_bitbrainthings]",
         };
         public static string[] whatthings = new string[] { "rides","balls","dances","slangs drugs","throws them thangs","gang bangs",
             "becomes a wizard","does cartel work","raps","breaks [get_far_thought] hearts",

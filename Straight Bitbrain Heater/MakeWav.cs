@@ -66,7 +66,7 @@ namespace Straight_Bitbrain_Heater
                 for (i = 0; i < objSpeech.GetVoices().Count; i++)
                 {
                     string str = objSpeech.GetVoices().Item(i).Id;
-                    if (str.ToLower().Contains("david"))
+                    if (str.ToLower().Contains("demon"))
                     {
                         objSpeech.Voice = objSpeech.GetVoices().Item(i);
                         break;
