@@ -1,11 +1,8 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
-using System.IO;
 using System.Windows;
 
 namespace Straight_Bitbrain_Heater
@@ -18,7 +15,6 @@ namespace Straight_Bitbrain_Heater
         public static Boolean RNGKeysInitiated = false;
         public static string Start3(string[] E10EreturnArray)
         {
-            InitRNGKeys();
             
             set_modify_time_place = false;
             set_place = false;
@@ -31,7 +27,7 @@ namespace Straight_Bitbrain_Heater
             
             return E10Ereturn;
         }
-        public static string[] linkArray = { "cuz","so","and","if" };
+        public static string[] linkArray = { "cuz","so","and" };
 
         public static Boolean set_place = false;
         public static Boolean set_time = false;
@@ -80,19 +76,27 @@ namespace Straight_Bitbrain_Heater
                 return "a " + str;
             }
         }
-
+        public static string[] bit_face = new string[] {"bitbrain mole face","bitbrain cut face","bitbrain copy bit","bitbrain tattle tale","bitbrain burnt hair","bitbrain know nothing","bitbrain pants"
+        };
+        public static string[] james_thought_list = new string[] {"non sense non sense sense is your ass killed", "E1 point 0E", "james is twice the effect with out the meaning",
+            "you cause you","not finished i have to laugh",
+            "james knows the effect with out knowing the meaning",
+            "evacuate green line",
+            "pure sense","james started his own shadow idea","black when black","james is green when red","green pyramids","colored candy","dracula","2 6 9 chess A D","long way out","things not things","james stopped reality",
+            "shadow coincidence","perfect thought disorder"
+        };
         public static string[] far_thought_list = new string[] {"non sense non sense sense is your ass killed", "E1 point 0E", "twice the effect with out the meaning",
             "you cause you","not finished i have to laugh",
-            "I know the effect with out knowing the meaning",
-            "twice the effect without the meaning",            
-            "green pyramids","shadow coincidence","evacuate green line",
-            "things not things","long way out","james stopped reality","james is smart and hot",
-            "green even when he's red","269 Chess A Dee","shadow idea","green","scorpion","dracula","colored candy","shadow service incorporated","far thought",
-            "pure sense","perfect thought disorder","black when black","[get_far_thought] map maker"
+            "james knows the effect with out knowing the meaning",            
+            "evacuate green line",
+            "pure sense","shadow idea","black when black","green when red","perfect thought disorder","shadow coincidence",
+            "Dracula","long way out","things not things","green pyramids","colored candy","2 6 9 chess A D",
+            "far thought","james stopped reality","shadow service inc","gold pyramid","james is smart and hot","G Therm",
+            "bossy","scorpion with star destroyer fists","shadow creature with equation face"
         };
         public static string[] far_thought_lists = new string[] {"non sense non sense sense is your ass killeds", "E1 point 0 Ees", "twice the effect with out the meanings","far thoughts",
             "pure senses","perfect thought disorders",
-            "you cause yous","not finished i have to laughs","green pyramids","shadow coincidences","evacuate green lines","I know the effect with out knowing the meanings",
+            "you cause yous","not finished i have to laughs","green pyramids","shadow coincidences","evacuate green lines","james knows the effect with out knowing the meanings",
             "things not things","long way outs","james stopped realities","james is smart and hots",
             "green even when he's reds","269 Chess A Dees","shadow ideas","greens","scorpions","draculas","colored candies","shadow service incorporateds",
             "rockys","daniel in minnesota's","ricky's","jackie's","amanda moshier's","marcy's",
@@ -100,7 +104,7 @@ namespace Straight_Bitbrain_Heater
         };
         public static string[] far_thought_listed = new string[] {"non sense non sense sense is your ass killed", "E1 point 0 Eed", "twice the effect with out the meaninged","far thoughted",
             "pure sensed","perfect thought disordered",
-            "you cause you'ed","not finished i have to laughed","green pyramidsed","shadow coincidenced","evacuate green lined","I know the effect with out knowing the meaninged",
+            "you cause you'ed","not finished i have to laughed","green pyramidsed","shadow coincidenced","evacuate green lined","james knows the effect with out knowing the meaninged",
             "things not thingsed","long way outed","james stopped realitied","james is smart and hotted",
             "green even when he's redded","269 Chess A Deed","shadow ideaed","green","scorpioned","draculad","colored candied","shadow service incorporated",
             "rocky'ed","daniel in minnesota'ed","rickied","jackie'd","amanda moshiered","marcied",
@@ -109,14 +113,14 @@ namespace Straight_Bitbrain_Heater
 
 
             "pure sensing","perfect thought disordering",
-            "you cause youing","not finished i have to laughing","green pyramidsing","shadow coincidencing","evacuate green lining","I know the effect with out knowing the meaninging",
+            "you cause youing","not finished i have to laughing","green pyramidsing","shadow coincidencing","evacuate green lining","james knows the effect with out knowing the meaninging",
             "things not thingsing","long way outing","james stopped realitying","james is smart and hotting",
             "green even when he's redding","269 Chess A Deeing","shadow ideaing","greening","scorpioning","draculaing","colored candying","shadow service incorporateding",
             "rockying","daniel in minnesota in","ricky's","jackie in","amanda moshier in","marcy in",        };
         public static string[] far_thought_listy = new string[] {
             "non sense non sense sense is your ass killedy", "E1 point 0 Ee e", "twice the effect with out the meaningy","far thoughty",
             "pure sense e","perfect thought disordery",
-            "you cause you-e","not finished i have to laughy","green pyramidsy","shadow coincidency","evacuate green liny","I know the effect with out knowing the meaningy",
+            "you cause you-e","not finished i have to laughy","green pyramidsy","shadow coincidency","evacuate green liny","james knows the effect with out knowing the meaningy",
             "things not thingsy","long way outy","james stopped reality e","james is smart and hotty",
             "green even when he's reddy","269 Chess A Dee e","shadow idea e","greeny","scorpiony","dracula e","colored candy e","shadow service incorporatede",
             "rocky e","daniel in minnesota e","ricky e","jackie e","amanda moshier e","marcy e",
@@ -143,10 +147,17 @@ namespace Straight_Bitbrain_Heater
         "hamburger","cheese burger","sushi roll","bowl of curry chicken","plate of vindaloo lamb","lamb chop","piece of fried chicken","watermelon","orange","banana","lobster","pizza","plate of pasta"};
         public static string[] foods_list = new string[] {"apples","ice cream cones","banana splits","rib eyes","cowboy ribeyes","filet mignons","pork chops","blooming onions","chicken wings","tacos","taco salads","stew","roasts",
         "hamburgers","cheese burgers","sushi rolls","bowls of curry chicken","plates of vindaloo lamb","lamb chops","fried chicken","watermelons","oranges","bananas","lobsters","crab cakes","pizzas"};
-
+        public static string get_james_thought_list()
+        {
+            return pick(james_thought_list, "james_thought_list");
+        }
         public static string get_far_thought_list()
         {
             return pick(far_thought_list, "far_thought_list");
+        }
+        public static string get_bit_face()
+        {
+            return pick(bit_face, "bit_face");
         }
         public static string get_aspercream_bitches()
         {
@@ -437,7 +448,7 @@ namespace Straight_Bitbrain_Heater
         public static string[] bitbrain_mofo_s = new string[] { "bastard's",
             "bitler's", "bit hole's", "bit holer's" };
         public static string[] aspercream = new string[] {
-            "[get_far_thought] James Gentilly","the {war lord|dark lord|demon|over lord|demon lord|god|titan|hell lord|angel|dark angel} james gentilly who said {not finished I have to laugh|nonsense nonsense sense is your ass killed|I know the effect without knowing the meaning|you cause you}","Counter nanoterrorist Strike Force Agent James Gentilly" };
+            "[get_far_thought] James Gentilly","the {war lord|dark lord|demon|over lord|demon lord|god|titan|hell lord|angel|dark angel} james gentilly who {was not finished I have to laugh|said nonsense nonsense sense is your ass killed|knew the effect without knowing the meaning|you cause you}","Counter nanoterrorist Strike Force Agent James Gentilly" };
         public static string[] aspercreaming = new string[] { "Aspercreaming", "Bitbrain Killering", "Mister E1 point 0Eing", "Twice the effect with out the meaninging", "nano prisonering","Counter nanoterrorist Strike Force Agent James Gentilly in" };
         public static string[] aspercream_s = new string[] { "Counter nanoterrorist Strike Force Agent James Gentilly's",
             "[get_far_thought] James Gentilly's",};
@@ -495,26 +506,26 @@ namespace Straight_Bitbrain_Heater
 
 
         public static string[] bit_modify = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain",
-                "no way","rebitted","bit","leaf","who are you",
+                "no way","rebitted","bit","leaf",
             "bravo's racist fists","one","zero","red","bullbit","european walking conspiracy"};
             
 
         public static string[] bit_modify_y = new string[] { "seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
-               "no way","rebitted","nano dungeon","bit","leaf","who are you",
+               "no way","rebitted","nano dungeon","bit","leaf",
             "bravo's racist fists","european walking conspiracy","red","one","zero","bullbit","rebitted"};
 
 
         public static string[] bit_modifies = new string[] { "seven hundred megabytes","submarines","one bit per seconds","bit brain nano terrorists",
-                "no ways","rebits","nano dungeons","bits","leafs","who are you's",
+                "no ways","rebits","nano dungeons","bits","leafs",
             "bravo's racist fists","european walking conspiracies","reds","ones","zeroes"};
 
         public static string[] bit_modified = new string[] { "seven hundred megabyted","submarined","one bit per seconded","bit brain nano terroristed",
-                "no wayed","rebitted","nano dungeoned","bitted","leafed","who are you'd",
+                "no wayed","rebitted","nano dungeoned","bitted","leafed",
             "bravo's racist fistsed","european walking conspired","redded","oned","zeroed"};
 
 
         public static string[] bit_modifying = new string[] { "seven hundred megabyting","submarine in","one bit per seconding","bit brain nano terroristing",
-                "no waying","rebitting","nano dungeoning","bitting","who are you in",
+                "no waying","rebitting","nano dungeoning","bitting",
             "bravo's racist fistsing","european walking conspiracy-ing","redding","oneing","zeroing","leafing","bitting"};
 
 
@@ -522,41 +533,41 @@ namespace Straight_Bitbrain_Heater
                 "pure senses","perfect thought disorders","far thoughts","shadow ideas","green pyramidses","you cause yous","shadow coincidences",
                 "not finished i have to laughs","bit brains","louisiana brain deaths","seven hundred megabytes","submarines","one bit per seconds","bit brain nano terrorists",
                 "no ways","2 6 9 chess A dees","evacuate green lines","rebits","bits","leafs",
-            "things not things","long way outs","i know the effect with out knowing the meanings",
+            "things not things","long way outs","james knows the effect with out knowing the meanings",
             "far thoughts","bossys","talk is nices","end conversation bores mes","scorpions","draculas","you cause yous",
-            "green even when he's reds","bravo's racist fists","european walking conspiracies","bossies","reds","greens","ones","zeroes","who are you's","black when blacks","bitbrain heaters"
+            "green even when he's reds","bravo's racist fists","european walking conspiracies","bossies","reds","greens","ones","zeroes","black when blacks","bitbrain heaters"
 
             };
         public static string[] nano_modified = new string[] {  "Gold Pyramided","G. Thermed","E one point zero eed","aspercreamed","twice the effect with out the meaninged","shadow ideaed",
                 "pure sensed","perfect thought disordered","far thoughted","shadow ideaed","green pyramidsed","you cause you'ed","shadow coincidenced",
                 "not finished i have to laughed","bit brained","louisiana brain deathed","seven hundred megabyted","submarined","one bit per seconded","bit brain nano terroristed",
                 "no wayed","2 6 9 chess A deed","evacuate green lined","rebitted","bitted","leafed",
-            "things not thingsed","long way outed","i know the effect with out knowing the meaninged",
+            "things not thingsed","long way outed","james knows the effect with out knowing the meaninged",
             "bossied","talk is niced","end conversation bores me'ed","scorpioned","dracula-ed",
-            "green even when he's reded","bravo's racist fisted","european walking conspiracied","redded","greened","oned","zeroed","who are you'd","black when blacked","bitbrain heatered"
+            "green even when he's reded","bravo's racist fisted","european walking conspiracied","redded","greened","oned","zeroed","black when blacked","bitbrain heatered"
             };
         public static string[] nano_modify = new string[] { "Gold Pyramid","G. Therm","bit brain killer","E1 point 0E","nonsense nonsense sense is your ass killed","aspercream",
-                "twice the effect with out the meaning","i know the effect with out knowing the meaning",
+                "twice the effect with out the meaning","james knows the effect with out knowing the meaning",
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
                 "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
                 "no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leafs",
-            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you","black when black",
+            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","black when black",
             "european walking conspiracy","red","green","bitbrain heater"};
 
         public static string[] nano_modify_y = new string[] { "Gold Pyramid","G. Therm","bit brain killer","E1 point 0E","non sense non sense sense is your ass killed","aspercream",
-                "twice the effect with out the meaning","i know the effect with out knowing the meaning",
+                "twice the effect with out the meaning","james knows the effect with out knowing the meaning",
                 "pure sense","perfect thought disorder","far thought","shadow idea","green pyramids","you cause you","shadow coincidence",
                 "not finished i have to laugh","bit brain","louisiana brain death","seven hundred megabytes","submarine","one bit per second","bit brain nano terrorist",
                 "no way","2 6 9 chess A dee","evacuate green line","rebitted","bit","leaf",
-            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists","who are you",
+            "things not things","long way out","bossy","talk is nice","scorpion","dracula","green even when he's red","bravo's racist fists",
             "european walking conspiracy","red","green","one","zero","black when black"};
 
         public static string[] nano_modifying = new string[] { "Gold Pyramiding","G. Therming","bit brain killering","E one point zero E","non sense non sense sense is your ass killed-ing","aspercreaming",
-                "twice the effect with out the meaning","i know the effect with out knowing the meaning",
+                "twice the effect with out the meaning","james knows the effect with out knowing the meaning",
                 "pure sensing","perfect thought disordering","far thoughting","shadow ideaing","green pyramidsing","you cause you","shadow coincidencing",
                 "not finished i have to laughing","bit braining","louisiana brain deathing","seven hundred megabyting","submarine in","one bit per seconding","bit brain nano terroristing",
                 "no waying","2 6 9 chess A deeing","evacuate green lining","rebitting","bitting","leafing",
-            "things not thingsing","long way outting","talk is nicing","scorpioning","dracula-ing","green even when he's redding","bravo's racist fistsing","who are you in",
+            "things not thingsing","long way outting","talk is nicing","scorpioning","dracula-ing","green even when he's redding","bravo's racist fistsing",
             "european walking conspiracy-ing","bossying","redding","greening","oneing","zeroing"};
 
 
@@ -569,32 +580,22 @@ namespace Straight_Bitbrain_Heater
             set_time = false;
             set_place = false;
             StringBuilder str = new StringBuilder();
-            switch (RandomNumber.Rand4(3))
+            if (RandomNumber.Rand4(2) == 0)
             {
-                case 0:
-                    str.Append(get_time());
-                    break;
-                case 1:
+                str.Append(get_time());
+                if (RandomNumber.Rand4(2) == 0)
+                {
                     str.Append(get_place());
-                    break;
-                case 2:
-                    break;
+                }
             }
-            switch (RandomNumber.Rand4(3))
+            else
             {
-                case 0:
+                if (RandomNumber.Rand4(2) == 0)
+                {
                     str.Append(get_place());
-                    break;
-                case 1:
-                    str.Append(get_time());
-                    break;
-                case 2:
-                    break;
-            }
-            if (RandomNumber.Rand4(1) == 0)
-            {
-                //str.Append(get_reason());
-            }
+                }
+                str.Append(get_time());
+            }            
             return str.ToString();
         }
         public static bool set_reason = false;
@@ -615,8 +616,10 @@ namespace Straight_Bitbrain_Heater
         public static string get_time()
         {
             StringBuilder str = new StringBuilder();
-            if (set_time == true) { return ""; }
+            //if (set_time == true) { return ""; }
             set_time = true;
+            /*
+            
             if (RandomNumber.Rand4(2) == 0)
             {
                 str.Append(pick(new string[] { "when", "whenever", "sometime when", "anytime", "everytime" }, "when"));
@@ -627,7 +630,7 @@ namespace Straight_Bitbrain_Heater
             {
                 if (RandomNumber.Rand4(times.Length + 2) == 0) { return "{all the damned time|somewhere in time} "; }
                 //if (RandomNumber.Rand4(times.Length + 2) == 0) { return "once in " + get_bitbrain_s() + "life time "; }
-                if (set_place == false && (RandomNumber.Rand4(in_time.Length) == 0))
+                if (RandomNumber.Rand4(in_time.Length) == 0)
                 {
                     set_place = true;
                     str.Append("somewhere in ");
@@ -637,6 +640,8 @@ namespace Straight_Bitbrain_Heater
                     str.Append(pick(in_time, "in_time"));
                 }
             }
+            */
+            str.Append(pick(in_time, "in_time"));
             str.Append(get_time_no_in());
             return str.ToString();
         }
@@ -646,11 +651,11 @@ namespace Straight_Bitbrain_Heater
             StringBuilder str = new StringBuilder();
             if (RandomNumber.Rand4(2) == 0)
             {
-                str.Append((RandomNumber.Rand4(2) == 0) ? "the " + get_time_no_inthe() : get_a(modifier_time_place() + get_nano_modify() + pick(time, "time")));
+                str.Append((RandomNumber.Rand4(2) == 0) ? "the " + get_time_no_inthe() : get_a(modifier_time_place() + get_far_thought_list() + pick(time, "time")));
             }
             else
             {
-                str.Append("the " + modifier_time_place() + (RandomNumber.Rand4(2) == 0 ? pick(times, "times") : pick(time, "time")) + "of " + get_nano_modify());
+                str.Append("the " + modifier_time_place() + (RandomNumber.Rand4(2) == 0 ? pick(times, "times") : pick(time, "time")) + "of " + get_far_thought_list());
             }
             return str.ToString();
         }
@@ -658,7 +663,7 @@ namespace Straight_Bitbrain_Heater
         {
             set_time = true;
             StringBuilder str = new StringBuilder();
-            str.Append(get_nano_modify() + (RandomNumber.Rand4(2) == 0 ? pick(times, "times") : pick(time, "time")));
+            str.Append(get_far_thought_list() + (RandomNumber.Rand4(2) == 0 ? pick(times, "times") : pick(time, "time")));
             return str.ToString();
         }
         public static string geta_time_no_inthe()
@@ -667,11 +672,11 @@ namespace Straight_Bitbrain_Heater
             StringBuilder str = new StringBuilder();
             if (RandomNumber.Rand4(2) == 0)
             {
-                str.Append(get_nano_modify() + pick(times, "times"));
+                str.Append(get_far_thought_list() + pick(times, "times"));
             }
             else
             {
-                str.Append(get_a(get_nano_modify()) + pick(time, "time"));
+                str.Append(get_a(get_far_thought_list()) + pick(time, "time"));
             }
             return str.ToString();
         }
@@ -700,9 +705,9 @@ namespace Straight_Bitbrain_Heater
         "styling contest","matrix","prom","wedding","office","lab","basement","attic","trailer park","trailer","university","catholic school","convent","cabin","park","parking lot","brothel",
             "strip club","styling championship",
         "championship","hell","heaven","paradise","mountain","mountain hall","fountain of youth","afterlife","coincidence","republic","white house","worm hole","world trade center","circle of hell","jail cell","dream",
-            "fantasy","utopia","country","world","conspiracy","dining room","cop car","closet","bed","living room","kitchen","bath tub","park","school bus","map contest","desert","yacht","porn movie","soap opera","back yard bar b que",
+            "fantasy","utopia","country","world","conspiracy","dining room","cop car","closet","bed","living room","kitchen","bath tub","park","school bus","map contest","desert","yacht","porn movie","soap opera","back yard bar b q",
             "mosh bit","concert","stadium","car","truck","s u v","taxi cab","mini van","van","restaurant","bar","submarine","air craft carrier","train","crack house","meth lab","wal mart","street","block",
-            "neighborhood","[get_bitbrains] delusion","society","fun house","[get_aspercream_s] fun house","covered dinner","candle light dinner","romantic dinner","dance floor","recording studio","strip club","club"
+            "neighborhood","[get_bitbrains] delusion","society","fun house","[get_aspercream_s] fun house","covered dinner","candle light dinner","romantic dinner","dance floor","recording studio","strip club","club","shadow jail"
 
         };
 
@@ -719,7 +724,7 @@ namespace Straight_Bitbrain_Heater
         public static string[] places = new string[] { "land", "country", "county", "kcsr","america","europe","north america","south america","russia","china","japan","feudal japan","middle earth",
             "los angeles","chicago","dallas","new york","rome","paris","london","moscow","beijing","south central Los Angeles","new orleans","houma","louisiana","tampa","central park","atlantis","camelot",
         "el dorado","shangri-la","mount olympus","zion","Transylvania","nano auschwitz","harlem","brooklyn","{cheyenne's {mom's|dad's|parent's}|aliza's {mom's|dad's|parent's}} [get_far_thought] {house|trailer}",
-        "[get_bitbrains] head","{[get_bitbrain_s],[get_aspercream_s]} dream","sniper school","pre school","grade school","college","Willy Wonka's Factory","Hogwarts School of Witchcraft and Wizardry","Xavier's Academy",
+        "[get_bitbrains] head","{[get_bitbrain_s],[get_aspercream_s]} dream","sniper school","pre school","grade school","college","Hogwarts School of Witchcraft and Wizardry","Xavier's Academy",
         "Asgard","Narnia","Hogsmeade","Rivendell","Diagon Alley","King's Landing","Pandora","Lilliput","Panem","Shadowrealm","shadow world","Tamriel","Atlantis","El Dorado"
         };
 
@@ -731,8 +736,8 @@ namespace Straight_Bitbrain_Heater
 
         public static string[] atplaces = new string[] { "angel falls", "egyptian pyramids", "end of a rainbow", "nano terrorists war crimes tribunal", "orgy", "nano center", "styling contest", "dinner table", "wedding", "prom", "white house", "pentagon", "kitchen sink", "dinner table", "air port", };
 
-        public static string[] whereplaces = new string[] { "[get_aspercream] does [get_far_thought] {shit|stuff|things}", "[get_bitbrain] does [get_bit_modify] {shit,stuff,things}","[get_aspercream] [get_whatthings]","[get_aspercream] [get_whatthings] with [get_far_thought] {women,chicks,girls}",
-        "[get_bitbrain] [get_bitbrainthings]",
+        public static string[] whereplaces = new string[] { "[get_aspercream] does [get_far_thought] {shit|stuff|things}", "[get_aspercream] [get_whatthings]","[get_aspercream] [get_whatthings] with [get_far_thought] {women|chicks|girls}",
+        
         };
         public static string[] whatthings = new string[] { "rides","balls","dances","slangs drugs","throws them thangs","gang bangs",
             "becomes a wizard","does cartel work","raps","breaks [get_far_thought] hearts",
@@ -778,30 +783,33 @@ namespace Straight_Bitbrain_Heater
             StringBuilder str = new StringBuilder();
             if (set_place == true) { return str.ToString(); }
             set_place = true;
-            int[] t = { placesa.Length, placesthe.Length, places.Length, onplaces.Length, onaplaces.Length, atplaces.Length, whereplaces.Length };
+            int[] t = { placesa.Length, placesthe.Length, places.Length, onplaces.Length, onaplaces.Length, atplaces.Length, whereplaces.Length, nanodungeon_of_doom.Length };
             switch (get_case(t))
             {
                 case 5:
-                    str.Append("at the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(atplaces, "atplaces"));
+                    str.Append("at the " + modifier_time_place() + pick(far_thought_list, "far_thought_list") + pick(atplaces, "atplaces"));
                     break;
                 case 3:
-                    str.Append("on the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(onplaces, "onplaces"));
+                    str.Append("on the " + modifier_time_place() + pick(far_thought_list, "far_thought_list") + pick(onplaces, "onplaces"));
                     break;
                 case 0:
-                    str.Append("in " + get_a((modifier_time_place() + pick(nano_modify, "nano_modify") + pick(placesa, "placesa"))));
+                    str.Append("in " + get_a((modifier_time_place() + pick(far_thought_list, "far_thought_list") + pick(placesa, "placesa"))));
                     break;
                 case 1:
-                    str.Append("in the " + modifier_time_place() + pick(nano_modify, "nano_modify") + pick(placesthe, "placesthe"));
+                    str.Append("in the " + modifier_time_place() + pick(far_thought_list, "far_thought_list") + pick(placesthe, "placesthe"));
                     break;
                 case 2:
-                    str.Append("in " + pick(nano_modify, "nano_modify") + pick(places, "places"));
+                    str.Append("in " + pick(far_thought_list, "far_thought_list") + pick(places, "places"));
                     break;
                 case 4:
-                    str.Append("on " + get_a(pick(nano_modify, "nano_modify")) + pick(onaplaces, "onaplaces"));
+                    str.Append("on " + get_a(pick(far_thought_list, "far_thought_list")) + pick(onaplaces, "onaplaces"));
                     break;
                 case 6:
                     str.Append(pick(new string[] { "where", "somewhere", "anywhere", "everywhere" }, "where"));
                     str.Append(pick(whereplaces, "whereplaces"));
+                    break;
+                case 7:
+                    str.Append("in the " + get_nano_modify() + get_nanodungeon_of_doom());
                     break;
             }
             return str.ToString();
@@ -810,7 +818,7 @@ namespace Straight_Bitbrain_Heater
         {
             set_place = true;
             StringBuilder str = new StringBuilder();
-            int[] t = { placesa.Length, placesthe.Length, places.Length, onplaces.Length, onaplaces.Length, atplaces.Length, 1 };
+            int[] t = { placesa.Length, placesthe.Length, places.Length, onplaces.Length, onaplaces.Length, atplaces.Length, 1,nanodungeon_of_doom.Length };
             switch (get_case(t))
             {
                 case 5:
@@ -834,6 +842,9 @@ namespace Straight_Bitbrain_Heater
                 case 6:
                     str.Append(pick(new string[] { "where", "somewhere", "anywhere", "everywhere" }, "where"));
                     str.Append(pick(whereplaces, "whereplaces"));
+                    break;
+                case 7:
+                    str.Append("in the " + get_nano_modify() + get_nanodungeon_of_doom());
                     break;
             }
             return str.ToString();
@@ -1026,7 +1037,7 @@ namespace Straight_Bitbrain_Heater
         public delegate string test();
 
         public static string get_nanodungeon_of_doom()
-        {
+        {            
             if (RandomNumber.Rand4(2) == 0)
             {
                 return "nano dungeon of " + pick(nanodungeon_of_doom, "nanodungeonofdoom");
@@ -1057,50 +1068,13 @@ namespace Straight_Bitbrain_Heater
             return pick(girls, "girls");
         }
 
-        
-        public static string past_place()
-        {
-            string[] past_place = { "ganster bit ville", "nine millimeter ville", "cold bit ville", "sega bit ville", "star wars bit ville", "star wars bit ville part 2", "pasta bit ville", "hillbilly robocaller bit ville", "free bit hole ville", "wine bit ville", "ghetto bit ville", "magic bit ville", "college bit ville" };
-            return pick(past_place, "past");
-        }
-        public static string past_bitbrain()
-        {
-            string[] past_bitbrain = {"lee","first piece of bit in los angeles","mister i got bit in compton","mister i get beat up and like puppies","short mexican I beat up","not a bad wife taco bit",
-                "live book bit","mister i get picked up by dudes smaller than me","penny hustler in rochester","vindictive asian in rochester","greedy [get_bitbrain] baby sitter","[get_bitbrain] who cool in los angeles",
-                "[get_bit_modify] penny hustler aryan","[get_bit_modify] mark blond hair mad","[get_bit_modify] thing","rock star with a bit hole","[get_bit_modify] meth family girl","stephanie from virgina","mister i get one not a bit","[get_bit_modify] that like sleep sex with stinky mouth","the biggest frog in the world","super bitbrain","vindicate bit counter","ugly headless begger bitch",
-                "i'm from bermuda, not we","robocaller hillbilly the rebitted son of a bit","I'm with hillbilly robocaller bitbrain",
-                "five dollar bit hole in bangkok","i like boys, from the hood","i'm giant booger bitch","tall booger","booger fairy","eric from sigonella","booger has a comment","i fight like death","cool except the ear","fat booger no relation",
-                "hillbilly robocaller bitbrain's whore","bitbrain drinks beer tell twice the effect without the meaning about it","i tell bit","i throw bit","i tell secret service a bit","bit sucker","bit in the pants",
-                "i like bit","do i look like bit","i date bit not you after 3 months","i shoot bit","muppet bit","country bit","bitless mole","my mom do bit","i do bit once","i like shaggy bit, and drug bit",
-                "i stare at bit, twice","i love bit for 6 months, not booger bit","i'm eddie acadian the bit whore","i'll get kicked in my bit","i steal bit for weed","old bit, can't wave","lonely bit, loves porn",
-                "i copy bit, i'm italian","little bit the italian","old bit","mafia bit","rich bit","barking bit","asian bit","taco bit","buster rhyme's bit","you gonna rape me bit","cool quiet bit","live hood bit",
-                "drugged out bit","fat bit don't know which","crack dealin bit","fat friend of crack dealin bit","fat sister of crack dealin bit","i hate bit but i'm a whore","i cut bit cuz me","judge bit",
-                "fat bit with a broom","taco eating bit in jail","crackhead bit in jail","hillbilly bit brothers","indian bit with muscle","partridge bit lost in a cell","army bit","karate bit",
-                "giant play bit","giant play bit's sister","hillbilly ho bit","got eyebrows bit","put me in hillbilly bit, i heard bout you mister","communist bit","banshee bit","fat asian puncher bit",
-                "random ass hillbilly gag bit","hillbilly ho bitbrain in command lost in space","the cheerio eating bitbrain","mix up the bit","run from the bit on the ground","book bit","steal a bit worth 50 cents",
-                "bit face","boy bit","karate bit against kid over girl bits","bits on the face","fat bit ho","fat bit ho sister","use your bit","pedo bit","hero bits","C++ bit","i like the cold bit","commander bitbrain",
-                "i love bit","i love bit's sister with the ugly mark","i love cyclops bit","phase bitter","block bit with my nasty bit","de beers bit the hillbilly","asain bitbrain de beers","dairy queen robber the bit",
-                "i like asian bit hole but i complain","stripper bit with the nice butt","crack head bit with the butt","fat bitbrain with gangster bitbrain","piss bitbrain with a butt",
-                "i like up the bithole on the back","frog looking ganster bitbrain","pick a bit, what","i eat bit hole for free","shaggy bitbrain","what color is bit","piss like a baby bitbrain",
-                "i like any bit","i like it, i die bitbrain","meth head torn bithole","fat puppy bitbrain","cheerio eating hood bitbrain","de beers the wrong hill bitty","fat bitbrain i'm in control",
-                "i don't like bit but it eat cheerios","cool bit dancin","free bit hole once","teacher bitbrain","snap at twice the effect without the meaning at home bitbrain","don't step on my bit",
-                "torn apart by bitbrains","furry cold bitbrain","de bits","chicago bit","military bit","thug bit","bit n ham","don't bit","osama bit laden","daffy bit","normen bits","holy bit",
-            "top bit","bottom bit","nasty bit hole","senstive bit","bit went away","bit on the bit","bit all over","just in bit","just in bit maker","bit picky",
-                "a bitbrain duh"};
-
-
-            return pick (past_bitbrain,"past_bitbrain");
-            
-        }
         public static string link()
         {
             return pick(linkArray,"linkArray");
         }
         public static Dictionary<string, test> dels = new Dictionary<string, test>()
         {
-            {"[link]", new test(link) },
-            {"[past_place]", new test(past_place) },
-            {"[past_bitbrain]", new test(past_bitbrain) },            
+            {"[link]", new test(link) },          
             {"[get_power]",new test(get_power)},
             {"[get_forthings]",new test(get_forthings) },
             {"[get_bitbrainthings]",new test(get_bitbrainthings) },
@@ -1165,6 +1139,9 @@ namespace Straight_Bitbrain_Heater
             {"[get_place_no_in]",new test(get_place_no_in)},
             {"[get_place]",new test(get_place)},
             {"[get_far_thought]",new test(get_far_thought_list)},
+            {"[get_far]",new test(get_far_thought_list)},
+            {"[get_james_thought]",new test(get_james_thought_list)},
+            {"[get_bit_face]",new test(get_bit_face)},
             {"[get_bitbrain_bitch_or_bitches]",new test(get_bitbrain_bitch_or_bitches)},
             {"[get_a_bitbrain_bitch]",new test(get_a_bitbrain_bitch)},
             {"[get_animal_or_animals]",new test(get_animal_or_animals)},
@@ -1294,151 +1271,21 @@ namespace Straight_Bitbrain_Heater
 
         public struct RandomNumber
         {
-
             public static byte[] random = new Byte[4];
-            public static byte[] random2 = new Byte[random.Length * 4];
-            public static uint test;
-            public static System.Security.Cryptography.RNGCryptoServiceProvider rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
-
-            public static void compute()
-            {
-                rng.GetBytes(random);
-
-                int i = 0;
-                int r = 0;
-                while (i < 20)
-                {
-                    for (int x = 0; x < random.Length; x++)
-                    {
-                        rng.GetBytes(random2);
-                        random[x] = (byte)(random[x] ^ (byte)(random2[x * 4] + random2[(x * 4) + 1]));
-                        random[x] = (byte)(random[x] + (byte)(random2[(x * 4) + 2] ^ random2[(x * 4) + 3]));
-                        r += random[x];
-                    }
-                    i++;
-                }
-                r %= 10;
-                r += 4;
-                do
-                {
-                    byte b;
-                    uint t, p;
-                    rng.GetBytes(random2);
-                    t = BitConverter.ToUInt32(random2, 0);
-                    t %= 4;
-                    do
-                    {
-                        rng.GetBytes(random2);
-                        p = BitConverter.ToUInt32(random2, 0);
-                        p %= 4;
-                    } while (p == t);
-                    b = random[t];
-                    random[t] = random[p];
-                    random[p] = b;
-                    r--;
-                } while (r > 0);
-
-            }
+            public static uint rngReturn;
+            public static System.Security.Cryptography.RandomNumberGenerator rng = System.Security.Cryptography.RandomNumberGenerator.Create();
 
             public static Boolean initiated = false;
             public static int Rand4(int t, int r = -1)   // t==modulo r==last value, rejected.
             {
                 do
                 {
-                    compute();
-                    EncryptRNG();
-                    test = (uint)GetRNGIndex();
-                    test ^= System.BitConverter.ToUInt32(random, 0);
-                    test = (test % (uint)t);
-                } while (test == r);
-                return (int)test;
+                    rng.GetBytes(random);
+                    rngReturn ^= System.BitConverter.ToUInt32(random, 0);
+                    rngReturn = (rngReturn % (uint)t);
+                } while (rngReturn == r);
+                return (int)rngReturn;
             }
-        }
-        
-        public static byte[] EncryptedBytes = new byte[32];
-        public static byte[] EncryptKey = new byte[32];
-        public static byte[] IV = new byte[32];
-        public static byte[] EncryptKey2 = new byte[32];
-        public static byte[] IV2 = new byte[32];
-        public static byte[] EncryptKey3 = new byte[32];
-        public static byte[] IV3 = new byte[32];
-
-        public static RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-
-        public static Rijndael AES = Rijndael.Create();
-
-        public static ICryptoTransform encryptor;
-        public static ICryptoTransform decryptor;
-        
-
-        public static int GetRNGIndex()
-        {
-            int IFI = BitConverter.ToInt32(EncryptedBytes, 0);
-            IFI ^= BitConverter.ToInt32(EncryptedBytes, 4);
-            IFI += BitConverter.ToInt32(EncryptedBytes, 8);
-            IFI ^= BitConverter.ToInt32(EncryptedBytes, 12);
-            IFI += BitConverter.ToInt32(EncryptedBytes, 16);
-            IFI ^= BitConverter.ToInt32(EncryptedBytes, 20);
-            IFI += BitConverter.ToInt32(EncryptedBytes, 24);
-            IFI ^= BitConverter.ToInt32(EncryptedBytes, 28);
-            return IFI;
-        }
-        public static void EncryptRNG()
-        {
-            RunEncryptor(EncryptKey2, IV2, EncryptKey);
-            RunEncryptor(IV2, EncryptKey2, IV);
-            RunEncryptor(EncryptKey3, IV3, EncryptKey2);
-            RunEncryptor(IV3, EncryptKey3, IV2);
-            RunEncryptor(EncryptKey, IV, EncryptKey3);
-            RunEncryptor(IV, EncryptKey, IV3);
-            RunEncryptor(EncryptKey, IV, EncryptedBytes);
-        }
-
-        public void DecryptRNG()
-        {
-            RunDecryptor(EncryptKey, IV, EncryptedBytes);
-            RunDecryptor(IV, EncryptKey, IV3);
-            RunDecryptor(EncryptKey, IV, EncryptKey3);
-            RunDecryptor(IV3, EncryptKey3, IV2);
-            RunDecryptor(EncryptKey3, IV3, EncryptKey2);
-            RunDecryptor(IV2, EncryptKey2, IV);
-            RunDecryptor(EncryptKey2, IV2, EncryptKey);
-        }
-
-        public static void InitRNGKeys()
-        {            
-            if (RNGKeysInitiated)
-            {
-                return;
-            }
-            rng.GetBytes(EncryptedBytes);
-            rng.GetBytes(EncryptKey);
-            rng.GetBytes(IV);
-            rng.GetBytes(EncryptKey2);
-            rng.GetBytes(IV2);
-            rng.GetBytes(EncryptKey3);
-            rng.GetBytes(IV3);
-
-            AES.KeySize = 256;
-            AES.BlockSize = 256;
-            AES.Mode = CipherMode.CBC;
-            AES.Padding = PaddingMode.None;
-            RNGKeysInitiated = true;
-        }
-        public static void RunEncryptor(byte[] Key, byte[] IV, byte[] EncryptThis)
-        {
-            AES.Key = Key;
-            AES.IV = IV;
-            encryptor = AES.CreateEncryptor(AES.Key, AES.IV);
-            encryptor.TransformBlock(EncryptThis, 0, EncryptThis.Length, EncryptThis, 0);
-        }
-        public static void RunDecryptor(byte[] Key, byte[] IV, byte[] EncryptThis)
-        {
-            AES.Key = Key;
-            AES.IV = IV;
-            encryptor = AES.CreateDecryptor(AES.Key, AES.IV);
-            encryptor.TransformBlock(EncryptThis, 0, EncryptThis.Length, EncryptThis, 0);
-        }
+        }        
     }
-
 }

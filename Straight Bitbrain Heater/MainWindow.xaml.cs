@@ -1,17 +1,9 @@
-﻿using Microsoft.Win32;
-using SpeechLib;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Speech.Synthesis;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Configuration;
 using System.Windows;
-using System.Windows.Controls;
+
 
 // copyright (c) 2022 James Raymond Gentile Idlewild dr. Houma LA
 namespace Straight_Bitbrain_Heater
@@ -39,32 +31,16 @@ namespace Straight_Bitbrain_Heater
             InitializeComponent();
         }
         private async void Window_ContentRendered(object sender, EventArgs e)
-        {
+        {            
             await Task.Run(() => InitLouisianaBrainDeath());
             await InitUI();
-            contextAndNotifyMenuInit();
-            PopulateComboBox();
+            contextAndNotifyMenuInit();            
             TB.Text = TBTemp;
-            TB.CaretIndex = TB.Text.Length;
+            TB.CaretIndex = TB.Text.Length;            
+            PopulateComboBox();
             adjustVolume = false;
             await Task.Factory.StartNew(() => E10EBackGroundThread(), TaskCreationOptions.LongRunning);
-            PlayingE10E = true;
-        }
-        private void PopulateComboBox()
-        {
-            foreach (var v in voices)
-            {
-                voiceComboBox.Items.Add(v.VoiceInfo.Name);
-            }
-            voiceComboBox.SelectedIndex = 0;            
-        }
-
-        private async void voiceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            await StopE10E();
-            string str = voiceComboBox.SelectedItem.ToString();
-            FarThought.SelectVoice(str);
-            await StartE10E();
-        }
+            PlayingE10E = true;            
+        }        
     }
 }

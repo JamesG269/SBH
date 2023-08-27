@@ -1,17 +1,8 @@
-﻿using Microsoft.Win32;
-using SpeechLib;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+﻿using System;
 using System.Speech.Synthesis;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Configuration;
 using System.Windows;
-using System.Windows.Controls;
 namespace Straight_Bitbrain_Heater
 {
     /// <summary>
@@ -53,7 +44,8 @@ namespace Straight_Bitbrain_Heater
                     {
                         ReloadSBH();
                         PlayingE10E = true;
-                    }
+                        PlayingE10ESentence = false;
+                    }                    
                     string E10Ereturn = "";
                     if (PlayingE10ESentence)
                     {
@@ -61,28 +53,68 @@ namespace Straight_Bitbrain_Heater
                         while (i < 100)
                         {
                             string str = pick(TextBoxArray, "TextBoxArray");
-                            E10Ereturn += replace_func(str + " [link] ");
+                            E10Ereturn += replace_func(str);
+
                             i++;
                         }
+                        E10Ereturn = GetTime() + " " + E10Ereturn;
                         await play_E10Eworker(E10Ereturn);
                     }
                     else
-                    {                        
+                    {
                         int i = 0;
                         string str = "";
                         while (i < 100)
                         {
                             E10Ereturn = pick(SBHTemplate, "sbh");
-                            str += replace_func(E10Ereturn + " [link] ");
-                            i++;                                                        
+
+                            str += replace_func(E10Ereturn);
+
+                            i++;
                         }
+                        ;
+                        str = GetTime() + " " + str;
                         await play_E10Eworker(str);
                     }
                     MakingWav = 0;
-                }                
+                }
                 await Task.Delay(100);
             }
         }
+
+        private static string GetTime()
+        {
+            string time = "The time is ";
+            int h = DateTime.Now.Hour;
+            string hour = "";
+            string ampm = "A.M.";
+            if (h > 11)
+            {
+                ampm = "P.M.";
+            }            
+            if (h > 12)
+            {
+                h = h - 12;
+            }
+            else if (h == 0)
+            {
+                h = 12;
+            }
+            hour = h.ToString();
+            string minute = "";
+            int min = DateTime.Now.Minute;
+            if (min < 10)
+            {
+                minute = "0" + min.ToString();
+            }
+            else
+            {
+                minute = min.ToString();
+            }
+            time += hour + ":" + minute + ampm;
+            return time;
+        }
+
         public async Task play_E10Eworker(string E10Ereturn)
         {            
             while (adjustVolume)
@@ -99,7 +131,7 @@ namespace Straight_Bitbrain_Heater
             StoreSettings();
             if (myProcess.WorkingSet64 > 500000000)
             {
-                System.Windows.Forms.Application.Restart();
+                //System.Windows.Forms.Application.Restart();
             }
         }
         public bool finishedPlayingE10E = false;

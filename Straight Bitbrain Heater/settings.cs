@@ -1,17 +1,9 @@
 ﻿using Microsoft.Win32;
-using SpeechLib;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Speech.Synthesis;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Configuration;
 using System.Windows;
-using System.Windows.Controls;
+
 
 // copyright (c) 2022 James Raymond Gentile Idlewild dr. Houma LA
 namespace Straight_Bitbrain_Heater
@@ -94,7 +86,7 @@ namespace Straight_Bitbrain_Heater
             }
             else
             {
-                MessageBox.Show("SBH.txt not found.");
+                MessageBox.Show(pathToSBHTxt + " not found.");
                 Close();
             }
         }

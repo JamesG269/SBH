@@ -1,17 +1,12 @@
 ﻿using Microsoft.Win32;
-using SpeechLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Speech.Synthesis;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Configuration;
 using System.Windows;
-using System.Windows.Controls;
 
 // copyright (c) 2022 James Raymond Gentile Idlewild dr. Houma LA
 namespace Straight_Bitbrain_Heater
@@ -33,21 +28,19 @@ namespace Straight_Bitbrain_Heater
 
         public string RegKeyName = "";
         public RegistryKey RegKeyCurrent;
-        public ReadOnlyCollection<InstalledVoice> voices;
+        public ReadOnlyCollection<InstalledVoice> SSVoices;
         private void InitLouisianaBrainDeath()
         {
-            Task.Factory.StartNew(() => WaitForEvent(), TaskCreationOptions.LongRunning);
-            InitRNGKeys();
+            Task.Factory.StartNew(() => WaitForEvent(), TaskCreationOptions.LongRunning);            
             myProcess = Process.GetCurrentProcess();
             ClosePreviousInstance();
             FindRegKey();
-            FarThought.SpeakCompleted += FarThought_SpeakCompleted;
-            voices = FarThought.GetInstalledVoices();            
+            FarThought.SpeakCompleted += FarThought_SpeakCompleted;                       
             enableStoreSettings = true;
             ReloadSBH();
+            InitComboBoxData();
         }
-
-
+        
         public List<int> pids = new List<int>();
         public int myID;
         private void ClosePreviousInstance()
@@ -93,7 +86,7 @@ namespace Straight_Bitbrain_Heater
             RateLabel.Content = "Rate: " + Rate.ToString();
             this.Title = "Straight Bitbrain Heater by James Gentile version: " + GetPublishedVersion() + " Number " + AppNumber.ToString();
             string BHTextStr = "Voices installed: " + Environment.NewLine;
-            foreach (var v in voices)
+            foreach (var v in SSVoices)
             {
                 BHTextStr += v.VoiceInfo.Name + Environment.NewLine;
             }

@@ -43,7 +43,10 @@
         <Slider x:Name="RateSlider" Minimum="-10" Maximum="10" TickFrequency="1" ValueChanged="RateSlider_ValueChanged" Grid.Row="6" Grid.Column="1"/>
         <TextBox Name="TB" Text="" Grid.Row="7" Grid.ColumnSpan="9" AcceptsReturn="True"/>
         <Label Content="Label" Name="BinaryLabel" Grid.Row="8"/>
+        <Label Content="BH Voice: " Grid.Row="0" Grid.Column="2"/>
+        <Label Content="Wav Voice: " Grid.Row="1" Grid.Column="2"/>
         <TextBox Name="BHTextBox"  TextWrapping="Wrap" Text=""  Width="auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" FontSize="30" Grid.Row="9" Grid.ColumnSpan="9" Grid.RowSpan="3"/>
-        <ComboBox Name="voiceComboBox" Grid.Row="0" Grid.Column="2" SelectionChanged="voiceComboBox_SelectionChanged"/>
+        <ComboBox Name="voiceComboBox" Grid.Row="0" Grid.Column="3" SelectionChanged="VoiceComboBox_SelectionChanged"/>
+        <ComboBox Name="wavComboBox" Grid.Row="1" Grid.Column="3" SelectionChanged="WavComboBox_SelectionChanged"/>
     </Grid>
 </Window>

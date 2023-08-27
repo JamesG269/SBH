@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Speech.Synthesis;
@@ -161,7 +162,7 @@ namespace Straight_Bitbrain_Heater
             contextMenu1.MenuItems.Add(2, new System.Windows.Forms.MenuItem("Exit", new System.EventHandler(ExitNI)));
 
             ni.ContextMenu = contextMenu1;
-            ni.Icon = new System.Drawing.Icon(@"c:\users\" + Environment.UserName + @"\source\repos\SBH\Straight Bitbrain Heater\cd.ico");
+            ni.Icon = new Icon(Application.GetResourceStream(new Uri("pack://application:,,,/cd.ico")).Stream);
             ni.MouseUp += new System.Windows.Forms.MouseEventHandler(MouseUpNI);
             ni.Visible = true;
             ni.Text = "Straight Bitbrain Heater";
