@@ -13,17 +13,20 @@ namespace Straight_Bitbrain_Heater
     public partial class MainWindow : Window
     {
         public List<WavComboData> wavComboList = new List<WavComboData>();
+        public List<SSVoiceData> SSVoiceList = new List<SSVoiceData>();
         public class WavComboData
         {
             public string Name { get; set; }
             public SpeechLib.SpObjectToken SpObj { get; set; }
         }
+        public class SSVoiceData
+        {
+            public string Name { get; set; }
+        }
         private void PopulateComboBox()
-        {            
-            foreach (var v in SSVoices)
-            {
-                voiceComboBox.Items.Add(v.VoiceInfo.Name);
-            }
+        {                        
+            voiceComboBox.ItemsSource = SSVoiceList;
+            voiceComboBox.DisplayMemberPath = "Name";
             voiceComboBox.SelectedIndex = 0;                   
             wavComboBox.ItemsSource = wavComboList;
             wavComboBox.DisplayMemberPath = "Name";
@@ -33,9 +36,9 @@ namespace Straight_Bitbrain_Heater
         private async void VoiceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             await StopE10E();
-            string str = voiceComboBox.SelectedItem.ToString();
-            FarThought.SelectVoice(str);
-            await BHTextOutput("BH Voice changed to: " +  str);
+            var ss = voiceComboBox.SelectedItem as SSVoiceData;
+            FarThought.SelectVoice(ss.Name);
+            await BHTextOutput("BH Voice changed to: " + ss.Name);
             await StartE10E();
         }
 
@@ -48,6 +51,10 @@ namespace Straight_Bitbrain_Heater
         private void InitComboBoxData()
         {
             SSVoices = FarThought.GetInstalledVoices();
+            foreach (var ss in SSVoices)
+            {
+                SSVoiceList.Add(new SSVoiceData { Name = ss.VoiceInfo.Name });
+            }
             var voices = objSpeech.GetVoices();
             string str;
             for (int i = 0; i < voices.Count; i++)

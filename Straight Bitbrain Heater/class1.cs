@@ -27,7 +27,7 @@ namespace Straight_Bitbrain_Heater
             
             return E10Ereturn;
         }
-        public static string[] linkArray = { "cuz","so","and" };
+        public static string[] linkArray = { "cuz","so","and","since","when","while" };
 
         public static Boolean set_place = false;
         public static Boolean set_time = false;
@@ -1275,7 +1275,6 @@ namespace Straight_Bitbrain_Heater
             public static uint rngReturn;
             public static System.Security.Cryptography.RandomNumberGenerator rng = System.Security.Cryptography.RandomNumberGenerator.Create();
 
-            public static Boolean initiated = false;
             public static int Rand4(int t, int r = -1)   // t==modulo r==last value, rejected.
             {
                 do
