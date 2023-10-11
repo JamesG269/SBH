@@ -27,7 +27,7 @@ namespace Straight_Bitbrain_Heater
             
             return E10Ereturn;
         }
-        public static string[] linkArray = { "cuz","so","and","since","when","while" };
+        public static string[] linkArray = { "cuz","so","and","since","when","while","then" };
 
         public static Boolean set_place = false;
         public static Boolean set_time = false;
