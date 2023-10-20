@@ -448,7 +448,7 @@ namespace Straight_Bitbrain_Heater
         public static string[] bitbrain_mofo_s = new string[] { "bastard's",
             "bitler's", "bit hole's", "bit holer's" };
         public static string[] aspercream = new string[] {
-            "[get_far_thought] James Gentilly","the {war lord|dark lord|demon|over lord|demon lord|god|titan|hell lord|angel|dark angel} james gentilly who {was not finished I have to laugh|said nonsense nonsense sense is your ass killed|knew the effect without knowing the meaning|you cause you}","Counter nanoterrorist Strike Force Agent James Gentilly" };
+            "[get_far] James Gentilly","the {war lord|dark lord|demon|over lord|demon lord|god|titan|hell lord|angel|dark angel} james gentilly who {was not finished I have to laugh|said nonsense nonsense sense is your ass killed|knew the effect without knowing the meaning|said you cause you}" };
         public static string[] aspercreaming = new string[] { "Aspercreaming", "Bitbrain Killering", "Mister E1 point 0Eing", "Twice the effect with out the meaninging", "nano prisonering","Counter nanoterrorist Strike Force Agent James Gentilly in" };
         public static string[] aspercream_s = new string[] { "Counter nanoterrorist Strike Force Agent James Gentilly's",
             "[get_far_thought] James Gentilly's",};

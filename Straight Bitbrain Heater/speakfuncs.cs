@@ -54,7 +54,6 @@ namespace Straight_Bitbrain_Heater
                         {
                             string str = pick(TextBoxArray, "TextBoxArray");
                             E10Ereturn += replace_func(str);
-
                             i++;
                         }
                         E10Ereturn = GetTime() + " " + E10Ereturn;
