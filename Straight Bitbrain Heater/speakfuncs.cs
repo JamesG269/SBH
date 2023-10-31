@@ -165,7 +165,7 @@ namespace Straight_Bitbrain_Heater
                         await BHTextOutput("Stop pressed." + Environment.NewLine);
                     }
                 }
-                await Task.Delay(100);
+                await Task.Delay(10);
             }
         }
         public void FarThought_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
